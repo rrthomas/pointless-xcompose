@@ -13,14 +13,16 @@ include "%L"
 # include "/usr/share/X11/locale/pt_BR.UTF-8/Compose"
 
 # Include everything! Adjust /usr/local/share to your installation path.
-include /usr/local/share/abbrevs.xcompose
-include /usr/local/share/arrows.xcompose
-include /usr/local/share/dingbats.xcompose
-include /usr/local/share/math.xcompose
-include /usr/local/share/misc.xcompose
-include /usr/local/share/undead.xcompose
-include /usr/local/share/hyphen-macron.xcompose
-include /usr/local/share/typographic.xcompose
+include "/usr/local/share/pointless-xcompose/abbrevs.xcompose"
+include "/usr/local/share/pointless-xcompose/arrows.xcompose"
+include "/usr/local/share/pointless-xcompose/cjk.xcompose"
+include "/usr/local/share/pointless-xcompose/dingbats.xcompose"
+include "/usr/local/share/pointless-xcompose/fractions.xcompose"
+include "/usr/local/share/pointless-xcompose/hyphen-macron.xcompose"
+include "/usr/local/share/pointless-xcompose/invisible.xcompose"
+include "/usr/local/share/pointless-xcompose/math.xcompose"
+include "/usr/local/share/pointless-xcompose/misc.xcompose"
+include "/usr/local/share/pointless-xcompose/typographic.xcompose"
 
 # If you use X deadkeys, use bin/make-dead-compose.sh to generate this one.
-include /usr/local/share/dead.xcompose
+include "/usr/local/share/pointless-xcompose/dead.xcompose"
