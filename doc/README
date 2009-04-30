@@ -21,21 +21,25 @@ the world suffer through it too.
 
 WHAT’S INCLUDED:
 ================
- - doc/README:               This file.
- - doc/license.txt:          “Public domain.”
- - doc/.XCompose.sample:     Sample ~/.XCompose file.
- - doc/xorg-compose-extract: Selected, annotated reading material.
+ - doc/README:                This.
+ - doc/license.txt:           “Public domain.”
+ - doc/.XCompose.sample:      Sample ~/.XCompose file.
+ - doc/xorg-compose-extract:  Selected, annotated reading material.
 
- - bin/make-dead-compose.sh: Run this if you use deadkeys.
+ - bin/make-dead-compose.sh:  Run it if you use deadkeys.
 
  - abbrevs.xcompose:          Abbreviations.
  - arrows.xcompose:           Pretty arrows.
+ - cjk.xcompose:              Chinese-Japanese-Korean punctuation.
  - dingbats.xcompose:         Cute drawings.
- - math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
- - misc.xcompose:             I couldn’t classify those.
+ - fractions.xcompose:        …Fractions.
  - hyphen-macron.xcompose:    For all you Japanese and Greek students,
                               macrons using hyphen instead of
                               underscore.
+ - invisible.xcompose:        Spaces, byte-order mark, soft hyphen, &
+                              other invisible characters.
+ - math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
+ - misc.xcompose:             I couldn’t classify those.
  - typographic.xcompose:      Typographic symbols.  Impress your
                               alistapart.com friends.
 
