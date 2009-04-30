@@ -6,7 +6,7 @@
 # Mnemonics
 # =========
 
-# The true hyphen, ≠ ASCII ‘-’ (=U002D the hyphen-minus).  Notice the
+# The true hyphen ≠ ASCII ‘-’ (=U002D the hyphen-minus).  Notice the
 # X name <minus> refer to the ASCII hyphen-minus, not the true minus.
 <Multi_key> <minus> <comma>             : "‐" U2010 # hyhpen
 # Perhaps counter-intuitive?
@@ -14,9 +14,11 @@
 <Multi_key> <minus> <period>            : "−" U2210 # MINUS SIGN
 <Multi_key> <minus> <minus> <period>    : "–" U2013 # EN DASH # X dup
 <Multi_key> <minus> <minus> <minus>     : "—" U2014 # EM DASH # X dup
-# Used for dialogue statements.  Visually identical to U2014 EM DASH.
+# Used for dialogue statements.  In most fonts visually identical to
+# U2014 EM DASH.
 <Multi_key> <minus> <minus> <underscore>: "―" U2015 # HORIZONTAL BAR
 # Soft hyphens are in invisible.xcompose.
+
 # ≠ ASCII ~
 <Multi_key> <minus> <asciitilde>:         "⁓" U2053 # SWUNG DASH
 <Multi_key> <asciitilde> <minus>:         "⁓" U2053 # SWUNG DASH
