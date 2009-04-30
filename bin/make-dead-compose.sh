@@ -5,7 +5,7 @@ X -version 2>&1 | sed -e '/^ *$/d' | head -n 1 | sed -e 's/^/# /'
 echo "# Code:"
 sed -e "s/^/#    /" < "$0"
 
-grep "<quotedb>\|<apostrophe>\|<asciicircum>\|<asciitilde>" | \
+grep "<quotedbl>\|<apostrophe>\|<asciicircum>\|<asciitilde>" | \
     sed -e 's/<quotedbl>/<dead_diaeresis>/g' \
     -e 's/<apostrophe>/<dead_acute>/g' \
     -e 's/<asciicircum>/<dead_circumflex>/g' \
