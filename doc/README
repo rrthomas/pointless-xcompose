@@ -12,12 +12,12 @@ assing a Windows key or something to it).  In my experience, Compose
 is less buggy and temperamental than X’s alternative mechanism to get
 extra characters, the ISO_Level3_Shift key (aka AltGr).
 
-Pointless-compose is a distribution of extra Compose mappings for many
-uncommon Unicode characters (well, actually it’s just my ~/.XCompose file
-better organized and documented).  I encourage interested parties to
-use it as a starting point to make your own Compose sequences.  I lost
-so many days in this useless timesink, I want to get revenge by making
-the world suffer through it too.
+Pointless-XCompose is a distribution of extra Compose mappings for
+many uncommon Unicode characters (actually it’s just my ~/.XCompose
+file better organized and documented).  I encourage interested parties
+to use it as a starting point to make your own Compose sequences.  I
+lost so many days in this useless timesink, I want to get revenge by
+making the world suffer through it too.
 
 WHAT’S INCLUDED:
 ================
