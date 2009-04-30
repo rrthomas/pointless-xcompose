@@ -70,7 +70,7 @@ INSTALL
    summary included this distribution), there’s lot of interesting
    things there.
 
-   Below the X includes add all extras you want:
+3. Below the X includes in your ~/.XCompose add all extras you want:
 
      include "/path/to/pointless-xcompose/abbrevs.xcompose"
      include "/path/to/pointless-xcompose/arrows.xcompose"
