@@ -111,7 +111,6 @@
 
 <Multi_key> <plus> <minus>       	: "±"   plusminus # PLUS-MINUS SIGN
 
-## I like “^ o” more, for consistency with ⁰, ¹, ² &c.
 <Multi_key> <o> <o>              	: "°"   degree # DEGREE SIGN
 
 ## Percent ÷10.
