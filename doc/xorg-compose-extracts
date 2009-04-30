@@ -19,17 +19,17 @@
 ## Typography
 ## ==========
 
-## Wouldn’t <greater> <period> be more consistent with the mappings
-## for e.g. «, », –?
-<Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
-<Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
-
 <Multi_key> <period> <period>    	: "…"   ellipsis # HORIZONTAL ELLIPSIS
 
 <Multi_key> <minus> <minus> <period> 	: "–"   U2013 # EN DASH
 <Multi_key> <minus> <minus> <minus> 	: "—"   U2014 # EM DASH
 ## true-minus, true-hyphen, and true-horizontal-bar are absent.  see
 ## my typographic.xcompose for some suggestions.
+
+## Wouldn’t <greater> <period> be more consistent with the mappings
+## for e.g. «, », –?
+<Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
 
 ## What’s the difference between this and the “seconds mark” ″?
 <Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
@@ -57,8 +57,7 @@
 <Multi_key> <o> <s>              	: "§"   section # SECTION SIGN
 <Multi_key> <P> <P>              	: "¶"   paragraph # PILCROW SIGN
 
-## Oldstyle Type
-## =============
+## Oldschool
 
 ## This isn’t the same as English ð/Ð (dh).
 <Multi_key> <minus> <d>          	: "đ"   dstroke # LATIN SMALL LETTER D WITH STROKE
@@ -69,11 +68,11 @@
 <Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
 <Multi_key> <t> <h>              	: "þ"   thorn # LATIN SMALL LETTER THORN
 
-## True Germans use essess.
+## True Germans use essesses.
 <Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
 
 ## Long S is not an F dammit.  They should use <S><S> or something.
-## Trivia: ever noticed ß is ſ+s?
+## Well-kown trivia: ever noticed ß is ſ+s?
 <Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
 <Multi_key> <f> <S>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
 
@@ -90,8 +89,10 @@
 <Multi_key> <space> <space>      	: " "   nobreakspace # NO-BREAK SPACE
 
 <Multi_key> <space> <period>     	: " "   U2008 # PUNCTUATION SPACE
+## All the other interesting spaces are missing, and <Multi_key>
+## <space> is such a good prefix.
 
-## I prefer “( c )”, “( r )”.
+## I prefer “( c )”, “( r )” like all other enclosed chars.
 <Multi_key> <o> <c>              	: "©"   copyright # COPYRIGHT SIGN
 <Multi_key> <o> <r>              	: "®"   registered # REGISTERED SIGN
 
@@ -106,6 +107,7 @@
 ## …and everyone’s favourite:
 <Multi_key> <question> <exclam>         : "‽"   U203D # INTERROBANG
 <Multi_key> <exclam> <question>         : "‽"   U203D # INTERROBANG
+## I want the ganborretni ⸘
 
 <Multi_key> <plus> <minus>       	: "±"   plusminus # PLUS-MINUS SIGN
 
@@ -188,7 +190,7 @@
 <Multi_key> <S> <m>		 	: "℠"   U2120 # SERVICE MARK
 <Multi_key> <s> <m>		 	: "℠"   U2120 # SERVICE MARK
 
-## same as ℠
+## same variants as ℠
 <Multi_key> <t> <m>		 	: "™"   U2122 # TRADE MARK SIGN
 
 
@@ -212,7 +214,7 @@
 ## Korean hangul
 <Multi_key> <parenleft> <U1100> <parenright> 	: "㉠"   U3260 # CIRCLED HANGUL KIYEOK
 <Multi_key> <parenleft> <U1102> <parenright> 	: "㉡"   U3261 # CIRCLED HANGUL NIEUN
-## …
+## …&c.
 
 ## Fractions
 ## =========
@@ -235,10 +237,10 @@
 <Multi_key> <7> <8>			: "⅞"	U215E # VULGAR FRACTION SEVEN EIGHTHS
 
 
-## Three ways of doing Ø… don’t confuse with U2205 “empty set” ∅, with
-## U2300 “diameter sign” ⌀, or with the slashed zero (a glyph, not a
-## character; when needed, it is represented by U0338 “combining long
-## solidus overlay” plus a zero (0̸).  Confused yet?
+## Three ways of doing Ø… don’t confuse slashed-O with U2205 “empty
+## set” ∅, with U2300 “diameter sign” ⌀, or with the slashed zero (a
+## glyph, not a character; when needed, it is represented by U0338
+## “combining long solidus overlay” plus a zero (0̸).  Confused yet?
 <dead_stroke> <O>               	: "Ø"   Oslash # LATIN CAPITAL LETTER O WITH STROKE
 <Multi_key> <slash> <O>          	: "Ø"   Oslash # LATIN CAPITAL LETTER O WITH STROKE
 <Multi_key> <KP_Divide> <O>      	: "Ø"   Oslash # LATIN CAPITAL LETTER O WITH STROKE
@@ -268,7 +270,7 @@
 <Multi_key> <U1D1BB> <U1D16F> 	: "𝆹𝅥𝅯"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
 <Multi_key> <U1D1BC> <U1D16F> 	: "𝆺𝅥𝅯"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
 
-## and where’s ♪?
+## and where’s the more common U2669–266C ♩♪♫♬?
 
 
 ## Money!
@@ -291,8 +293,10 @@
 <Multi_key> <R> <s>              	: "₨"   U20a8 # RUPEE SIGN
 <Multi_key> <W> <equal>          	: "₩"   U20a9 # WON SIGN
 <Multi_key> <equal> <W>          	: "₩"   U20a9 # WON SIGN
-# "₪" U20aa NEW SHEQEL SIGN ## heh xorg, bet you couldn’t mnemonic THIS
+## ₪… heh xorg, bet you couldn’t mnemonic THIS
 ## On second though, perhaps “Compose [ ]”?
+## On third though, I use that for ∎.
+# "₪" U20aa NEW SHEQEL SIGN
 <Multi_key> <d> <minus>          	: "₫"   U20ab # DONG SIGN
 ## Euro, for people with visual imagination.
 <Multi_key> <C> <equal>          	: "€"   EuroSign # EURO SIGN
@@ -333,32 +337,6 @@
 <Multi_key> <o> <x>              	: "¤"   currency # CURRENCY SIGN
 <Multi_key> <x> <o>              	: "¤"   currency # CURRENCY SIGN
 
-## Linguistics
-## ===========
-<Multi_key> <e> <e>              	: "ə"   U0259 # LATIN SMALL LETTER SCHWA
-
-## There are order and deadkey variants for the following.  The
-## <dead_circumflex> ones use Multi_key after the circumflex, not
-## before as I’d expect.
-<Multi_key> <slash> <i>          	: "ɨ"   U0268 # LATIN SMALL LETTER I WITH STROKE
-<Multi_key> <slash> <U0294>  	: "ʡ"   U02A1 # LATIN LETTER GLOTTAL STOP WITH STROKE
-<Multi_key> <asciicircum> <underscore> <h> 	: "ʰ"   U02B0 # MODIFIER LETTER SMALL H
-<Multi_key> <asciicircum> <underscore> <U0266> 	: "ʱ"   U02B1 # MODIFIER LETTER SMALL H WITH HOOK
-<Multi_key> <asciicircum> <underscore> <j> 	: "ʲ"   U02B2 # MODIFIER LETTER SMALL J
-<Multi_key> <asciicircum> <underscore> <r> 	: "ʳ"   U02B3 # MODIFIER LETTER SMALL R
-<Multi_key> <asciicircum> <underscore> <U0279> 	: "ʴ"   U02B4 # MODIFIER LETTER SMALL TURNED R
-<Multi_key> <asciicircum> <underscore> <U027B> 	: "ʵ"   U02B5 # MODIFIER LETTER SMALL TURNED R WITH HOOK
-<Multi_key> <asciicircum> <underscore> <U0281> 	: "ʶ"   U02B6 # MODIFIER LETTER SMALL CAPITAL INVERTED R
-<Multi_key> <asciicircum> <underscore> <w> 	: "ʷ"   U02B7 # MODIFIER LETTER SMALL W
-<Multi_key> <asciicircum> <underscore> <y> 	: "ʸ"   U02B8 # MODIFIER LETTER SMALL Y
-<Multi_key> <asciicircum> <underscore> <U0263> 	: "ˠ"   U02E0 # MODIFIER LETTER SMALL GAMMA
-<Multi_key> <asciicircum> <underscore> <l> 	: "ˡ"   U02E1 # MODIFIER LETTER SMALL L
-<Multi_key> <asciicircum> <underscore> <s> 	: "ˢ"   U02E2 # MODIFIER LETTER SMALL S
-<Multi_key> <asciicircum> <underscore> <x> 	: "ˣ"   U02E3 # MODIFIER LETTER SMALL X
-<Multi_key> <asciicircum> <underscore> <U0295> 	: "ˤ"   U02E4 # MODIFIER LETTER SMALL REVERSED GLOTTAL STOP
-
-## lots more with various modifiers, go look the file if you’re a linguits.
-
 
 ## Japanese
 ## ========
@@ -396,3 +374,32 @@
 <Multi_key> <parenleft> <kana_A> <parenright> 	: "㋐"   U32D0 # CIRCLED KATAKANA A
 <Multi_key> <parenleft> <kana_I> <parenright> 	: "㋑"   U32D1 # CIRCLED KATAKANA I
 ## …㋻㋼㋽㋾. (all katakana; no hiragana?)
+
+
+## Linguistics
+## ===========
+<Multi_key> <e> <e>              	: "ə"   U0259 # LATIN SMALL LETTER SCHWA
+
+## There are order and deadkey variants for the following.  The
+## <dead_circumflex> ones use Multi_key after the circumflex, not
+## before as I’d expect.
+<Multi_key> <slash> <i>          	: "ɨ"   U0268 # LATIN SMALL LETTER I WITH STROKE
+<Multi_key> <slash> <U0294>  	: "ʡ"   U02A1 # LATIN LETTER GLOTTAL STOP WITH STROKE
+<Multi_key> <asciicircum> <underscore> <h> 	: "ʰ"   U02B0 # MODIFIER LETTER SMALL H
+<Multi_key> <asciicircum> <underscore> <U0266> 	: "ʱ"   U02B1 # MODIFIER LETTER SMALL H WITH HOOK
+<Multi_key> <asciicircum> <underscore> <j> 	: "ʲ"   U02B2 # MODIFIER LETTER SMALL J
+<Multi_key> <asciicircum> <underscore> <r> 	: "ʳ"   U02B3 # MODIFIER LETTER SMALL R
+<Multi_key> <asciicircum> <underscore> <U0279> 	: "ʴ"   U02B4 # MODIFIER LETTER SMALL TURNED R
+<Multi_key> <asciicircum> <underscore> <U027B> 	: "ʵ"   U02B5 # MODIFIER LETTER SMALL TURNED R WITH HOOK
+<Multi_key> <asciicircum> <underscore> <U0281> 	: "ʶ"   U02B6 # MODIFIER LETTER SMALL CAPITAL INVERTED R
+<Multi_key> <asciicircum> <underscore> <w> 	: "ʷ"   U02B7 # MODIFIER LETTER SMALL W
+<Multi_key> <asciicircum> <underscore> <y> 	: "ʸ"   U02B8 # MODIFIER LETTER SMALL Y
+<Multi_key> <asciicircum> <underscore> <U0263> 	: "ˠ"   U02E0 # MODIFIER LETTER SMALL GAMMA
+<Multi_key> <asciicircum> <underscore> <l> 	: "ˡ"   U02E1 # MODIFIER LETTER SMALL L
+<Multi_key> <asciicircum> <underscore> <s> 	: "ˢ"   U02E2 # MODIFIER LETTER SMALL S
+<Multi_key> <asciicircum> <underscore> <x> 	: "ˣ"   U02E3 # MODIFIER LETTER SMALL X
+<Multi_key> <asciicircum> <underscore> <U0295> 	: "ˤ"   U02E4 # MODIFIER LETTER SMALL REVERSED GLOTTAL STOP
+
+## lots more with various modifiers, go look the file if you’re a linguist.
+
+
