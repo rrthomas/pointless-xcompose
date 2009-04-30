@@ -1,0 +1,8 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# not sure why anyone would want this, but it’s nostalgic
+<Multi_key> <bar> <bar>    : "¦" brokenbar
+
+# X uses <o> <o>; this version is consistent with ⁰, ¹, ² etc.
+<Multi_key> <asciicircum> <o> : "°" # degree symbol

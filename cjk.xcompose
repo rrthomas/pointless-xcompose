@@ -1,0 +1,20 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# “nyoro” on many Japanese IMs
+<Multi_key> <asciitilde> <space>: "〜" U301C # WAVE DASH
+<Multi_key> <asciitilde> <asciitilde>: "〰" U301C # WAVY DASH
+<Multi_key> <equal> <space>: "゠" U30A0 # KATAKANA DOUBLE HYPHEN
+
+# “kome” IM
+<Multi_key> <plus> <x>: "※" U203B # REFERENCE MARK
+<Multi_key> <x> <plus>: "※" U203B # REFERENCE MARK
+
+# «<exclam> <exclam>», «<exclam> <question>» &c. taken
+<Multi_key> <2> <exclam>: "‼" U203C # DOUBLE EXCLAMATION MARK
+<Multi_key> <2> <question>: "⁇" U2047 # DOUBLE QUESTION MARK
+# ⁈
+# ⁉
+
+# v = ↓
+<Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS

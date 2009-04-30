@@ -1,0 +1,146 @@
+All files in this distribution use UTF-8 pointlessly.  Read them in a
+font with good Unicode coverage — say, Bitstream Vera Sans Mono or GNU
+unifont (xfonts-unifont).
+
+WHAT’S INCLUDED:
+================
+ - doc/README:               This file.
+ - doc/license.txt:          “Public domain.”
+ - doc/.XCompose.sample:     Sample ~/.XCompose file.
+ - doc/xorg-compose-extract: Selected, annotated reading material.
+
+ - bin/make-dead-compose.sh: Run this if you use deadkeys.
+
+ - abbrevs.xcompose:          Abbreviations.
+ - arrows.xcompose:           Pretty arrows.
+ - dingbats.xcompose:         Cute drawings.
+ - math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
+ - misc.xcompose:             I couldn’t classify those.
+ - hyphen-macron.xcompose:    For all you Japanese and Greek students,
+                              macrons using hyphen instead of
+                              underscore.
+ - typographic.xcompose:      Typographic symbols.  Impress your
+                              alistapart.com friends.
+
+
+INSTALL
+=======
+
+1. Copy or git-clone this directory anywhere safe (I use
+   /usr/local/share/pointless-xcompose/).
+
+2. If you have a ~/.XCompose file, skip to the next step.  If not,
+   create one.  If you’re lazy you can copy the sample file in doc/,
+   else keep reading.  You probably want this line in it to pull
+   default X compose mappings from
+   e.g. /usr/share/X11/locale/en_US.UTF-8/Compose:
+
+     include "%L"
+
+   If you use an en_US.UTF-8 locale but want another locale-specific X
+   mapping, include that one instead.  I’m thinking Brazilian users,
+   who most probably will want this to make dead_acute + c generate a
+   cedilla instead of a c with accent:
+
+     include "/usr/share/X11/locale/pt_BR.UTF-8/Compose"
+
+   I recommend reading the Xorg en_US.UTF-8 Compose file (or the
+   summary included this distribution), there’s lot of interesting
+   things there.
+
+   Below the X includes add all extras you want:
+
+     include "/path/to/pointless-xcompose/abbrevs.xcompose"
+     include "/path/to/pointless-xcompose/arrows.xcompose"
+     include "/path/to/pointless-xcompose/dingbats.xcompose"
+     …
+
+4. Skip to the next step if you don’t use X deadkeys.  If you do use
+   them (for example, if you use an XKB layout like “us_intl”,
+   “us(intl)”, or “br¨), let’s create deadkey versions of the mappings
+   now:
+
+    pointless-xcompose$ ./bin/make-dead-compose.sh \
+                        /usr/share/X11/locale/en_US.UTF-8/Compose \
+                        /path/to/pointless-xcompose/math.xcompose \
+                        # …list all files you want to include \
+                        # or just use /pointless-xcompose/*.xcompose =) \
+                        > dead.xcompose
+
+  Then include the dead file:
+
+     include "/path/to/pointless-xcompose/dead.xcompose
+
+
+5. If you don’t have a Compose key (aka Multi_key) already, set one of
+   your keyboard keys to it:
+
+   - setxkbmap -option compose:rwin (new way; doesn’t always work)
+   - xmodmap -e "keycode 135 = Multi_key" (safer, old-fashioned way)
+
+   Put it in your .xsession/.gnomerc/whatever.  To find what’s the
+   keycode for a given key, use xev(1).  If you use gnome, you can
+   also try System→Preferences→Keyboard, at your own risk.
+
+6. Restart your apps (and perhaps X the first time) — XCompose
+   settings only apply for new windows.  I do suspect you need an
+   .UTF-8 locale set, though I didn’t test.
+
+7. Fix GTK.  XCompose unfortunately won’t work in GTK apps by default;
+   GTK defines its own static, nonconfigurable compose mechanism which
+   overrides X.  A possible workaround is to use the “xim” GTK input
+   method, but that didn’t work for me.  Another workaround is to use
+   the uim input method (install uim, then export GTK_IM_MODULE=uim;
+   thanks to uim’s author, Etsushi Kato, for pointing me his
+   solution).  If you’re a SCIM user, consider switching to uim.  If
+   you’re annoyed, do complain to GTK devs:
+
+   http://bugzilla.gnome.org/show_bug.cgi?id=321896
+
+
+USAGE
+=====
+
+Compose settings can conflict due to lack of terminators.  Suppose
+you have this sequence:
+ - Compose . . =      → ·
+ - Compose . . . =    → …
+Now when you type «Compose . .», X won’t print anything because it’s
+waiting for «Compose . . .» (IMHO it should print · and then … should
+you type another period, but I digress).  In other words, you can’t
+make mappings that are substrings of other mappings.  That means you
+probably don’t want to set Compose shortcuts for U2A94 GREATER-THAN
+ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL (⪔).
+
+All the mappings here <del>have been</del><ins>will be</ins>
+painstakenly compared agains Xorg 1.6.0’s en_US Compose file for
+conflicts.  Many of these entries are present in X’s Compose as
+another sequence, but I prefer a more mnemonic one.  Some entries are
+duplicated here for consistency sake; these are marked with a “# X
+dup” comment.
+
+Conventions:
+
+- Termination convention (copied from X):
+  - A repeated character: Compose v v → ✓
+  - Where that would conflict, a period:
+    - Compose - .      → − (minus sign)
+    - Compose - - .    → – (en-bar)
+    - Compose - - -    → — (em-bar)
+  (Side note: the difference between the above three characters is
+  small in monospaced fonts, but large in proportionals).
+
+- Often I set repeats for key permutations, for typing convenience:
+  - Compose + -      → ±
+  - Compose - +      → ±
+
+- Often I set repeats for shift-less equivalents, for typing convenience:
+  - Compose = -      → ± (“equals” (=) is shift-less +)
+
+# vim: encoding=utf-8
+# Emacs:
+# Local Variables:
+# mode: text
+# mode: filladapt
+# coding: utf-8
+# End:

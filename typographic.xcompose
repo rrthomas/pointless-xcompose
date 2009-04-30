@@ -1,0 +1,85 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# See also the other files (e.g. invisible.xcompose for spaces, &c.)
+
+# Mnemonics
+# =========
+
+# The true hyphen, ≠ ASCII ‘-’ (=U002D the hyphen-minus).  Notice the
+# X name <minus> refer to the ASCII hyphen-minus, not the true minus.
+<Multi_key> <minus> <comma>             : "‐" U2010 # hyhpen
+# Perhaps counter-intuitive?
+<Multi_key> <minus> <Return>            : "‑" U2011 # non-breaking hyphen
+<Multi_key> <minus> <period>            : "−" U2210 # MINUS SIGN
+<Multi_key> <minus> <minus> <period>    : "–" U2013 # EN DASH # X dup
+<Multi_key> <minus> <minus> <minus>     : "—" U2014 # EM DASH # X dup
+# Used for dialogue statements.  Visually identical to U2014 EM DASH.
+<Multi_key> <minus> <minus> <underscore>: "―" U2015 # HORIZONTAL BAR
+# Soft hyphens are in invisible.xcompose.
+# ≠ ASCII ~
+<Multi_key> <minus> <asciitilde>:         "⁓" U2053 # SWUNG DASH
+<Multi_key> <asciitilde> <minus>:         "⁓" U2053 # SWUNG DASH
+
+# Asterisk is commonly used for bullets.
+<Multi_key> <asterisk> <period>: "•" U2022 # BULLET
+<Multi_key> <asterisk> <asterisk>: "⁂" U2042 # ASTERISM
+<Multi_key> <o> <period>: "◦" U25E6 # WHITE BULLET
+# kind of like a superscript period
+<Multi_key> <asciicircum> <period>: "·" U00B7 # MIDDLE DOT
+<Multi_key> <exclam> <asterisk>: "◘" U25D8 # INVERSE BULLET
+<Multi_key> <bar> <greater>: "‣" U2023 # TRIANGULAR BULLET
+
+# commonly written as ./. in ASCII
+<Multi_key> <period> <slash> <period>: "⁒" # COMMERCIAL MINUS SIGN
+
+# X default will map both ?! and !? to interrobang «‽».  Here we set one
+# of them to the U2E18 gnaborretni «⸘» instead.
+<Multi_key> <question> <exclam>: "‽"   U203D # INTERROBANG # X dup
+<Multi_key> <exclam> <question>: "⸘"   U2E18 # GNABORRETNI
+
+<Multi_key> <colon> <period>: "⸪" U2E2A # TWO DOTS OVER ONE DOT
+<Multi_key> <period> <colon>: "⸫" U2E2B # ONE DOT OVER TWO DOTS
+<Multi_key> <colon> <colon>:  "⸬" U2E2C # TWO DOTS OVER TWO DOTS
+# what should we use for U2E2D ⸭ ?
+
+<Multi_key> <plus> <bar> : "†" U2020 # DAGGER
+<Multi_key> <plus> <plus> : "‡" U2021 # DOUBLE DAGGER
+
+
+
+# Just citing X defaults for ease of reference.
+# <Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+# <Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+# <Multi_key> <less> <less>        	: "«"   guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+# <Multi_key> <greater> <greater>  	: "»"   guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+# <Multi_key> <less> <apostrophe>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+# <Multi_key> <apostrophe> <less>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+# <Multi_key> <greater> <apostrophe> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+# <Multi_key> <apostrophe> <greater> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+# <Multi_key> <comma> <apostrophe> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
+# <Multi_key> <apostrophe> <comma> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
+# <Multi_key> <less> <quotedbl>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+# <Multi_key> <quotedbl> <less>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+# <Multi_key> <greater> <quotedbl> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+# <Multi_key> <quotedbl> <greater> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+# <Multi_key> <comma> <quotedbl>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
+# <Multi_key> <quotedbl> <comma>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
+# <Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
+# <Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
+
+<Multi_key> <greater> <period>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <less> <period>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+
+# Spelled out
+# ===========
+<Multi_key> <m> <i> <n> : "′"
+# ≠ prime quotation mark above
+<Multi_key> <s> <e> <c> : "″"
+<Multi_key> <i> <n> <f> : "∞"
+
+# Not a dingbat —“General Punctuation”, used as separator.
+<Multi_key> <p> <a> <l> <m>: "⸙" U2E19 # PALM BRANCH
+
+# Used in Indic scripts.
+<Multi_key> <p> <h> <u> <l>: "⁕" U2055 # FLOWER PUNCTUATION MARK

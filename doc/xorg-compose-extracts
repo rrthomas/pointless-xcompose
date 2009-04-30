@@ -1,0 +1,398 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+#
+# This file is not intended for Compose inclusion; rather, it’s a
+# selected extract of current (2009-04)
+# /usr/share/X11/locale/en_US.UTF-8/Compose.  There’s a lot of
+# interesting mappings there, but also a lot of cruft (such as vowels
+# with various permutations of piled diacritics; grep -v "WITH " and
+# it gets a lot better).  I started this file for my own benefit and
+# decided to include it for lazy people.  It doubles as a “X keyboard
+# shortcut quick reference”.
+#
+# I included personal comments with ##.
+#
+#—leoboiko
+#
+
+
+## Typography
+## ==========
+
+## Wouldn’t <greater> <period> be more consistent with the mappings
+## for e.g. «, », –?
+<Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+
+<Multi_key> <period> <period>    	: "…"   ellipsis # HORIZONTAL ELLIPSIS
+
+<Multi_key> <minus> <minus> <period> 	: "–"   U2013 # EN DASH
+<Multi_key> <minus> <minus> <minus> 	: "—"   U2014 # EM DASH
+## true-minus, true-hyphen, and true-horizontal-bar are absent.  see
+## my typographic.xcompose for some suggestions.
+
+## What’s the difference between this and the “seconds mark” ″?
+<Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
+## And what is this one for?
+<Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
+
+## These actually are fairly intuitive once you get the hang of it.
+<Multi_key> <less> <less>        	: "«"   guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+<Multi_key> <greater> <greater>  	: "»"   guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+<Multi_key> <less> <apostrophe>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+<Multi_key> <apostrophe> <less>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+<Multi_key> <greater> <apostrophe> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+<Multi_key> <apostrophe> <greater> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+<Multi_key> <comma> <apostrophe> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
+<Multi_key> <apostrophe> <comma> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
+<Multi_key> <less> <quotedbl>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+<Multi_key> <quotedbl> <less>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+<Multi_key> <greater> <quotedbl> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+<Multi_key> <quotedbl> <greater> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+<Multi_key> <comma> <quotedbl>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
+<Multi_key> <quotedbl> <comma>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
+
+## Typography for Lawyers
+<Multi_key> <s> <o>              	: "§"   section # SECTION SIGN
+<Multi_key> <o> <s>              	: "§"   section # SECTION SIGN
+<Multi_key> <P> <P>              	: "¶"   paragraph # PILCROW SIGN
+
+## Oldstyle Type
+## =============
+
+## This isn’t the same as English ð/Ð (dh).
+<Multi_key> <minus> <d>          	: "đ"   dstroke # LATIN SMALL LETTER D WITH STROKE
+<Multi_key> <minus> <D>          	: "Đ"   Dstroke # LATIN CAPITAL LETTER D WITH STROKE
+
+<Multi_key> <T> <H>              	: "Þ"   THORN # LATIN CAPITAL LETTER THORN
+<Multi_key> <D> <H>              	: "Ð"   ETH # LATIN CAPITAL LETTER ETH
+<Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
+<Multi_key> <t> <h>              	: "þ"   thorn # LATIN SMALL LETTER THORN
+
+## True Germans use essess.
+<Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
+
+## Long S is not an F dammit.  They should use <S><S> or something.
+## Trivia: ever noticed ß is ſ+s?
+<Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
+<Multi_key> <f> <S>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
+
+<Multi_key> <o> <e>              	: "œ"   oe # LATIN SMALL LIGATURE OE
+<Multi_key> <O> <E>              	: "Œ"   OE # LATIN CAPITAL LIGATURE OE
+<Multi_key> <a> <e>              	: "æ"   ae # LATIN SMALL LETTER AE
+<Multi_key> <A> <E>              	: "Æ"   AE # LATIN CAPITAL LETTER AE
+
+
+## Miscellaneous
+## =============
+
+## If only browsers could read this one.
+<Multi_key> <space> <space>      	: " "   nobreakspace # NO-BREAK SPACE
+
+<Multi_key> <space> <period>     	: " "   U2008 # PUNCTUATION SPACE
+
+## I prefer “( c )”, “( r )”.
+<Multi_key> <o> <c>              	: "©"   copyright # COPYRIGHT SIGN
+<Multi_key> <o> <r>              	: "®"   registered # REGISTERED SIGN
+
+## These four aren’t mnemonic at all IMHO.
+<Multi_key> <period> <minus>    	: "·"   periodcentered # MIDDLE DOT
+<Multi_key> <period> <equal>    	: "•"   enfilledcircbullet # BULLET
+<Multi_key> <exclam> <asciicircum> 	: "¦"   brokenbar # BROKEN BAR
+<Multi_key> <p> <exclam>         	: "¶"   paragraph # PILCROW SIGN
+
+<Multi_key> <exclam> <exclam>    	: "¡"   exclamdown # INVERTED EXCLAMATION MARK
+<Multi_key> <question> <question> 	: "¿"   questiondown # INVERTED QUESTION MARK
+## …and everyone’s favourite:
+<Multi_key> <question> <exclam>         : "‽"   U203D # INTERROBANG
+<Multi_key> <exclam> <question>         : "‽"   U203D # INTERROBANG
+
+<Multi_key> <plus> <minus>       	: "±"   plusminus # PLUS-MINUS SIGN
+
+## I like “^ o” more, for consistency with ⁰, ¹, ² &c.
+<Multi_key> <o> <o>              	: "°"   degree # DEGREE SIGN
+
+## Percent ÷10.
+<Multi_key> <percent> <o>        	: "‰"   U2030 # PER MILLE SIGN
+## Obvious extension to ‱ won’n work due to XCompose substring
+## conflict problem.
+
+## No idea how to type this sequence, but isn’t it interesting? The
+## decomposed character is a negation (⫝ “non-forking”), so the
+## slashed version is an affirmative.  Both symbols are some math
+## thing apparently.
+<Multi_key> <U2ADD> <U0338> 	: "⫝̸"   U2ADC # FORKING
+
+## stroking arrows! (can’t input though)
+<Multi_key> <slash> <leftarrow>  	: "↚"   U219A # LEFTWARDS ARROW WITH STROKE
+<Multi_key> <KP_Divide> <leftarrow> 	: "↚"   U219A # LEFTWARDS ARROW WITH STROKE
+<Multi_key> <slash> <rightarrow> 	: "↛"   U219B # RIGHTWARDS ARROW WITH STROKE
+<Multi_key> <KP_Divide> <rightarrow> 	: "↛"   U219B # RIGHTWARDS ARROW WITH STROKE
+<Multi_key> <slash> <U2194>  	: "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
+<Multi_key> <KP_Divide> <U2194> 	: "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
+
+## Super– and subscripts
+## =====================
+
+## With keypad or not, with deadkeys or not = 4 ways to superscript
+<dead_circumflex> <0>            	: "⁰"   U2070 # SUPERSCRIPT ZERO
+<Multi_key> <asciicircum> <0>    	: "⁰"   U2070 # SUPERSCRIPT ZERO
+<dead_circumflex> <KP_0>         	: "⁰"   U2070 # SUPERSCRIPT ZERO
+<Multi_key> <asciicircum> <KP_0> 	: "⁰"   U2070 # SUPERSCRIPT ZERO
+## there’s dead_circumflex and keypad variant for all sub– and superscripts.
+<Multi_key> <asciicircum> <1>    	: "¹"   onesuperior # SUPERSCRIPT ONE
+<Multi_key> <asciicircum> <2>    	: "²"   twosuperior # SUPERSCRIPT TWO
+## ³,⁴, ⁵…⁰
+
+## Isn’t it weird how they didn’t include <Multy_key>
+## <dead_circumflex>? Anyway my bin/make-dead-compose.sh fixes this.
+<dead_circumflex> <Multi_key> <underscore> <a> 	: "ª"   ordfeminine # FEMININE ORDINAL INDICATOR
+<Multi_key> <asciicircum> <underscore> <a> 	: "ª"   ordfeminine # FEMININE ORDINAL INDICATOR
+<dead_circumflex> <Multi_key> <underbar> <a> 	: "ª"   ordfeminine # FEMININE ORDINAL INDICATOR
+<Multi_key> <asciicircum> <underbar> <a> 	: "ª"   ordfeminine # FEMININE ORDINAL INDICATOR
+<dead_circumflex> <Multi_key> <underscore> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
+<Multi_key> <asciicircum> <underscore> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
+<dead_circumflex> <Multi_key> <underbar> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
+<Multi_key> <asciicircum> <underbar> <o> 	: "º"   masculine # MASCULINE ORDINAL INDICATOR
+
+## <dead_circumflex> versions for all of these
+<Multi_key> <asciicircum> <underscore> <i> : "ⁱ"   U2071 # SUPERSCRIPT LATIN SMALL LETTER I
+<Multi_key> <asciicircum> <plus> 	: "⁺"   U207A # SUPERSCRIPT PLUS SIGN
+## how do I u2212? (without pointless-xcompose, I mean)
+<Multi_key> <asciicircum> <U2212>    	: "⁻"   U207B # SUPERSCRIPT MINUS
+<Multi_key> <asciicircum> <equal> 	: "⁼"   U207C # SUPERSCRIPT EQUALS SIGN
+<Multi_key> <asciicircum> <KP_Equal> 	: "⁼"   U207C # SUPERSCRIPT EQUALS SIGN
+<Multi_key> <asciicircum> <parenleft> 	: "⁽"   U207D # SUPERSCRIPT LEFT PARENTHESIS
+<Multi_key> <asciicircum> <parenright> 	: "⁾"   U207E # SUPERSCRIPT RIGHT PARENTHESIS
+
+## there’s keypad and underbar versions for all subscripts
+<Multi_key> <underscore> <0>     	: "₀"   U2080 # SUBSCRIPT ZERO
+<Multi_key> <underscore> <1>     	: "₁"   U2081 # SUBSCRIPT ONE
+<Multi_key> <underscore> <2>     	: "₂"   U2082 # SUBSCRIPT TWO
+## ₃, ₄, ₅… ₀
+
+<Multi_key> <underscore> <plus>  	: "₊"   U208A # SUBSCRIPT PLUS SIGN
+<Multi_key> <underscore> <U2212> 	: "₋"   U208B # SUBSCRIPT MINUS
+<Multi_key> <underscore> <equal> 	: "₌"   U208C # SUBSCRIPT EQUALS SIGN
+<Multi_key> <underscore> <parenleft> 	: "₍"   U208D # SUBSCRIPT LEFT PARENTHESIS
+<Multi_key> <underscore> <parenright> 	: "₎"   U208E # SUBSCRIPT RIGHT PARENTHESIS
+
+## why underscore for a superscript? a mistake?
+<Multi_key> <asciicircum> <underscore> <n> 	: "ⁿ"   U207F # SUPERSCRIPT LATIN SMALL LETTER N
+
+## <dead_circumflex> redundant? similarly for all below (ommited)
+<Multi_key> <S> <M>		 	: "℠"   U2120 # SERVICE MARK
+<dead_circumflex> <Multi_key> <S> <M> 	: "℠"   U2120 # SERVICE MARK
+## they include all case permutations
+<Multi_key> <s> <M>		 	: "℠"   U2120 # SERVICE MARK
+<Multi_key> <S> <m>		 	: "℠"   U2120 # SERVICE MARK
+<Multi_key> <s> <m>		 	: "℠"   U2120 # SERVICE MARK
+
+## same as ℠
+<Multi_key> <t> <m>		 	: "™"   U2122 # TRADE MARK SIGN
+
+
+## Circled things
+
+<Multi_key> <parenleft> <0> <parenright> 	: "⓪"   U24EA # CIRCLED DIGIT ZERO
+<Multi_key> <parenleft> <1> <parenright> 	: "①"   U2460 # CIRCLED DIGIT ONE
+<Multi_key> <parenleft> <2> <parenright> 	: "②"   U2461 # CIRCLED DIGIT TWO
+## ③, ④… ⑩, ⑪, ⑫… ⑳, ㉑… ㊿
+
+<Multi_key> <parenleft> <A> <parenright> 	: "Ⓐ"   U24B6 # CIRCLED LATIN CAPITAL LETTER A
+<Multi_key> <parenleft> <B> <parenright> 	: "Ⓑ"   U24B7 # CIRCLED LATIN CAPITAL LETTER B
+<Multi_key> <parenleft> <C> <parenright> 	: "Ⓒ"   U24B8 # CIRCLED LATIN CAPITAL LETTER C
+## …Ⓩ
+
+<Multi_key> <parenleft> <a> <parenright> 	: "ⓐ"   U24D0 # CIRCLED LATIN SMALL LETTER A
+<Multi_key> <parenleft> <b> <parenright> 	: "ⓑ"   U24D1 # CIRCLED LATIN SMALL LETTER B
+<Multi_key> <parenleft> <c> <parenright> 	: "ⓒ"   U24D2 # CIRCLED LATIN SMALL LETTER C
+## …ⓩ
+
+## Korean hangul
+<Multi_key> <parenleft> <U1100> <parenright> 	: "㉠"   U3260 # CIRCLED HANGUL KIYEOK
+<Multi_key> <parenleft> <U1102> <parenright> 	: "㉡"   U3261 # CIRCLED HANGUL NIEUN
+## …
+
+## Fractions
+## =========
+## I’d expect variants with slash.
+
+<Multi_key> <1> <4>              	: "¼"   onequarter # VULGAR FRACTION ONE QUARTER
+<Multi_key> <1> <2>              	: "½"   onehalf # VULGAR FRACTION ONE HALF
+<Multi_key> <3> <4>              	: "¾"   threequarters # VULGAR FRACTION THREE QUARTERS
+<Multi_key> <1> <3>			: "⅓"	U2153 # VULGAR FRACTION ONE THIRD
+<Multi_key> <2> <3>			: "⅔"	U2154 # VULGAR FRACTION TWO THIRDS
+<Multi_key> <1> <5>			: "⅕"	U2155 # VULGAR FRACTION ONE FIFTH
+<Multi_key> <2> <5>			: "⅖"	U2156 # VULGAR FRACTION TWO FIFTHS
+<Multi_key> <3> <5>			: "⅗"	U2157 # VULGAR FRACTION THREE FIFTHS
+<Multi_key> <4> <5>			: "⅘"	U2158 # VULGAR FRACTION FOUR FIFTHS
+<Multi_key> <1> <6>			: "⅙"	U2159 # VULGAR FRACTION ONE SIXTH
+<Multi_key> <5> <6>			: "⅚"	U215A # VULGAR FRACTION FIVE SIXTHS
+<Multi_key> <1> <8>			: "⅛"	U215B # VULGAR FRACTION ONE EIGHTH
+<Multi_key> <3> <8>			: "⅜"	U215C # VULGAR FRACTION THREE EIGHTHS
+<Multi_key> <5> <8>			: "⅝"	U215D # VULGAR FRACTION FIVE EIGHTHS
+<Multi_key> <7> <8>			: "⅞"	U215E # VULGAR FRACTION SEVEN EIGHTHS
+
+
+## Three ways of doing Ø… don’t confuse with U2205 “empty set” ∅, with
+## U2300 “diameter sign” ⌀, or with the slashed zero (a glyph, not a
+## character; when needed, it is represented by U0338 “combining long
+## solidus overlay” plus a zero (0̸).  Confused yet?
+<dead_stroke> <O>               	: "Ø"   Oslash # LATIN CAPITAL LETTER O WITH STROKE
+<Multi_key> <slash> <O>          	: "Ø"   Oslash # LATIN CAPITAL LETTER O WITH STROKE
+<Multi_key> <KP_Divide> <O>      	: "Ø"   Oslash # LATIN CAPITAL LETTER O WITH STROKE
+
+
+## Music
+
+## Btw <numbersign> = #
+<Multi_key> <numbersign> <b>     	: "♭"   U266d # MUSIC FLAT SIGN
+<Multi_key> <numbersign> <f>     	: "♮"   U266e # MUSIC NATURAL SIGN
+<Multi_key> <numbersign> <numbersign> 	: "♯"   U266f # MUSIC SHARP SIGN
+
+## These characters somehow appear as hanzi in my system (Emacs with
+## custom fontset).  In any case they appear to be unsupported by most
+## fonts.
+<Multi_key> <U1D157> <U1D165> 	: "𝅗𝅥"   U1D15E # MUSICAL SYMBOL HALF NOTE
+<Multi_key> <U1D158> <U1D165> 	: "𝅘𝅥"   U1D15F # MUSICAL SYMBOL QUARTER NOTE
+<Multi_key> <U1D15F> <U1D16E> 	: "𝅘𝅥𝅮"   U1D160 # MUSICAL SYMBOL EIGHTH NOTE
+<Multi_key> <U1D15F> <U1D16F> 	: "𝅘𝅥𝅯"   U1D161 # MUSICAL SYMBOL SIXTEENTH NOTE
+<Multi_key> <U1D15F> <U1D170> 	: "𝅘𝅥𝅰"   U1D162 # MUSICAL SYMBOL THIRTY-SECOND NOTE
+<Multi_key> <U1D15F> <U1D171> 	: "𝅘𝅥𝅱"   U1D163 # MUSICAL SYMBOL SIXTY-FOURTH NOTE
+<Multi_key> <U1D15F> <U1D172> 	: "𝅘𝅥𝅲"   U1D164 # MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH NOTE
+<Multi_key> <U1D1B9> <U1D165> 	: "𝆹𝅥"   U1D1BB # MUSICAL SYMBOL MINIMA
+<Multi_key> <U1D1BA> <U1D165> 	: "𝆺𝅥"   U1D1BC # MUSICAL SYMBOL MINIMA BLACK
+<Multi_key> <U1D1BB> <U1D16E> 	: "𝆹𝅥𝅮"   U1D1BD # MUSICAL SYMBOL SEMIMINIMA WHITE
+<Multi_key> <U1D1BC> <U1D16E> 	: "𝆺𝅥𝅮"   U1D1BE # MUSICAL SYMBOL SEMIMINIMA BLACK
+<Multi_key> <U1D1BB> <U1D16F> 	: "𝆹𝅥𝅯"   U1D1BF # MUSICAL SYMBOL FUSA WHITE
+<Multi_key> <U1D1BC> <U1D16F> 	: "𝆺𝅥𝅯"   U1D1C0 # MUSICAL SYMBOL FUSA BLACK
+
+## and where’s ♪?
+
+
+## Money!
+## ======
+## Pay attention to case.
+<Multi_key> <C> <E>              	: "₠"   U20a0 # EURO-CURRENCY SIGN
+<Multi_key> <C> <slash>          	: "₡"   U20a1 # COLON SIGN
+<Multi_key> <slash> <C>          	: "₡"   U20a1 # COLON SIGN
+## This is awesome! —nostalgic brazilian
+<Multi_key> <C> <r>              	: "₢"   U20a2 # CRUZEIRO SIGN
+<Multi_key> <F> <r>              	: "₣"   U20a3 # FRENCH FRANC SIGN
+<Multi_key> <L> <equal>          	: "₤"   U20a4 # LIRA SIGN
+<Multi_key> <equal> <L>          	: "₤"   U20a4 # LIRA SIGN
+<Multi_key> <m> <slash>          	: "₥"   U20a5 # MILL SIGN
+<Multi_key> <slash> <m>          	: "₥"   U20a5 # MILL SIGN
+<Multi_key> <N> <equal>          	: "₦"   U20a6 # NAIRA SIGN
+<Multi_key> <equal> <N>          	: "₦"   U20a6 # NAIRA SIGN
+<Multi_key> <P> <t>              	: "₧"   U20a7 # PESETA SIGN
+## Zelda fans:
+<Multi_key> <R> <s>              	: "₨"   U20a8 # RUPEE SIGN
+<Multi_key> <W> <equal>          	: "₩"   U20a9 # WON SIGN
+<Multi_key> <equal> <W>          	: "₩"   U20a9 # WON SIGN
+# "₪" U20aa NEW SHEQEL SIGN ## heh xorg, bet you couldn’t mnemonic THIS
+## On second though, perhaps “Compose [ ]”?
+<Multi_key> <d> <minus>          	: "₫"   U20ab # DONG SIGN
+## Euro, for people with visual imagination.
+<Multi_key> <C> <equal>          	: "€"   EuroSign # EURO SIGN
+<Multi_key> <equal> <C>          	: "€"   EuroSign # EURO SIGN
+<Multi_key> <c> <equal>          	: "€"   EuroSign # EURO SIGN
+<Multi_key> <equal> <c>          	: "€"   EuroSign # EURO SIGN
+## Euro, for people with verbal imagination.
+<Multi_key> <E> <equal>          	: "€"   EuroSign # EURO SIGN
+<Multi_key> <equal> <E>          	: "€"   EuroSign # EURO SIGN
+<Multi_key> <e> <equal>          	: "€"   EuroSign # EURO SIGN
+<Multi_key> <equal> <e>          	: "€"   EuroSign # EURO SIGN
+## Euro, for people with, er… Cyrillic keyboards?
+<Multi_key> <Cyrillic_ES> <equal>	: "€"   EuroSign # EURO SIGN
+<Multi_key> <equal> <Cyrillic_ES>	: "€"   EuroSign # EURO SIGN
+<Multi_key> <Cyrillic_IE> <equal>	: "€"   EuroSign # EURO SIGN
+<Multi_key> <equal> <Cyrillic_IE>	: "€"   EuroSign # EURO SIGN
+## Drachma? German penny? Guarani? Someone think of shorcuts for
+## these, they’re great!
+# "₭" U20ad KIP SIGN
+# "₮" U20ae TUGRIK SIGN
+# "₯" U20af DRACHMA SIGN
+# "₰" U20b0 GERMAN PENNY SIGN
+# "₱" U20b1 PESO SIGN
+# "₲" U20b2 GUARANI SIGN
+# "₳" U20b3 AUSTRAL SIGN
+# "₴" U20b4 HRYVNIA SIGN
+# "₵" U20b5 CEDI SIGN
+<Multi_key> <bar> <c>            	: "¢"   cent # CENT SIGN
+<Multi_key> <c> <bar>            	: "¢"   cent # CENT SIGN
+<Multi_key> <c> <slash>          	: "¢"   cent # CENT SIGN
+<Multi_key> <slash> <c>          	: "¢"   cent # CENT SIGN
+<Multi_key> <L> <minus>          	: "£"   sterling # POUND SIGN
+<Multi_key> <minus> <L>          	: "£"   sterling # POUND SIGN
+<Multi_key> <Y> <equal>          	: "¥"   yen # YEN SIGN
+<Multi_key> <equal> <Y>          	: "¥"   yen # YEN SIGN
+
+## Generic currency!
+<Multi_key> <o> <x>              	: "¤"   currency # CURRENCY SIGN
+<Multi_key> <x> <o>              	: "¤"   currency # CURRENCY SIGN
+
+## Linguistics
+## ===========
+<Multi_key> <e> <e>              	: "ə"   U0259 # LATIN SMALL LETTER SCHWA
+
+## There are order and deadkey variants for the following.  The
+## <dead_circumflex> ones use Multi_key after the circumflex, not
+## before as I’d expect.
+<Multi_key> <slash> <i>          	: "ɨ"   U0268 # LATIN SMALL LETTER I WITH STROKE
+<Multi_key> <slash> <U0294>  	: "ʡ"   U02A1 # LATIN LETTER GLOTTAL STOP WITH STROKE
+<Multi_key> <asciicircum> <underscore> <h> 	: "ʰ"   U02B0 # MODIFIER LETTER SMALL H
+<Multi_key> <asciicircum> <underscore> <U0266> 	: "ʱ"   U02B1 # MODIFIER LETTER SMALL H WITH HOOK
+<Multi_key> <asciicircum> <underscore> <j> 	: "ʲ"   U02B2 # MODIFIER LETTER SMALL J
+<Multi_key> <asciicircum> <underscore> <r> 	: "ʳ"   U02B3 # MODIFIER LETTER SMALL R
+<Multi_key> <asciicircum> <underscore> <U0279> 	: "ʴ"   U02B4 # MODIFIER LETTER SMALL TURNED R
+<Multi_key> <asciicircum> <underscore> <U027B> 	: "ʵ"   U02B5 # MODIFIER LETTER SMALL TURNED R WITH HOOK
+<Multi_key> <asciicircum> <underscore> <U0281> 	: "ʶ"   U02B6 # MODIFIER LETTER SMALL CAPITAL INVERTED R
+<Multi_key> <asciicircum> <underscore> <w> 	: "ʷ"   U02B7 # MODIFIER LETTER SMALL W
+<Multi_key> <asciicircum> <underscore> <y> 	: "ʸ"   U02B8 # MODIFIER LETTER SMALL Y
+<Multi_key> <asciicircum> <underscore> <U0263> 	: "ˠ"   U02E0 # MODIFIER LETTER SMALL GAMMA
+<Multi_key> <asciicircum> <underscore> <l> 	: "ˡ"   U02E1 # MODIFIER LETTER SMALL L
+<Multi_key> <asciicircum> <underscore> <s> 	: "ˢ"   U02E2 # MODIFIER LETTER SMALL S
+<Multi_key> <asciicircum> <underscore> <x> 	: "ˣ"   U02E3 # MODIFIER LETTER SMALL X
+<Multi_key> <asciicircum> <underscore> <U0295> 	: "ˤ"   U02E4 # MODIFIER LETTER SMALL REVERSED GLOTTAL STOP
+
+## lots more with various modifiers, go look the file if you’re a linguits.
+
+
+## Japanese
+## ========
+
+## How is one supposed to combine ideographs (normally inputed with an
+## IM) and X compose?  In any case it’s interesting to know there are
+## superscript kanji, deadkey variants and all.  I wonder how to type
+## them in common IMs?
+
+<dead_circumflex> <U4E00>    	: "㆒"   U3192 # IDEOGRAPHIC ANNOTATION ONE MARK
+<Multi_key> <asciicircum> <U4E00> 	: "㆒"   U3192 # IDEOGRAPHIC ANNOTATION ONE MARK
+<dead_circumflex> <U4E8C>    	: "㆓"   U3193 # IDEOGRAPHIC ANNOTATION TWO MARK
+<Multi_key> <asciicircum> <U4E8C> 	: "㆓"   U3193 # IDEOGRAPHIC ANNOTATION TWO MARK
+## dead_circumflex for all the following
+<Multi_key> <asciicircum> <U4E09> 	: "㆔"   U3194 # IDEOGRAPHIC ANNOTATION THREE MARK
+<Multi_key> <asciicircum> <U56DB> 	: "㆕"   U3195 # IDEOGRAPHIC ANNOTATION FOUR MARK
+<Multi_key> <asciicircum> <U4E0A> 	: "㆖"   U3196 # IDEOGRAPHIC ANNOTATION TOP MARK
+<Multi_key> <asciicircum> <U4E2D> 	: "㆗"   U3197 # IDEOGRAPHIC ANNOTATION MIDDLE MARK
+<Multi_key> <asciicircum> <U4E0B> 	: "㆘"   U3198 # IDEOGRAPHIC ANNOTATION BOTTOM MARK
+<Multi_key> <asciicircum> <U7532> 	: "㆙"   U3199 # IDEOGRAPHIC ANNOTATION FIRST MARK
+<Multi_key> <asciicircum> <U4E59> 	: "㆚"   U319A # IDEOGRAPHIC ANNOTATION SECOND MARK
+<Multi_key> <asciicircum> <U4E19> 	: "㆛"   U319B # IDEOGRAPHIC ANNOTATION THIRD MARK
+<Multi_key> <asciicircum> <U4E01> 	: "㆜"   U319C # IDEOGRAPHIC ANNOTATION FOURTH MARK
+<Multi_key> <asciicircum> <U5929> 	: "㆝"   U319D # IDEOGRAPHIC ANNOTATION HEAVEN MARK
+<Multi_key> <asciicircum> <U5730> 	: "㆞"   U319E # IDEOGRAPHIC ANNOTATION EARTH MARK
+## unicode sexism! why not “person mark”?
+<Multi_key> <asciicircum> <U4EBA> 	: "㆟"   U319F # IDEOGRAPHIC ANNOTATION MAN MARK
+
+<Multi_key> <parenleft> <U4E00> <parenright> 	: "㊀"   U3280 # CIRCLED IDEOGRAPH ONE
+<Multi_key> <parenleft> <U4E8C> <parenright> 	: "㊁"   U3281 # CIRCLED IDEOGRAPH TWO
+<Multi_key> <parenleft> <U4E09> <parenright> 	: "㊂"   U3282 # CIRCLED IDEOGRAPH THREE
+## ㊃ ㊄ ㊅ ㊆ ㊇ ㊈ ㊉ ㊊ ㊋ ㊌ ㊍ ㊎ ㊏ ㊐ ㊑ ㊒ ㊓ ㊔ ㊕ ㊖ ㊗ ㊘ ㊙
+## ㊚ ㊛ ㊜ ㊝ ㊞ ㊟ ㊠ ㊡ ㊢ ㊣ ㊤ ㊥ ㊦ ㊧ ㊨ ㊩ ㊪ ㊫ ㊬ ㊭ ㊮ ㊯ ㊰
+
+<Multi_key> <parenleft> <kana_A> <parenright> 	: "㋐"   U32D0 # CIRCLED KATAKANA A
+<Multi_key> <parenleft> <kana_I> <parenright> 	: "㋑"   U32D1 # CIRCLED KATAKANA I
+## …㋻㋼㋽㋾. (all katakana; no hiragana?)

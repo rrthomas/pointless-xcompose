@@ -1,0 +1,17 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# Arrows
+# ======
+<Multi_key> <less> <minus>: "←" U2190
+<Multi_key> <minus> <greater>: "→" U2192
+<Multi_key> <less> <greater>: "↔" U2194
+<Multi_key> <circumflex> <bar>: "↑" U2191
+<Multi_key> <bar> <circumflex>: "↑" U2191
+<Multi_key> <v> <bar>: "↓" U2193
+<Multi_key> <bar> <v>: "↓" U2193
+
+<Multi_key> <slash> <less> <minus>      : "↚"   U219A # LEFTWARDS ARROW WITH STROKE
+<Multi_key> <slash> <minus> <greater>   : "↛"   U219B # RIGHTWARDS ARROW WITH STROKE
+<Multi_key> <slash> <less> <greater>    : "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
+

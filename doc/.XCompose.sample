@@ -1,0 +1,26 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# Pulls default X configurations from locale;
+# e.g. /usr/share/X11/locale/en_US.UTF-8/Compose
+include "%L"
+
+# Brazilian users with an en_US.UTF-8 locale might want this instead.
+# Currently, it’s only a fix for acute + c to properly generate ç
+# instead of c with acute (it does include the en_US, like most
+# locale-based Compose mappings).
+#
+# include "/usr/share/X11/locale/pt_BR.UTF-8/Compose"
+
+# Include everything! Adjust /usr/local/share to your installation path.
+include /usr/local/share/abbrevs.xcompose
+include /usr/local/share/arrows.xcompose
+include /usr/local/share/dingbats.xcompose
+include /usr/local/share/math.xcompose
+include /usr/local/share/misc.xcompose
+include /usr/local/share/undead.xcompose
+include /usr/local/share/hyphen-macron.xcompose
+include /usr/local/share/typographic.xcompose
+
+# If you use X deadkeys, use bin/make-dead-compose.sh to generate this one.
+include /usr/local/share/dead.xcompose

@@ -1,0 +1,10 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# Mnemonics
+# =========
+<Multi_key> <v> <v> : "✓" U2713
+<Multi_key> <X> <X> : "✗" U2717 # ballot X - <x> <x> taken by Xorg for multiply
+
+# Spelled-out
+# ===========
