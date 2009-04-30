@@ -54,8 +54,7 @@ INSTALL
    create one (notice the two-letter capitalization).  If you’re lazy
    you can copy the sample file in doc/, else keep reading.  You
    probably want this line in it to pull default X compose mappings
-   from
-   e.g. /usr/share/X11/locale/en_US.UTF-8/Compose:
+   from e.g. /usr/share/X11/locale/en_US.UTF-8/Compose:
 
      include "%L"
 
@@ -131,17 +130,18 @@ you have this sequence:
  - Compose . . =      → ·
  - Compose . . . =    → …
 Now when you type «Compose . .», X won’t print anything because it’s
-waiting for «Compose . . .» (IMHO it should print · and then … should
-you type another period, but I digress).  In other words, you can’t
-make mappings that are substrings of other mappings.  That means you
-probably don’t want to set Compose shortcuts for U2A94 GREATER-THAN
-ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL (⪔).
+waiting for «Compose . . .» (IMHO it should print · and then change it
+to… should you type another period, but I digress).  In other words,
+you can’t make mappings that are substrings of other mappings.  That
+means you probably don’t want to set Compose shortcuts for U2A94
+GREATER-THAN ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL
+(⪔).
 
 All the mappings here <del>have been</del><ins>will be</ins>
 painstakenly compared agains Xorg 1.6.0’s en_US Compose file for
 conflicts.  Several of these entries are present in X’s Compose as
-another sequence, but I prefer a more mnemonic one.  Some entries are
-duplicated here for consistency sake; these are marked with a
+another sequence, but I prefer one that’s more mnemonic.  Some entries
+are duplicated here for consistency sake; these are marked with a
 “# X dup” comment.
 
 Conventions:
