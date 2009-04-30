@@ -23,7 +23,7 @@
 # the second for fractions.
 # <slash>:                   "/" U002F # ASCII SLASH
 <Multi_key> <slash> <slash>: "∕" U2215 # DIVISION SLASH
-<Multi_key> <slash> <period> "⁄" U2044 # FRACTION SLASH
+<Multi_key> <slash> <period>: "⁄" U2044 # FRACTION SLASH
 
 # Comparison
 # ==========
@@ -52,7 +52,7 @@
 
 # Other
 # =====
-<Multi_key> <!> <minus> : "¬" notsign # NOT SIGN
+<Multi_key> <exclam> <minus> : "¬" notsign # NOT SIGN
 <Multi_key> <bracketleft> <bracketright>: "∎" # END OF PROOF
 
 # % ÷ 10
