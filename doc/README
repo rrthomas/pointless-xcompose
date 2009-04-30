@@ -139,10 +139,10 @@ ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL (⪔).
 
 All the mappings here <del>have been</del><ins>will be</ins>
 painstakenly compared agains Xorg 1.6.0’s en_US Compose file for
-conflicts.  Many of these entries are present in X’s Compose as
+conflicts.  Several of these entries are present in X’s Compose as
 another sequence, but I prefer a more mnemonic one.  Some entries are
-duplicated here for consistency sake; these are marked with a “# X
-dup” comment.
+duplicated here for consistency sake; these are marked with a
+“# X dup” comment.
 
 Conventions:
 
