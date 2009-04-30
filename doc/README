@@ -2,6 +2,23 @@ All files in this distribution use UTF-8 pointlessly.  Read them in a
 font with good Unicode coverage — say, Bitstream Vera Sans Mono or GNU
 unifont (xfonts-unifont).
 
+WHAT IS
+=======
+
+X has a mechanism to type characters by pressing key sequences, called
+“Compose”.  Most Compose sequences begin with the Compose key, also
+known as Multi_key (not available in standard keyboards; you have to
+assing a Windows key or something to it).  In my experience, Compose
+is less buggy and temperamental than X’s alternative mechanism to get
+extra characters, the ISO_Level3_Shift key (aka AltGr).
+
+Pointless-compose is a distribution of extra Compose mappings for many
+uncommon Unicode characters (well, actually it’s just my ~/.XCompose file
+better organized and documented).  I encourage interested parties to
+use it as a starting point to make your own Compose sequences.  I lost
+so many days in this useless timesink, I want to get revenge by making
+the world suffer through it too.
+
 WHAT’S INCLUDED:
 ================
  - doc/README:               This file.
@@ -101,6 +118,9 @@ INSTALL
 
 USAGE
 =====
+
+Read the included *.xcompose files and doc/xorg-compose-extracts to
+see what mappings are included.
 
 Compose settings can conflict due to lack of terminators.  Suppose
 you have this sequence:
