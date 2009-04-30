@@ -30,9 +30,10 @@ INSTALL
    /usr/local/share/pointless-xcompose/).
 
 2. If you have a ~/.XCompose file, skip to the next step.  If not,
-   create one.  If you’re lazy you can copy the sample file in doc/,
-   else keep reading.  You probably want this line in it to pull
-   default X compose mappings from
+   create one (notice the two-letter capitalization).  If you’re lazy
+   you can copy the sample file in doc/, else keep reading.  You
+   probably want this line in it to pull default X compose mappings
+   from
    e.g. /usr/share/X11/locale/en_US.UTF-8/Compose:
 
      include "%L"
