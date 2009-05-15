@@ -5,10 +5,8 @@
 # e.g. /usr/share/X11/locale/en_US.UTF-8/Compose
 include "%L"
 
-# Brazilian users with an en_US.UTF-8 locale might want this instead.
-# Currently, it’s only a fix for acute + c to properly generate ç
-# instead of c with acute (it does include the en_US, like most
-# locale-based Compose mappings).
+# Brazilian users with an en_US.UTF-8 locale might want this instead
+# of "include %L".
 #
 # include "/usr/share/X11/locale/pt_BR.UTF-8/Compose"
 
@@ -24,5 +22,6 @@ include "/usr/local/share/pointless-xcompose/math.xcompose"
 include "/usr/local/share/pointless-xcompose/misc.xcompose"
 include "/usr/local/share/pointless-xcompose/typographic.xcompose"
 
-# If you use X deadkeys, use bin/make-dead-compose.sh to generate this one.
+# If you use a layout with X deadkeys, use bin/make-dead-compose.rb to
+# create this file.  See the README.
 include "/usr/local/share/pointless-xcompose/dead.xcompose"

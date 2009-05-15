@@ -26,7 +26,10 @@ WHAT’S INCLUDED:
  - doc/.XCompose.sample:      Sample ~/.XCompose file.
  - doc/xorg-compose-extract:  Selected, annotated reading material.
 
- - bin/make-dead-compose.sh:  Run it if you use deadkeys.
+ - bin/make-dead-compose.rb:  Run it if you use deadkeys.
+ - bin/*.rb:                  Misc Ruby XCompose parsers and
+                              validators, not likely to be interesting
+                              to anyone.
 
  - abbrevs.xcompose:          Abbreviations.
  - arrows.xcompose:           Pretty arrows.
@@ -84,11 +87,11 @@ INSTALL
     pointless-xcompose$ ./bin/make-dead-compose.sh \
                         /usr/share/X11/locale/en_US.UTF-8/Compose \
                         /path/to/pointless-xcompose/math.xcompose \
-                        # …list all files you want to include \
+                        # …list all Compose files you want to include \
                         # or just use /pointless-xcompose/*.xcompose =) \
                         > dead.xcompose
 
-  Then include the dead file:
+   Then include the deadkeys file:
 
      include "/path/to/pointless-xcompose/dead.xcompose
 
