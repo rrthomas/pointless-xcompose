@@ -109,14 +109,13 @@ WHAT’S INCLUDED
                                everything in this package plus today’s
                                Xorg Compose table.
 
- - doc/xorg-compose-extract:  Selected, annotated reading material.
+ - doc/xorg-compose-extracts:  Selected, annotated reading material.
 
+ - bin/*.rb:                   Misc Ruby XCompose parsers and
+                               validators.  Not likely to be
+                               interesting to anyone at the moment.
 
- - bin/*.rb:                  Misc Ruby XCompose parsers and
-                              validators.  Not likely to be
-                              interesting to anyone at the moment.
-
- - doc/license.txt:           “Public domain.”
+ - doc/license.txt:            “Public domain.”
 
 
 INSTALL
