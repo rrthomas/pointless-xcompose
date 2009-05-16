@@ -164,7 +164,7 @@ INSTALL
 
    Then include the deadkeys file:
 
-     include "/path/to/pointless-xcompose/dead.xcompose
+     include "/path/to/pointless-xcompose/dead.xcompose"
 
 
 5. If you already have a Compose (Multi_key) key, skip to the next
