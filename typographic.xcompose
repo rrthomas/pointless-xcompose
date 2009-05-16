@@ -1,7 +1,8 @@
 # -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
-# See also the other files (e.g. invisible.xcompose for spaces, &c.)
+# Lines commented out are already present in X.  See also the other
+# files (e.g. invisible.xcompose for spaces, &c.)
 
 # Mnemonics
 # =========
@@ -12,8 +13,8 @@
 # Perhaps counter-intuitive?
 <Multi_key> <minus> <Return>            : "‑" U2011 # non-breaking hyphen
 <Multi_key> <minus> <period>            : "−" U2210 # MINUS SIGN
-<Multi_key> <minus> <minus> <period>    : "–" U2013 # EN DASH # X dup
-<Multi_key> <minus> <minus> <minus>     : "—" U2014 # EM DASH # X dup
+# <Multi_key> <minus> <minus> <period>    : "–" U2013 # EN DASH
+# <Multi_key> <minus> <minus> <minus>     : "—" U2014 # EM DASH
 # Used for dialogue statements.  In most fonts visually identical to
 # U2014 EM DASH.
 <Multi_key> <minus> <minus> <underscore>: "―" U2015 # HORIZONTAL BAR
@@ -37,7 +38,7 @@
 
 # X default will map both ?! and !? to interrobang «‽».  Here we set one
 # of them to the U2E18 gnaborretni «⸘» instead.
-<Multi_key> <question> <exclam>: "‽"   U203D # INTERROBANG # X dup
+# <Multi_key> <question> <exclam>: "‽"   U203D # INTERROBANG
 <Multi_key> <exclam> <question>: "⸘"   U2E18 # GNABORRETNI
 
 <Multi_key> <colon> <period>: "⸪" U2E2A # TWO DOTS OVER ONE DOT
@@ -47,7 +48,6 @@
 
 <Multi_key> <plus> <bar> : "†" U2020 # DAGGER
 <Multi_key> <plus> <plus> : "‡" U2021 # DOUBLE DAGGER
-
 
 
 # Just citing X defaults for ease of reference.
@@ -85,6 +85,9 @@
 
 <Multi_key> <Y> <Y>: "Ȝ" U021C # Yogh
 <Multi_key> <y> <y>: "ȝ" U021D # yogh
+
+# not sure why anyone would want this, but it’s nostalgic
+<Multi_key> <bar> <bar>    : "¦" brokenbar
 
 # X defaults for reference, &c.
 # <Multi_key> <T> <H>              	: "Þ"   THORN # LATIN CAPITAL LETTER THORN

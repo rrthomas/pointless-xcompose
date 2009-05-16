@@ -2,15 +2,74 @@ All files in this distribution use UTF-8 pointlessly.  Read them in a
 font with good Unicode coverage — say, Bitstream Vera Sans Mono or GNU
 unifont (xfonts-unifont).
 
-WHAT IS
-=======
+Background
+==========
 
-X has a mechanism to type characters by pressing key sequences, called
-“Compose”.  Most Compose sequences begin with the Compose key, also
-known as Multi_key (not available in standard keyboards; you have to
-assing a Windows key or something to it).  In my experience, Compose
-is less buggy and temperamental than X’s alternative mechanism to get
-extra characters, the ISO_Level3_Shift key (aka AltGr).
+If you know what the words “~/.XCompose”, “ISO_Level3_Shift”, “input
+method”, “character map”, “deadkey” and “xmodmap” mean, you can skip
+to the next section.
+
+Still there? So.  Unicode has lots of cool characters.  I mean lots
+and lots of cool characters.  Enough characters to annoy all your
+friends with useless charatry.
+
+Your keyboard doesn’t have nearly enough keys to input all them.
+
+In X — the GUI system used in Linux, BSD, Solaris &c. — there are a
+number of different ways to input these extra characters:
+
+ - Copy and paste from the web, a reference file, or a character map
+   utility such as gucharmap(1).  Easy to do and fail-proof, but
+   tedious and labor-intensive.
+
+ - Enter the Unicode character by its code point (a number that
+   uniquely identifies it; tipically in four-digit hexadecimal).  Ways
+   to input these numbers include the Ctrl+Shift+u shortcut on certain
+   setups, the ucs-insert Emacs function, web services, and charmap
+   apps.  Less labor-intensive, but requires you to memorize or look
+   up the numbers for every character you want.
+
+ - Use one of your keys as a character modifier — tipically the right
+   Alt key (aka AltGr), set as ISO_Level3_Shift or Mode_switch (these
+   are X names for key meanings).  In my experience this method tends
+   to be buggy; for example, in the Xorg version I’m using right now,
+   you can’t set an AltGr mapping for an US keyboard unless the US
+   international variant touches that key.  Due to the way X sets keys
+   (with xmodmap(1)), AltGr is also very tedious to configure, and
+   it’s a method that limits you to one extra character per key (or
+   two, combined with Shift).
+
+ - Use a X keyboard layout with deadkeys.  A “dead” key is one that
+   prints nothing on the screen; when you press another key, it will
+   decide on a character that combines both and output it.  These are
+   common with users of European languages (most, for example, have a
+   “dead acute” key that will combine with vowels to make áéíóú, &c.).
+
+ - Use a custom input method (IM).  These are extra software that sit
+   between your input and X and use sophisticated methods to translate
+   keypresses to characters; examples include SCIM, uim, anthy, &c.
+   This method is necessary for users of complex languages like
+   Chinese, Japanese, Korean, Indic scripts &c, who needs many more
+   characters than Europeans.  IMs are kind of tricky to configure for
+   the first time, but easy to use from there on.  As far as I know,
+   no current input method make it simple to extend with your own
+   arbitrary character mappings (though they often are easy to extend
+   with characters of the language they target).  Some old IMs break
+   deadkeys, making the life of bilingual European-Asian speakers even
+   more difficult than it already is.
+
+ - Use X Compose mappings.  This method is a X mechanism to input
+   arbitrary characters by pressing fixed key sequences.  Most Compose
+   sequences begin with the Compose key, also known as Multi_key (not
+   available in standard keyboards; you have to assign a Windows key
+   or something to it).  The deadkey method mentioned above is
+   actually implemented with Compose too.  Xorg comes with many
+   builtin mappings described in /usr/share/X11/locale/*/Compose, and
+   you can add your own in ~/.XCompose.  Compose has its quirks, but
+   IMHO it’s the easiest to extend your way and use system-wide.
+
+WHATIS
+======
 
 Pointless-XCompose is a distribution of extra Compose mappings for
 many uncommon Unicode characters (actually it’s just my ~/.XCompose
@@ -19,17 +78,13 @@ to use it as a starting point to make your own Compose sequences.  I
 lost so many days in this useless timesink, I want to get revenge by
 making the world suffer through it too.
 
-WHAT’S INCLUDED:
-================
- - doc/README:                This.
- - doc/license.txt:           “Public domain.”
- - doc/.XCompose.sample:      Sample ~/.XCompose file.
- - doc/xorg-compose-extract:  Selected, annotated reading material.
+I also included a few other potentially interesting Compose-related
+stuff, such as a selection of standard X mappings, a script to
+generate deadkey variants of Compose files, &c.  Or, to be throughly:
 
- - bin/make-dead-compose.rb:  Run it if you use deadkeys.
- - bin/*.rb:                  Misc Ruby XCompose parsers and
-                              validators, not likely to be interesting
-                              to anyone.
+WHAT’S INCLUDED
+===============
+ - doc/README:                This.
 
  - abbrevs.xcompose:          Abbreviations.
  - arrows.xcompose:           Pretty arrows.
@@ -42,35 +97,51 @@ WHAT’S INCLUDED:
  - invisible.xcompose:        Spaces, byte-order mark, soft hyphen, &
                               other invisible characters.
  - math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
- - misc.xcompose:             I couldn’t classify those.
  - typographic.xcompose:      Typographic symbols.  Impress your
                               alistapart.com friends.
+
+ - examples/.XCompose:         Sample ~/.XCompose file to include the
+                               *.xcompose described above.
+ - bin/make-dead-compose.rb:   You want to run this if you use a
+                               keyboard layout with deadkeys.
+ - examples/dead.xcompose:     Example output of make-dead-keys.rb for
+                               everything in this package plus my Xorg
+                               Compose table.
+
+ - doc/xorg-compose-extract:  Selected, annotated reading material.
+
+
+ - bin/*.rb:                  Misc Ruby XCompose parsers and
+                              validators.  Not likely to be
+                              interesting to anyone at the moment.
+
+ - doc/license.txt:           “Public domain.”
 
 
 INSTALL
 =======
 
-1. Copy or git-clone this directory anywhere safe (I use
+1. Copy or git-clone this directory to somewhere safe (I use
    /usr/local/share/pointless-xcompose/).
 
 2. If you have a ~/.XCompose file, skip to the next step.  If not,
    create one (notice the two-letter capitalization).  If you’re lazy
-   you can copy the sample file in doc/, else keep reading.  You
-   probably want this line in it to pull default X compose mappings
-   from e.g. /usr/share/X11/locale/en_US.UTF-8/Compose:
+   you can copy the sample file in doc/ and skip to 4, else keep
+   reading.  You probably want this line in it to pull default X
+   compose mappings from
+   e.g. /usr/share/X11/locale/en_US.UTF-8/Compose:
 
      include "%L"
 
    If you use an en_US.UTF-8 locale but want another locale-specific X
    mapping, include that one instead.  I’m thinking Brazilian users,
-   who most probably will want this to make dead_acute + c generate a
-   cedilla instead of a c with accent:
+   who most probably will want this line to make dead_acute + c
+   generate a cedilla instead of a c with accent:
 
      include "/usr/share/X11/locale/pt_BR.UTF-8/Compose"
 
    I recommend reading the Xorg en_US.UTF-8 Compose file (or the
-   summary included this distribution), there’s lot of interesting
-   things there.
+   summary included in doc/), there’s lot of interesting things there.
 
 3. Below the X includes in your ~/.XCompose add all extras you want:
 
@@ -96,28 +167,48 @@ INSTALL
      include "/path/to/pointless-xcompose/dead.xcompose
 
 
-5. If you don’t have a Compose key (aka Multi_key) already, set one of
-   your keyboard keys to it:
+5. If you already have a Compose (Multi_key) key, skip to the next
+   step.  Else let’s configure one now.  There’s a new way of doing
+   this using setxkbmap, but I’ve seen it not working, so I recommend
+   you use good old xmodmap(1) instead.  First decide which key you
+   want to use; most people go with Menu or right Windows.  Open a
+   console, run xev(1), and press your chosen key a few times.  Take
+   note of its keycode in the line “keycode <nnn> = <blah>” (for
+   example, my Menu key is keycode 135).  Then run the following
+   command:
 
-   - setxkbmap -option compose:rwin (new way; doesn’t always work)
-   - xmodmap -e "keycode 135 = Multi_key" (safer, old-fashioned way)
+     xmodmap -e "keycode <nnn> = Multi_key"
 
-   Put it in your .xsession/.gnomerc/whatever.  To find what’s the
-   keycode for a given key, use xev(1).  If you use gnome, you can
-   also try System→Preferences→Keyboard, at your own risk.
+   Use xev again to make sure it worked, then add the xmodmap command
+   (between quotes, above) to ~/.xmodmap.
+
+   If you use gnome, next time you login it might ask whether you want
+   to use Gnome keyboard settings or “X” settings.  This is because
+   Gnome overrides many X keyboard configurations for no good reason.
+   Choose X settings.  You can also try System→Preferences→Keyboard,
+   at your own risk.
 
 6. Restart your apps (and perhaps X the first time) — XCompose
    settings only apply for new windows.  I do suspect you need an
-   .UTF-8 locale set, though I didn’t test.
+   UTF-8 locale set, though I didn’t test.
 
-7. Fix GTK.  XCompose unfortunately won’t work in GTK apps by default;
-   GTK defines its own static, nonconfigurable compose mechanism which
-   overrides X.  A possible workaround is to use the “xim” GTK input
-   method, but that didn’t work for me.  Another workaround is to use
-   the uim input method (install uim, then export GTK_IM_MODULE=uim;
-   thanks to uim’s author, Etsushi Kato, for pointing me his
-   solution).  If you’re a SCIM user, consider switching to uim.  If
-   you’re annoyed, do complain to GTK devs:
+7. Fix GTK.  XCompose configuration unfortunately won’t work in GTK
+   apps by default; GTK defines its own static, compile-time,
+   nonconfigurable compose mechanism which overrides X.  They do copy
+   X Compose mappings from time to time, so GTK compose most of the
+   time are almost the same as X defaults.  It will break where you
+   most need it, of course.  And there’s no way at all to add your own
+   mappings or otherwise configure them.
+
+   A possible workaround is to use the “xim” GTK input method, but
+   that didn’t work for me.  Another workaround is to use the uim GTK
+   input method (install uim, then export GTK_IM_MODULE=uim in your
+   ~/.gnomerc; thanks to uim’s author, Etsushi Kato, for pointing me
+   his solution).  There’s no need to run any software, and it won’t
+   otherwise touch your keyboard settings.  If you’re a SCIM user,
+   consider switching to uim.
+
+   If you’re as annoyed as I am, do complain to GTK devs:
 
    http://bugzilla.gnome.org/show_bug.cgi?id=321896
 
@@ -134,7 +225,7 @@ you have this sequence:
  - Compose . . . =    → …
 Now when you type «Compose . .», X won’t print anything because it’s
 waiting for «Compose . . .» (IMHO it should print · and then change it
-to… should you type another period, but I digress).  In other words,
+to … should you type another period, but I digress).  In other words,
 you can’t make mappings that are substrings of other mappings.  That
 means you probably don’t want to set Compose shortcuts for U2A94
 GREATER-THAN ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL
@@ -142,10 +233,9 @@ GREATER-THAN ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL
 
 All the mappings here <del>have been</del><ins>will be</ins>
 painstakenly compared agains Xorg 1.6.0’s en_US Compose file for
-conflicts.  Several of these entries are present in X’s Compose as
+conflicts.  Several of my entries are present in X’s Compose as
 another sequence, but I prefer one that’s more mnemonic.  Some entries
-are duplicated here for consistency sake; these are marked with a
-“# X dup” comment.
+are duplicated for consistency sake; these are commented out.
 
 Conventions:
 

@@ -4,18 +4,19 @@
 # Arithmetic operators
 # ====================
 # 
-# Notice the “<minus>” X name refers to the ASCII hyphen-minus, not to
-# the true minus character.
-#
-<Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN # X dup
+# Lines commented out are already present in X.  Notice the “<minus>”
+# X name refers to the ASCII hyphen-minus, not to the true minus
+# character.
+
+# <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN
 <Multi_key> <equal> <minus>: "±" plusminus
 <Multi_key> <minus> <equal>: "±" plusminus
 <Multi_key> <minus> <plus>: "±" plusminus
 
-<Multi_key> <x> <x>: "×" multiply # MULTIPLICATION SIGN # X dup
+# <Multi_key> <x> <x>: "×" multiply # MULTIPLICATION SIGN
 <Multi_key> <minus> <period>: "−" U2212 # MINUS SIGN' (U+2212)
-<Multi_key> <colon> <minus>: "÷" division # DIVISION SIGN # X dup
-<Multi_key> <minus> <colon>: "÷" division # DIVISION SIGN # X dup
+# <Multi_key> <colon> <minus>: "÷" division # DIVISION SIGN
+# <Multi_key> <minus> <colon>: "÷" division # DIVISION SIGN
 
 # 2215 is different from both the ASCII slash (which Unicode
 # confusingly call “solidus”) and the U2044 fraction slash ⁄, which
@@ -56,6 +57,6 @@
 <Multi_key> <bracketleft> <bracketright>: "∎" # END OF PROOF
 
 # % ÷ 10
-<Multi_key> <percent> <o>: "‰"   U2030 # PER MILLE SIGN # X dup
-# % ÷ 100; can’t extend with <o> <o> due to XCompose substring problem.
+# <Multi_key> <percent> <o>: "‰"   U2030 # PER MILLE SIGN
+# % ÷ 100; can’t extend with <o> <o> due to XCompose substring issue.
 <Multi_key> <percent> <O>: "‱"   U2030 # PER MYRIAD SIGN
