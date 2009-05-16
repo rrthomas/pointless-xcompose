@@ -27,6 +27,21 @@ module Enumerable
     end
     p
   end
+
+  def starts_with(other)
+    if self.size < other.size
+      return false
+    end
+    result=true
+    0.upto(other.size-1).each do |i|
+      if self[i] != other[i]
+        result=false
+        break
+      end
+    end
+    return result
+  end
+
 end
 
 
@@ -36,20 +51,6 @@ end
 #       - "\nnn" description format
 class XComposeParser
   attr_accessor :file, :parsed_lines, :logger
-
-  # class MapConflict < StandardError
-  #   def initialize(parser, l1, l2)
-  #   end
-  # end
-  # class MapPrefixConflict < StandardError
-  #   def initialize(parser, l1, l2)
-  #   end
-  # end
-  # class MapDuplicate < StandardError
-  #   def initialize(parser, l1, l2)
-  #   end
-  # end
-
 
   def initialize(file, logger=nil)
     if not file.respond_to? :read
@@ -205,7 +206,45 @@ class XComposeParser
     return valid
   end
 
+  class MapDuplicate < StandardError
+  end
+  class MapConflict < StandardError
+  end
+
+  def compare_mapping_other(li, other, lj)
+
+    desc1 = "line #{li}"
+    if self == other
+      return true if li == lj
+      desc2 = "line #{lj}"
+    else
+      desc2 = "#{other.file.path}:#{li}"
+    end
+
+    line1, line2 = self.parsed_lines[li], other.parsed_lines[lj]
+    return true if (!line1 || !line2)
+
+    if line1[:map] == line2[:map]
+      if line1[:definition] == line2[:definition]
+        raise MapDuplicate.new("#{desc1} is duplicated at #{desc2}")
+
+      else
+        raise MapConflict.new("#{desc1} conflicts with #{desc2}" +\
+                              " (#{line1[:map]}: #{line1[:definition]} vs. #{line2[:definition]})")
+      end
+    elsif line1[:map].starts_with(line2[:map])
+      raise MapConflict.new(format("%s mapping (%s->%s) obscured by %s mapping (%s->%s)",
+                                   desc2, line2[:map], line2[:definition],
+                                   desc1, line1[:map], line1[:definition]))
+    elsif line2[:map].starts_with(line1[:map])
+      raise MapConflict.new(format("%s mapping (%s->%s) obscured by %s mapping (%s->%s)",
+                                   desc1, line1[:map], line1[:definition],
+                                   desc2, line2[:map], line2[:definition]))
+    end
+  end
+
 end
+
 
 if __FILE__ == $0
   options = OpenStruct.new
@@ -257,7 +296,21 @@ if __FILE__ == $0
     end
   end
 
-  # l.info("Checking for internal conflicts...")
+  l.info("Checking for internal conflicts...")
+  parsers.each do |p|
+    0.upto(p.parsed_lines.size-1).to_a.pairs.each do |li, lj|
+      line1, line2 = p.parsed_lines[li], p.parsed_lines[lj]
+      next if !line1 || !line2
+
+      begin
+        p.compare_mapping_other(li, p, lj)
+      rescue XComposeParser::MapDuplicate => ex
+        p.logger.warn(ex.message)
+      rescue XComposeParser::MapConflict => ex
+        p.logger.error(ex.message)
+      end
+    end
+  end
 
 
 end
