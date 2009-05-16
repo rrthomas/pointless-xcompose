@@ -2,9 +2,12 @@
 require 'optparse'
 require 'ostruct'
 require 'log4r'
+require 'pp'
 include Log4r
 require File.dirname(__FILE__) + '/keysymdef.rb'
 include Keysymdef
+
+#require 'unprof'
 
 module Enumerable
   # [1,2,3] -> [[1,2],[1,3],[2,3]]
@@ -16,18 +19,10 @@ module Enumerable
     end
   end
 
-  def starts_with(other)
-    if self.size < other.size
-      return false
+  def each_prefix()
+    0.upto(self.size-1-1) do |i|
+      yield self[0..i]
     end
-    result=true
-    0.upto(other.size-1).each do |i|
-      if self[i] != other[i]
-        result=false
-        break
-      end
-    end
-    return result
   end
 
 end
@@ -40,7 +35,29 @@ end
 class XComposeParser
   attr_accessor :file, :parsed_lines, :logger
 
+  # Index to speed mapping prefix checks.
+  #
+  # The format is mapping => [parser, lineno]
+  @@map_index = {}
+  def self.map_index
+    @@map_index
+  end
+
+  class MapDuplicate < StandardError
+  end
+  class MapConflict < StandardError
+  end
+  class MapPrefixConflict < MapConflict
+  end
+  class ParseError < StandardError
+    def initialize(file)
+      super("Parse error at file #{@file.path}:#{@file.lineno}.")
+    end
+  end
+
+
   def initialize(file, logger=nil)
+
     if not file.respond_to? :read
       file = File.open(file.to_str, 'r')
     end
@@ -57,16 +74,13 @@ class XComposeParser
     @parsed_lines = []
   end
 
-  class ParseError < StandardError
-    def initialize(file)
-      super("Parse error at file #{@file.path}:#{@file.lineno}.")
-    end
-  end
 
   # Parse the file and fill @parsed_lines.
   def parse
     @file.seek 0
+
     @file.each_line do |line|
+      pline = nil
 
       if line.match(/^#/)
         @logger.debug("Skipped comment at line #{@file.lineno}")
@@ -75,12 +89,32 @@ class XComposeParser
       elsif line.match(/^\s*include/)
         @logger.warn("Skipped include at line #{@file.lineno}")
       elsif line.index(':')
-        @parsed_lines[@file.lineno] = self.class.parse_line(line)
-        if not @parsed_lines[@file.lineno]
+        pline = self.class.parse_line(line)
+        if not pline
           raise ParseError.new(@file)
+        else
+          @parsed_lines[@file.lineno] = pline
         end
       else
         raise ParseError.new(@file)
+      end
+
+      next if not pline
+      if not (@@map_index.has_key?(pline[:map]))
+        @@map_index[pline[:map]] = [self, @file.lineno]
+      else # mapping already indexed!
+        dup_parser, dup_index = @@map_index[pline[:map]]
+        dup_pline = dup_parser.parsed_lines[dup_index]
+        if pline[:definition] == dup_pline[:definition]
+          raise MapDuplicate.new(format("%s:%d: duplicate map: %s:%d",
+                                        @file.path, @file.lineno,
+                                        dup_parser.file.path, dup_index))
+        else
+          raise MapConflict.new(format("%s:%d: map conflict: %s:%d",
+                                       @file.path, @file.lineno,
+                                       dup_parser.file.path, dup_index))
+
+        end
       end
     end
   end
@@ -194,41 +228,18 @@ class XComposeParser
     return valid
   end
 
-  class MapDuplicate < StandardError
-  end
-  class MapConflict < StandardError
-  end
-
-  def compare_mapping_other(li, other, lj)
-
-    desc1 = "line #{li}"
-    if self == other
-      return true if li == lj
-      desc2 = "line #{lj}"
-    else
-      desc2 = "#{other.file.path}:#{li}"
-    end
-
-    line1, line2 = self.parsed_lines[li], other.parsed_lines[lj]
-    return true if (!line1 || !line2)
-
-    if line1[:map] == line2[:map]
-      if line1[:definition] == line2[:definition]
-        raise MapDuplicate.new("#{desc1} is duplicated at #{desc2}")
-
-      else
-        raise MapConflict.new("#{desc1} conflicts with #{desc2}" +\
-                              " (#{line1[:map]}: #{line1[:definition]} vs. #{line2[:definition]})")
+  def validate_mapping(li)
+    l = @parsed_lines[li]
+    return true if not l
+    l[:map].each_prefix do |pref|
+      conflict = @@map_index[pref]
+      if conflict
+        raise MapPrefixConflict.new(format("%s:%s: prefix conflict with %s:%s",
+                                           @file.path, li,
+                                           conflict[0].file.path, conflict[1]))
       end
-    elsif line1[:map].starts_with(line2[:map])
-      raise MapConflict.new(format("%s mapping (%s->%s) obscured by %s mapping (%s->%s)",
-                                   desc2, line2[:map], line2[:definition],
-                                   desc1, line1[:map], line1[:definition]))
-    elsif line2[:map].starts_with(line1[:map])
-      raise MapConflict.new(format("%s mapping (%s->%s) obscured by %s mapping (%s->%s)",
-                                   desc1, line1[:map], line1[:definition],
-                                   desc2, line2[:map], line2[:definition]))
     end
+    return true
   end
 
 end
@@ -260,7 +271,7 @@ if __FILE__ == $0
   l.outputters << Outputter.stdout
 
 
-  l.info("Checking basic syntax...")
+  l.info("Checking syntax and mappings...")
   parsers=[]
   ARGV.each do |fpath|
     p = XComposeParser.new(fpath, l)
@@ -268,7 +279,10 @@ if __FILE__ == $0
       p.parse
       p.logger.info("Parsed fine.")
       parsers << p
-    rescue XComposeParser::ParseError => ex
+    rescue XComposeParser::MapDuplicate => ex
+      l.warn(ex.message)
+      parsers << p
+    rescue XComposeParser::ParseError, XComposeParser::MapConflict => ex
       l.error(ex.message)
       l.info("#{p.file.path} will be skipped")
     end
@@ -284,16 +298,12 @@ if __FILE__ == $0
     end
   end
 
-  l.info("Checking for internal conflicts...")
-  parsers.each do |p|
-     0.upto(p.parsed_lines.size-1).to_a.each_pair do |li, lj|
-      line1, line2 = p.parsed_lines[li], p.parsed_lines[lj]
-      next if !line1 || !line2
+  l.info("Checking for mapping conflicts...")
 
+  parsers.each do |p|
+    p.parsed_lines.each_index do |i|
       begin
-        p.compare_mapping_other(li, p, lj)
-      rescue XComposeParser::MapDuplicate => ex
-        p.logger.warn(ex.message)
+        p.validate_mapping(i)
       rescue XComposeParser::MapConflict => ex
         p.logger.error(ex.message)
       end
