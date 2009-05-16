@@ -6,43 +6,43 @@ include Log4r
 require File.dirname(__FILE__) + '/keysymdef.rb'
 include Keysymdef
 
+module Enumerable
+  # [1,2,3] -> [[1,2],[1,3],[2,3]]
+  def pairs
+    p=[]
+    self.each_with_index do |item1, i|
+      self[(i+1)..self.size].each do |item2|
+        p << [item1, item2]
+      end
+    end
+    p
+  end
+  # [1,2,3] -> [[1,1],[1,2],[1,3],[2,2],[2,3],[3,3]]
+  def pairs_with_identity
+    p=[]
+    self.each_with_index do |item1, i|
+      self[(i)..self.size].each do |item2|
+        p << [item1, item2]
+      end
+    end
+    p
+  end
+end
+
+
 # Parser for XCompose compose definitions.
 #
 # TODO: - includes
 #       - "\nnn" description format
 class XComposeParser
-  attr_accessor :file, :parsed_lines, :logger
+  attr_accessor :file, :parsed_lines
 
-  # class MapConflict < StandardError
-  #   def initialize(parser, l1, l2)
-  #   end
-  # end
-  # class MapPrefixConflict < StandardError
-  #   def initialize(parser, l1, l2)
-  #   end
-  # end
-  # class MapDuplicate < StandardError
-  #   def initialize(parser, l1, l2)
-  #   end
-  # end
-
-
-  def initialize(file, logger=nil)
+  def initialize(file)
     if not file.respond_to? :read
       file = File.open(file.to_str, 'r')
     end
     @file = file
-
-    if logger
-      @logger = Logger.new(logger.fullname + '::' + \
-                           "parser:#{@file.path}")
-    else
-      @logger = Logger.new("parser:#{@file.path}")
-      @logger.outputters << Outputter.stdout
-      @logger.level = DEBUG
-    end
     @parsed_lines = []
-    self.parse
   end
 
   class ParseError < StandardError
@@ -56,12 +56,10 @@ class XComposeParser
     @file.seek 0
     @file.each_line do |line|
 
-      if line.match(/^#/)
-        @logger.debug("Skipped comment at line #{@file.lineno}")
-      elsif line.match(/^\s*$/)
-        @logger.debug("Skipped blank line at line #{@file.lineno}")
-      elsif line.match(/^\s*include/)
-        @logger.warn("Skipped include at line #{@file.lineno}")
+      if (line.match(/^#/) ||
+          line.match(/^\s*$/) ||
+          line.match(/^\s*include/))
+        next
       elsif line.index(':')
         @parsed_lines[@file.lineno] = self.class.parse_line(line)
         if not @parsed_lines[@file.lineno]
@@ -173,9 +171,7 @@ class XComposeParser
       next if not @parsed_lines[i]
       begin
         self.class.validate_desc(@parsed_lines[i])
-        @logger.debug("#{i}: description valid.")
       rescue UnknownKeysymname, DescriptionConflict, InvalidCodepoint => ex
-        @logger.error("#{i}: #{ex.message}")
         valid = false
       end
     end
@@ -201,7 +197,6 @@ if __FILE__ == $0
     end
   end
 
-  l = Logger.new('xcompose')
   if options.verbose
     l.level=DEBUG
   else
@@ -210,21 +205,11 @@ if __FILE__ == $0
   l.outputters << Outputter.stdout
 
 
-  all_valid = true
+  parsers=[]
   ARGV.each do |fpath|
     p = XComposeParser.new(fpath, l)
 
-    if p.validate_descs
-      p.logger.info("Descriptions ok.")
-    else
-      p.logger.error("Description errors.")
-      all_valid=false if all_valid
-    end
+    parsers << p
   end
 
-  if all_valid
-    exit 0
-  else
-    exit 1
-  end
 end
