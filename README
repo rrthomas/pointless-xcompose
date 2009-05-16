@@ -106,8 +106,8 @@ WHAT’S INCLUDED
  - bin/make-dead-compose.rb:   You want to run this if you use a
                                keyboard layout with deadkeys.
  - examples/dead.xcompose:     Example output of make-dead-keys.rb for
-                               everything in this package plus my Xorg
-                               Compose table.
+                               everything in this package plus today’s
+                               Xorg Compose table.
 
  - doc/xorg-compose-extract:  Selected, annotated reading material.
 
