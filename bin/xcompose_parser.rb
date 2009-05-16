@@ -8,24 +8,12 @@ include Keysymdef
 
 module Enumerable
   # [1,2,3] -> [[1,2],[1,3],[2,3]]
-  def pairs
-    p=[]
+  def each_pair()
     self.each_with_index do |item1, i|
       self[(i+1)..self.size].each do |item2|
-        p << [item1, item2]
+        yield([item1, item2])
       end
     end
-    p
-  end
-  # [1,2,3] -> [[1,1],[1,2],[1,3],[2,2],[2,3],[3,3]]
-  def pairs_with_identity
-    p=[]
-    self.each_with_index do |item1, i|
-      self[(i)..self.size].each do |item2|
-        p << [item1, item2]
-      end
-    end
-    p
   end
 
   def starts_with(other)
@@ -298,7 +286,7 @@ if __FILE__ == $0
 
   l.info("Checking for internal conflicts...")
   parsers.each do |p|
-    0.upto(p.parsed_lines.size-1).to_a.pairs.each do |li, lj|
+     0.upto(p.parsed_lines.size-1).to_a.each_pair do |li, lj|
       line1, line2 = p.parsed_lines[li], p.parsed_lines[lj]
       next if !line1 || !line2
 
@@ -311,6 +299,4 @@ if __FILE__ == $0
       end
     end
   end
-
-
 end
