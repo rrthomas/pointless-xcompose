@@ -155,7 +155,7 @@ INSTALL
    “us(intl)”, or “br”), let’s create deadkey versions of the mappings
    now:
 
-    pointless-xcompose$ ./bin/make-dead-compose.sh \
+    pointless-xcompose$ ./bin/make-dead-compose.rb \
                         /usr/share/X11/locale/en_US.UTF-8/Compose \
                         /path/to/pointless-xcompose/math.xcompose \
                         # …list all Compose files you want to include \
