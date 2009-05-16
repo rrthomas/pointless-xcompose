@@ -2,8 +2,10 @@
 require 'optparse'
 require 'ostruct'
 require 'log4r'
+
 require 'pp'
 include Log4r
+
 require File.dirname(__FILE__) + '/keysymdef.rb'
 include Keysymdef
 
@@ -75,9 +77,11 @@ class XComposeParser
   end
 
 
-  # Parse the file and fill @parsed_lines.
+  # Parse the file; fill @parsed_lines, @@map_index.
   def parse
     @file.seek 0
+    duplicates = []
+    conflicts = []
 
     @file.each_line do |line|
       pline = nil
@@ -100,22 +104,42 @@ class XComposeParser
       end
 
       next if not pline
+
       if not (@@map_index.has_key?(pline[:map]))
         @@map_index[pline[:map]] = [self, @file.lineno]
       else # mapping already indexed!
         dup_parser, dup_index = @@map_index[pline[:map]]
         dup_pline = dup_parser.parsed_lines[dup_index]
         if pline[:definition] == dup_pline[:definition]
-          raise MapDuplicate.new(format("%s:%d: duplicate map: %s:%d",
-                                        @file.path, @file.lineno,
-                                        dup_parser.file.path, dup_index))
+          duplicates << [@file.lineno,
+                         dup_parser, dup_index]
         else
-          raise MapConflict.new(format("%s:%d: map conflict: %s:%d",
-                                       @file.path, @file.lineno,
-                                       dup_parser.file.path, dup_index))
-
+          conflicts << [@file.lineno,
+                        dup_parser, dup_index]
         end
       end
+    end
+
+    out="\n"
+    conflicts.each do |li, dup_parser, dup_index|
+      out += format("     %s:%d: conflicts with %s:%d (%s -> %s vs. %s)\n",
+                    @file.path, li,
+                    dup_parser.file.path, dup_index,
+                    @parsed_lines[li][:map],
+                    @parsed_lines[li][:definition],
+                    dup_parser.parsed_lines[dup_index][:definition])
+    end
+    duplicates.each do |li, dup_parser, dup_index|
+      out += format("     %s:%d: duplicate of %s:%d (%s -> %s)\n",
+                    @file.path, li,
+                    dup_parser.file.path, dup_index,
+                    @parsed_lines[li][:map],
+                    @parsed_lines[li][:definition])
+    end
+    if not conflicts.empty?
+      raise MapConflict.new(out)
+    elsif not duplicates.empty?
+      raise MapDuplicate.new(out)
     end
   end
 
@@ -246,11 +270,32 @@ end
 
 
 if __FILE__ == $0
+  l = Logger.new('xcompose_parser')
+
   options = OpenStruct.new
+  options.loglevel = WARN
+
   OptionParser.new {|op|
     op.banner = "Usage: #{$0} [options] <Compose files...>"
-    op.on('v', '--verbose', 'Increase verbosity') do |v|
-      options.verbose = v
+    op.on('l', '--loglevel LOG', 'Set loglevel <debug|info|warn|error>') do |l|
+      if l.downcase.match /debug/
+        options.loglevel = DEBUG
+      elsif l.downcase.match /info/
+        options.loglevel = INFO
+      elsif l.downcase.match /warn/
+        options.loglevel = WARN
+      elsif l.downcase.match /info/
+        options.loglevel = ERROR
+      end
+    end
+    op.on('d', '--debug', 'Equivalent to -l DEBUG') do |d|
+      options.loglevel = DEBUG if d
+    end
+    op.on('v', '--verbose', 'Equivalent to -l INFO') do |v|
+      options.loglevel = INFO if v
+    end
+    op.on('q', '--quiet', 'Equivalent to -l ERROR') do |q|
+      options.loglevel = ERROR if q
     end
   }.parse!
 
@@ -262,12 +307,7 @@ if __FILE__ == $0
     end
   end
 
-  l = Logger.new('xcompose_parser')
-  if options.verbose
-    l.level=DEBUG
-  else
-    l.level=INFO
-  end
+  l.level=options.loglevel
   l.outputters << Outputter.stdout
 
 
@@ -282,7 +322,9 @@ if __FILE__ == $0
     rescue XComposeParser::MapDuplicate => ex
       l.warn(ex.message)
       parsers << p
-    rescue XComposeParser::ParseError, XComposeParser::MapConflict => ex
+    rescue XComposeParser::MapConflict => ex
+      l.error(ex.message)
+    rescue XComposeParser::ParseError => ex
       l.error(ex.message)
       l.info("#{p.file.path} will be skipped")
     end
