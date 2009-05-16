@@ -12,7 +12,7 @@
 <Multi_key> <minus> <comma>             : "‐" U2010 # hyhpen
 # Perhaps counter-intuitive?
 <Multi_key> <minus> <Return>            : "‑" U2011 # non-breaking hyphen
-<Multi_key> <minus> <period>            : "−" U2210 # MINUS SIGN
+<Multi_key> <minus> <period>            : "−" U2212 # MINUS SIGN
 # <Multi_key> <minus> <minus> <period>    : "–" U2013 # EN DASH
 # <Multi_key> <minus> <minus> <minus>     : "—" U2014 # EM DASH
 # Used for dialogue statements.  In most fonts visually identical to
