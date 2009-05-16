@@ -1,36 +1,80 @@
 #!/usr/bin/env ruby1.8
-
+require 'log4r'
+include Log4r
 require File.dirname(__FILE__) + '/keysymdef.rb'
+include Keysymdef
 
 # Parser for XCompose compose definitions.
 #
-# Does not do includes.
+# TODO: - includes
+#       - "\nnn" description format
 class XComposeParser
-  attr_accessor :file, :parsed_lines
+  attr_accessor :file, :parsed_lines, :logger
 
-  class MapConflict < StandardError
-    def initialize(parser, l1, l2)
+  # class MapConflict < StandardError
+  #   def initialize(parser, l1, l2)
+  #   end
+  # end
+  # class MapPrefixConflict < StandardError
+  #   def initialize(parser, l1, l2)
+  #   end
+  # end
+  # class MapDuplicate < StandardError
+  #   def initialize(parser, l1, l2)
+  #   end
+  # end
+
+
+  def initialize(file, logger=nil)
+    if not file.respond_to? :read
+      file = File.open(file.to_str, 'r')
+    end
+    @file = file
+
+    if logger
+      @logger = Logger.new(logger.fullname + '::' + \
+                           "parser/#{@file.path}")
+    else
+      @logger = Logger.new("parser/#{@file.path}")
+      @logger.outputters << Outputter.stdout
+      @logger.level = DEBUG
+    end
+    @parsed_lines = []
+    self.parse
+  end
+
+  class ParseError < StandardError
+    def initialize(file)
+      super("Parse error at file #{@file.path}, line #{@file.lineno}.")
     end
   end
-  class MapPrefixConflict < StandardError
-    def initialize(parser, l1, l2)
-    end
-  end
-  class MapDuplicate < StandardError
-    def initialize(parser, l1, l2)
+
+  # Parse the file and fill @parsed_lines.
+  def parse
+    @file.seek 0
+    @file.each_line do |line|
+
+      if line.match(/^#/)
+        @logger.debug("Skipped comment at line #{@file.lineno}")
+      elsif line.match(/^\s*$/)
+        @logger.debug("Skipped blank line at line #{@file.lineno}")
+      elsif line.match(/^\s*include/)
+        @logger.warn("Skipped include at line #{@file.lineno}")
+      elsif line.index(':')
+        @parsed_lines[@file.lineno] = self.class.parse_line(line)
+        if not @parsed_lines[@file.lineno]
+          raise ParseError.new(@file)
+        end
+      else
+        raise ParseError.new(@file)
+      end
     end
   end
 
   # Parse a singe XCompose line.
   #
-  # Returns a hash with :map,
-  # :definition, :description and :comment, or nil if the line wasn't
-  # a Compose mapping.
+  # Returns a hash with :map, :definition, :description, and :comment.
   def self.parse_line(line)
-    return if (not line.index(':') \
-               or line.match(/^#/) \
-               or line.match(/^\s*include/))
-
     map_side, definition_side = line.split ':'
     definition, comment = definition_side.split '#'
     defchar, defdesc = definition.split(/\s/).reject {|s| s.empty?}
@@ -54,13 +98,28 @@ class XComposeParser
     parsed[:description] = defdesc.strip if defdesc
     parsed[:comment] = comment.strip if comment
 
-    parsed[:original] = line # for convenience
     parsed
   end
+
 
   class InvalidCodepoint < StandardError
     def initialize(invcd)
       super(invcd + " doesn't look like a codepoint")
+    end
+  end
+
+  class UnknownKeysymname < StandardError
+    def initialize(keysymname)
+      super(format("Couldn't find keysym name `%s' in database", keysymname))
+    end
+  end
+
+  class DescriptionConflict < StandardError
+    def initialize(parsed_line)
+      super(format("Description `%s' doesn't match definition `%s'",
+                   parsed_line[:description],
+                   parsed_line[:definition]))
+
     end
   end
 
@@ -83,21 +142,6 @@ class XComposeParser
     [codepoint].pack('U')
   end
 
-  class UnknownKeysymname < StandardError
-    def initialize(keysymname)
-      super(format("Couldn't find keysym name `%s' in database", keysymname))
-    end
-  end
-
-  class DescriptionConflict < StandardError
-    def initialize(parsed_line)
-      super(format("Description `%s' doesn't match definition` %s'",
-                   parsed_line[:description],
-                   parsed_line[:definition]))
-
-    end
-  end
-
   # Checks whether a parsed line's description matches its definition.
   def self.validate_desc(parsed_line)
     desc, defin = parsed_line[:description], parsed_line[:definition]
@@ -110,7 +154,7 @@ class XComposeParser
         return true
       end
     else # keysymname description
-      keysymval = Keysymdef::Keysyms[desc]
+      keysymval = Keysyms[desc]
       if not  keysymval
         raise UnknownKeysymname.new(desc)
       elsif defin != keysymval
@@ -121,42 +165,15 @@ class XComposeParser
     end
   end
 
-
-  def initialize(file)
-    if not file.respond_to? :read
-      file = File.open(file.to_str, 'r')
-    end
-    @file = file
-
-    @parsed_lines = []
-    self.parse
-  end
-
-  def parse
-    @file.seek 0
-    @file.each_line do |line|
-      parsed = self.class.parse_line(line)
-      if parsed
-        @parsed_lines[@file.lineno] = parsed
-        # TODO: log skipped lines
-        # TODO: includes?
-      end
-    end
-  end
-
-  def validate_desc(n)
-    self.class.validate_desc(@parsed_lines[n])
-  end
-
   def validate_descs()
     valid=true
     0.upto(@parsed_lines.size) do |i|
       next if not @parsed_lines[i]
       begin
-        validate_desc(i)
-      rescue UnknownKeysymname, DescriptionConflict => ex
-        $stderr.puts(format("In file #{@file.path}, line #{i}:"))
-        $stderr.puts("  " + ex.message + "\n\n")
+        self.class.validate_desc(@parsed_lines[i])
+        @logger.debug("Line #{i}: description valid.")
+      rescue UnknownKeysymname, DescriptionConflict, InvalidCodepoint => ex
+        @logger.error("Line #{i}: #{ex.message}")
         valid = false
       end
     end
@@ -167,14 +184,17 @@ end
 
 if __FILE__ == $0
   exit if not ARGV[0]
-  p = XComposeParser.new(ARGV[0])
+  l = Logger.new('xcompose')
+  l.level=INFO
+  l.outputters << Outputter.stdout
+  p = XComposeParser.new(ARGV[0], l)
 
   valid = true
 
   if p.validate_descs
-    puts "File #{p.file.path}: Descriptions ok."
+    p.logger.info("Descriptions ok.")
   else
-    puts "File #{p.file.path}: Description errors."
+    p.logger.error("Description errors.")
     valid=false
   end
 
