@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby1.8
+require 'optparse'
+require 'ostruct'
 require 'log4r'
 include Log4r
 require File.dirname(__FILE__) + '/keysymdef.rb'
@@ -33,9 +35,9 @@ class XComposeParser
 
     if logger
       @logger = Logger.new(logger.fullname + '::' + \
-                           "parser/#{@file.path}")
+                           "parser:#{@file.path}")
     else
-      @logger = Logger.new("parser/#{@file.path}")
+      @logger = Logger.new("parser:#{@file.path}")
       @logger.outputters << Outputter.stdout
       @logger.level = DEBUG
     end
@@ -183,22 +185,44 @@ class XComposeParser
 end
 
 if __FILE__ == $0
-  exit if not ARGV[0]
-  l = Logger.new('xcompose')
-  l.level=INFO
-  l.outputters << Outputter.stdout
-  p = XComposeParser.new(ARGV[0], l)
+  options = OpenStruct.new
+  OptionParser.new {|op|
+    op.banner = "Usage: #{$0} [options] <Compose files...>"
+    op.on('v', '--verbose', 'Increase verbosity') do |v|
+      options.verbose = v
+    end
+  }.parse!
 
-  valid = true
-
-  if p.validate_descs
-    p.logger.info("Descriptions ok.")
-  else
-    p.logger.error("Description errors.")
-    valid=false
+  exit 1 if not ARGV[0]
+  ARGV.each do |fpath|
+    if not File.readable? fpath
+      $stderr.puts "Cannot read file #{fpath}"
+      exit 1
+    end
   end
 
-  if valid
+  l = Logger.new('xcompose')
+  if options.verbose
+    l.level=DEBUG
+  else
+    l.level=INFO
+  end
+  l.outputters << Outputter.stdout
+
+
+  all_valid = true
+  ARGV.each do |fpath|
+    p = XComposeParser.new(fpath, l)
+
+    if p.validate_descs
+      p.logger.info("Descriptions ok.")
+    else
+      p.logger.error("Description errors.")
+      all_valid=false if all_valid
+    end
+  end
+
+  if all_valid
     exit 0
   else
     exit 1
