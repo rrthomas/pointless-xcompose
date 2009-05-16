@@ -47,7 +47,7 @@ class XComposeParser
 
   class ParseError < StandardError
     def initialize(file)
-      super("Parse error at file #{@file.path}, line #{@file.lineno}.")
+      super("Parse error at file #{@file.path}:#{@file.lineno}.")
     end
   end
 
@@ -173,9 +173,9 @@ class XComposeParser
       next if not @parsed_lines[i]
       begin
         self.class.validate_desc(@parsed_lines[i])
-        @logger.debug("Line #{i}: description valid.")
+        @logger.debug("#{i}: description valid.")
       rescue UnknownKeysymname, DescriptionConflict, InvalidCodepoint => ex
-        @logger.error("Line #{i}: #{ex.message}")
+        @logger.error("#{i}: #{ex.message}")
         valid = false
       end
     end
