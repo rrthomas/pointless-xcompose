@@ -6,6 +6,30 @@ include Log4r
 require File.dirname(__FILE__) + '/keysymdef.rb'
 include Keysymdef
 
+module Enumerable
+  # [1,2,3] -> [[1,2],[1,3],[2,3]]
+  def pairs
+    p=[]
+    self.each_with_index do |item1, i|
+      self[(i+1)..self.size].each do |item2|
+        p << [item1, item2]
+      end
+    end
+    p
+  end
+  # [1,2,3] -> [[1,1],[1,2],[1,3],[2,2],[2,3],[3,3]]
+  def pairs_with_identity
+    p=[]
+    self.each_with_index do |item1, i|
+      self[(i)..self.size].each do |item2|
+        p << [item1, item2]
+      end
+    end
+    p
+  end
+end
+
+
 # Parser for XCompose compose definitions.
 #
 # TODO: - includes
@@ -42,7 +66,6 @@ class XComposeParser
       @logger.level = DEBUG
     end
     @parsed_lines = []
-    self.parse
   end
 
   class ParseError < StandardError
@@ -201,7 +224,7 @@ if __FILE__ == $0
     end
   end
 
-  l = Logger.new('xcompose')
+  l = Logger.new('xcompose_parser')
   if options.verbose
     l.level=DEBUG
   else
@@ -210,21 +233,31 @@ if __FILE__ == $0
   l.outputters << Outputter.stdout
 
 
-  all_valid = true
+  l.info("Checking basic syntax...")
+  parsers=[]
   ARGV.each do |fpath|
     p = XComposeParser.new(fpath, l)
+    begin
+      p.parse
+      p.logger.info("Parsed fine.")
+      parsers << p
+    rescue XComposeParser::ParseError => ex
+      l.error(ex.message)
+      l.info("#{p.file.path} will be skipped")
+    end
+  end
 
+  l.info("Checking for bad descriptions...")
+
+  parsers.each do |p|
     if p.validate_descs
       p.logger.info("Descriptions ok.")
     else
       p.logger.error("Description errors.")
-      all_valid=false if all_valid
     end
   end
 
-  if all_valid
-    exit 0
-  else
-    exit 1
-  end
+  # l.info("Checking for internal conflicts...")
+
+
 end
