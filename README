@@ -152,7 +152,7 @@ INSTALL
 
 4. Skip to the next step if you don’t use X deadkeys.  If you do use
    them (for example, if you use an XKB layout like “us_intl”,
-   “us(intl)”, or “br¨), let’s create deadkey versions of the mappings
+   “us(intl)”, or “br”), let’s create deadkey versions of the mappings
    now:
 
     pointless-xcompose$ ./bin/make-dead-compose.sh \
