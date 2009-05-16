@@ -169,11 +169,11 @@ INSTALL
 
 5. If you already have a Compose (Multi_key) key, skip to the next
    step.  Else let’s configure one now.  There’s a new way of doing
-   this using setxkbmap, but I’ve seen it not working, so I recommend
-   you use good old xmodmap(1) instead.  First decide which key you
-   want to use; most people go with Menu or right Windows.  Open a
-   console, run xev(1), and press your chosen key a few times.  Take
-   note of its keycode in the line “keycode <nnn> = <blah>” (for
+   this using setxkbmap(1), but I’ve seen it not working, so I
+   recommend you use good old xmodmap(1) instead.  First decide which
+   key you want to use; most people go with Menu or right Windows.
+   Open a console, run xev(1), and press your chosen key a few times.
+   Take note of its keycode in the line “keycode <nnn> = <blah>” (for
    example, my Menu key is keycode 135).  Then run the following
    command:
 
