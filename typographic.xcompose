@@ -87,7 +87,7 @@
 
 # X default will map both ?! and !? to interrobang «‽».  Here we set one
 # of them to the U2E18 gnaborretni «⸘» instead.
-## Multi_key> <question> <exclam>: "‽"   U203D # INTERROBANG
+## <Multi_key> <question> <exclam>: "‽"   U203D # INTERROBANG
 <Multi_key> <exclam> <question>: "⸘"   U2E18 # GNABORRETNI
 
 <Multi_key> <colon> <period>: "⸪" U2E2A # TWO DOTS OVER ONE DOT
@@ -101,24 +101,24 @@
 
 
 # Just citing X defaults for ease of reference.
-## Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
-## Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
-## Multi_key> <less> <less>        	: "«"   guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
-## Multi_key> <greater> <greater>  	: "»"   guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
-## Multi_key> <less> <apostrophe>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
-## Multi_key> <apostrophe> <less>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
-## Multi_key> <greater> <apostrophe> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
-## Multi_key> <apostrophe> <greater> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
-## Multi_key> <comma> <apostrophe> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
-## Multi_key> <apostrophe> <comma> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
-## Multi_key> <less> <quotedbl>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
-## Multi_key> <quotedbl> <less>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
-## Multi_key> <greater> <quotedbl> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
-## Multi_key> <quotedbl> <greater> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
-## Multi_key> <comma> <quotedbl>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
-## Multi_key> <quotedbl> <comma>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
-## Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
-## Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
+## <Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+## <Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+## <Multi_key> <less> <less>        	: "«"   guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+## <Multi_key> <greater> <greater>  	: "»"   guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+## <Multi_key> <less> <apostrophe>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+## <Multi_key> <apostrophe> <less>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+## <Multi_key> <greater> <apostrophe> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+## <Multi_key> <apostrophe> <greater> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+## <Multi_key> <comma> <apostrophe> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
+## <Multi_key> <apostrophe> <comma> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
+## <Multi_key> <less> <quotedbl>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+## <Multi_key> <quotedbl> <less>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+## <Multi_key> <greater> <quotedbl> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+## <Multi_key> <quotedbl> <greater> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+## <Multi_key> <comma> <quotedbl>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
+## <Multi_key> <quotedbl> <comma>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
+## <Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
+## <Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
 
 <Multi_key> <greater> <period>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
 <Multi_key> <less> <period>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
@@ -140,16 +140,16 @@
 <Multi_key> <bar> <bar>    : "¦" brokenbar
 
 # X defaults for reference, &c.
-## Multi_key> <T> <H>              	: "Þ"   THORN # LATIN CAPITAL LETTER THORN
-## Multi_key> <t> <h>              	: "þ"   thorn # LATIN SMALL LETTER THORN
-## Multi_key> <D> <H>              	: "Ð"   ETH # LATIN CAPITAL LETTER ETH
-## Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
-## Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
-## Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
-## Multi_key> <O> <E>              	: "Œ"   OE # LATIN CAPITAL LIGATURE OE
-## Multi_key> <o> <e>              	: "œ"   oe # LATIN SMALL LIGATURE OE
-## Multi_key> <A> <E>              	: "Æ"   AE # LATIN CAPITAL LETTER AE
-## Multi_key> <a> <e>              	: "æ"   ae # LATIN SMALL LETTER AE
+## <Multi_key> <T> <H>              	: "Þ"   THORN # LATIN CAPITAL LETTER THORN
+## <Multi_key> <t> <h>              	: "þ"   thorn # LATIN SMALL LETTER THORN
+## <Multi_key> <D> <H>              	: "Ð"   ETH # LATIN CAPITAL LETTER ETH
+## <Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
+## <Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
+## <Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
+## <Multi_key> <O> <E>              	: "Œ"   OE # LATIN CAPITAL LIGATURE OE
+## <Multi_key> <o> <e>              	: "œ"   oe # LATIN SMALL LIGATURE OE
+## <Multi_key> <A> <E>              	: "Æ"   AE # LATIN CAPITAL LETTER AE
+## <Multi_key> <a> <e>              	: "æ"   ae # LATIN SMALL LETTER AE
 
 # Spelled out
 # ===========

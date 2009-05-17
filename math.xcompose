@@ -60,6 +60,6 @@
 <Multi_key> <bracketleft> <bracketright>: "∎" # END OF PROOF
 
 # % ÷ 10
-## Multi_key> <percent> <o>: "‰"   U2030 # PER MILLE SIGN
+## <Multi_key> <percent> <o>: "‰"   U2030 # PER MILLE SIGN
 # % ÷ 100; can’t extend with <o> <o> due to XCompose substring issue.
 <Multi_key> <percent> <O>: "‱"   U2031 # PER MYRIAD SIGN
