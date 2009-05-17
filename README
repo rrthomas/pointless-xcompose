@@ -91,6 +91,7 @@ WHAT’S INCLUDED
  - arrows.xcompose:           Pretty arrows.
  - cjk.xcompose:              Chinese-Japanese-Korean punctuation.
  - dingbats.xcompose:         Cute drawings.
+ - enclosed.xcompose:         Stuff in circles, parenthesis, &c.
  - fractions.xcompose:        …Fractions.
  - hyphen-macron.xcompose:    For all you Japanese and Greek students,
                               macrons using hyphen instead of
@@ -231,12 +232,12 @@ means you probably don’t want to set Compose shortcuts for U2A94
 GREATER-THAN ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL
 (⪔).
 
-All the mappings here <del>have been</del><ins>will be</ins>
-painstakenly compared agains Xorg 1.6.0’s en_US Compose file for
-conflicts.  Several of my entries are present in X’s Compose as
-another sequence, but I prefer one that’s more mnemonic.  Some entries
-are duplicated for consistency sake; these are commented out with two
-## symbols..
+All the mappings here have been painstakenly compared agains Xorg
+1.6.0’s en_US Compose file for conflicts.  Several of my entries are
+present in X’s Compose as another sequence, but I prefer one that’s
+more mnemonic.  Some entries are duplicated for consistency sake;
+these are commented out with two ## symbols.  The few entires that
+replace X mappings are marked as such.
 
 Conventions:
 
