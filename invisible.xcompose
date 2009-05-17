@@ -1,9 +1,9 @@
 # -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
-<Multi_key> <space> <space>: " "   nobreakspace # NO-BREAK SPACE
+## <Multi_key> <space> <space>: " "   nobreakspace # NO-BREAK SPACE
 <Multi_key> <space> <0>: "​" U200B # ZERO WIDTH SPACE
-<Multi_key> <space> <minus>: "­" U00AD # SOFT HYPHEN
+# Conflicts with X shortcut for cedilla “¸”
 <Multi_key> <space> <comma>: "⁣" U2063 # INVISIBLE COMMA
 # nut
 <Multi_key> <space> <n>: " " U2002   # EN SPACE
@@ -21,7 +21,7 @@
 # tabular space = the width of a digit if font is fixed-digit 
 <Multi_key> <space> <Tab>: " " U2007 # FIGURE SPACE
 
-<Multi_key> <space> <period>: " "   U2008 # PUNCTUATION SPACE
+## <Multi_key> <space> <period>: " "   U2008 # PUNCTUATION SPACE
 
 <Multi_key> <space> <t>: " " U2009 # THIN SPACE
 <Multi_key> <space> <h>: " " U200A # HAIR SPACE

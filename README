@@ -235,7 +235,8 @@ All the mappings here <del>have been</del><ins>will be</ins>
 painstakenly compared agains Xorg 1.6.0’s en_US Compose file for
 conflicts.  Several of my entries are present in X’s Compose as
 another sequence, but I prefer one that’s more mnemonic.  Some entries
-are duplicated for consistency sake; these are commented out.
+are duplicated for consistency sake; these are commented out with two
+## symbols..
 
 Conventions:
 

@@ -2,24 +2,24 @@
 # vim: encoding=utf-8 ft=conf
 
 # X already includes mappings of the form:
-^ ## Multi_key> <parenleft> <0> <parenright> 	: "⓪"   U24EA # CIRCLED DIGIT ZERO
-^ ## Multi_key> <parenleft> <1> <parenright> 	: "①"   U2460 # CIRCLED DIGIT ONE
-^ ## Multi_key> <parenleft> <2> <parenright> 	: "②"   U2461 # CIRCLED DIGIT TWO
+## Multi_key> <parenleft> <0> <parenright> 	: "⓪"   U24EA # CIRCLED DIGIT ZERO
+## Multi_key> <parenleft> <1> <parenright> 	: "①"   U2460 # CIRCLED DIGIT ONE
+## Multi_key> <parenleft> <2> <parenright> 	: "②"   U2461 # CIRCLED DIGIT TWO
 # ③, ④… ⑩, ⑪, ⑫… ⑳, ㉑… ㊿
 
-^ ## Multi_key> <parenleft> <A> <parenright> 	: "Ⓐ"   U24B6 # CIRCLED LATIN CAPITAL LETTER A
-^ ## Multi_key> <parenleft> <B> <parenright> 	: "Ⓑ"   U24B7 # CIRCLED LATIN CAPITAL LETTER B
-^ ## Multi_key> <parenleft> <C> <parenright> 	: "Ⓒ"   U24B8 # CIRCLED LATIN CAPITAL LETTER C
+## Multi_key> <parenleft> <A> <parenright> 	: "Ⓐ"   U24B6 # CIRCLED LATIN CAPITAL LETTER A
+## Multi_key> <parenleft> <B> <parenright> 	: "Ⓑ"   U24B7 # CIRCLED LATIN CAPITAL LETTER B
+## Multi_key> <parenleft> <C> <parenright> 	: "Ⓒ"   U24B8 # CIRCLED LATIN CAPITAL LETTER C
 # …Ⓩ
 
-^ ## Multi_key> <parenleft> <a> <parenright> 	: "ⓐ"   U24D0 # CIRCLED LATIN SMALL LETTER A
-^ ## Multi_key> <parenleft> <b> <parenright> 	: "ⓑ"   U24D1 # CIRCLED LATIN SMALL LETTER B
-^ ## Multi_key> <parenleft> <c> <parenright> 	: "ⓒ"   U24D2 # CIRCLED LATIN SMALL LETTER C
+## Multi_key> <parenleft> <a> <parenright> 	: "ⓐ"   U24D0 # CIRCLED LATIN SMALL LETTER A
+## Multi_key> <parenleft> <b> <parenright> 	: "ⓑ"   U24D1 # CIRCLED LATIN SMALL LETTER B
+## Multi_key> <parenleft> <c> <parenright> 	: "ⓒ"   U24D2 # CIRCLED LATIN SMALL LETTER C
 # …ⓩ
 
 # hangul
-^ ## Multi_key> <parenleft> <U1100> <parenright> 	: "㉠"   U3260 # CIRCLED HANGUL KIYEOK
-^ ## Multi_key> <parenleft> <U1102> <parenright> 	: "㉡"   U3261 # CIRCLED HANGUL NIEUN
+## Multi_key> <parenleft> <U1100> <parenright> 	: "㉠"   U3260 # CIRCLED HANGUL KIYEOK
+## Multi_key> <parenleft> <U1102> <parenright> 	: "㉡"   U3261 # CIRCLED HANGUL NIEUN
 # …&c.
 
 # Since X uses () for circled, we use [] for parenthised.
@@ -87,16 +87,16 @@
 <Multi_key> <9> <period>   : "⒐" U2490
 <Multi_key> <1> <0> <period>  : "⒑" U2491
 # Various of those prefix-conflicts with X sequences for fractions.
-^ ## Multi_key> <1> <1> <period>  : "⒒" U2492
-^ ## Multi_key> <1> <2> <period>  : "⒓" U2493
-^ ## Multi_key> <1> <3> <period>  : "⒔" U2494
-^ ## Multi_key> <1> <4> <period>  : "⒕" U2495
-^ ## Multi_key> <1> <5> <period>  : "⒖" U2496
-^ ## Multi_key> <1> <6> <period>  : "⒗" U2497
-^ ## Multi_key> <1> <7> <period>  : "⒘" U2498
-^ ## Multi_key> <1> <8> <period>  : "⒙" U2499
-^ ## Multi_key> <1> <9> <period>  : "⒚" U249A
-^ ## Multi_key> <2> <0> <period>  : "⒛" U249B
+## Multi_key> <1> <1> <period>  : "⒒" U2492
+## Multi_key> <1> <2> <period>  : "⒓" U2493
+## Multi_key> <1> <3> <period>  : "⒔" U2494
+## Multi_key> <1> <4> <period>  : "⒕" U2495
+## Multi_key> <1> <5> <period>  : "⒖" U2496
+## Multi_key> <1> <6> <period>  : "⒗" U2497
+## Multi_key> <1> <7> <period>  : "⒘" U2498
+## Multi_key> <1> <8> <period>  : "⒙" U2499
+## Multi_key> <1> <9> <period>  : "⒚" U249A
+## Multi_key> <2> <0> <period>  : "⒛" U249B
 
 
 # The idea here is that “!” = “not” = inverted.  Despite being called

@@ -2,9 +2,5 @@
 # vim: encoding=utf-8 ft=conf
 
 # X defaults
-# <Multi_key> <t> <m> : "™" U2122 # TRADE MARK SIGN
-# <Multi_key> <m> <u>: "µ"   mu # MICRO SIGN
-<Multi_key> <parenleft> <c> <parenright>: "©" copyright # COPYRIGHT SIGN
-<Multi_key> <parenleft> <C> <parenright>: "©" copyright # COPYRIGHT SIGN
-<Multi_key> <parenleft> <r> <parenright>: "®" registered # REGISTERED SIGN
-<Multi_key> <parenleft> <R> <parenright>: "®" registered # REGISTERED SIGN
+## Multi_key> <t> <m> : "™" U2122 # TRADE MARK SIGN
+## Multi_key> <m> <u>: "µ"   mu # MICRO SIGN
