@@ -1,0 +1,26 @@
+#!/bin/bash
+
+parser="bin/xcompose_parser.rb"
+ignores="
+invisible.xcompose:.*Compose:.*<Multi_key><space><comma> -> ⁣ vs. ¸
+math.xcompose:.*Compose:.*<Multi_key><slash><slash> -> ∕ vs. \
+typographic.xcompose:.*Compose.*<Multi_key><exclam><question> -> ⸘ vs. ‽
+typographic.xcompose:.*Compose.*<Multi_key><plus><plus> -> ‡ vs. 
+"
+
+files="/usr/share/X11/locale/en_US.UTF-8/Compose"
+files+=" $(ls *.xcompose)"
+
+
+
+old_ifs="$IFS"
+ifs="
+"
+ignore_regexp='\\('
+for line in $ignores; do
+    ignore_regexp+="${line}\\|"
+done
+ignore_regexp+='\\)'
+ifs="$old_ifs"
+
+$parser -q $files | grep -v "$ignore_regexp" 
