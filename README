@@ -243,7 +243,7 @@ Conventions:
 - Termination convention (copied from X):
   - A repeated character: Compose v v → ✓
   - Where that would conflict, a period:
-    - Compose - .      → − (minus sign)
+    - Compose - .      → − (true hypen)
     - Compose - - .    → – (en-bar)
     - Compose - - -    → — (em-bar)
   (Side note: the difference between the above three characters is

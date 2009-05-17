@@ -8,21 +8,24 @@
 # X name refers to the ASCII hyphen-minus, not to the true minus
 # character.
 
-# <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN
+## <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN
 <Multi_key> <equal> <minus>: "±" plusminus
 <Multi_key> <minus> <equal>: "±" plusminus
 <Multi_key> <minus> <plus>: "±" plusminus
 
-# <Multi_key> <x> <x>: "×" multiply # MULTIPLICATION SIGN
-<Multi_key> <minus> <period>: "−" U2212 # MINUS SIGN' (U+2212)
-# <Multi_key> <colon> <minus>: "÷" division # DIVISION SIGN
-# <Multi_key> <minus> <colon>: "÷" division # DIVISION SIGN
+<Multi_key> <minus> <m>            : "−" U2212 # MINUS SIGN
+<Multi_key> <minus> <KP_Subract>   : "−" U2212 #  MINUS SIGN
+## <Multi_key> <colon> <minus>     : "÷" division # DIVISION SIGN
+## <Multi_key> <minus> <colon>     : "÷" division # DIVISION SIGN
+## <Multi_key> <x> <x>             : "×" multiply # MULTIPLICATION SIGN
 
 # 2215 is different from both the ASCII slash (which Unicode
 # confusingly call “solidus”) and the U2044 fraction slash ⁄, which
-# everyone _except_ unicode call “solidus”. Use the first as operator,
-# the second for fractions.
-# <slash>:                   "/" U002F # ASCII SLASH
+# everyone _except_ unicode call “solidus”. Use U2215 as a math
+# operator, U2044 for fractions.
+
+## slash>:                   "/" U002F # ASCII SLASH
+## Conflicts with X sequence for \ ASCII backslash
 <Multi_key> <slash> <slash>: "∕" U2215 # DIVISION SLASH
 <Multi_key> <slash> <period>: "⁄" U2044 # FRACTION SLASH
 

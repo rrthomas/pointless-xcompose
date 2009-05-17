@@ -11,7 +11,6 @@
 <Multi_key> <v> <bar>: "↓" U2193
 <Multi_key> <bar> <v>: "↓" U2193
 
-<Multi_key> <slash> <less> <minus>      : "↚"   U219A # LEFTWARDS ARROW WITH STROKE
-<Multi_key> <slash> <minus> <greater>   : "↛"   U219B # RIGHTWARDS ARROW WITH STROKE
-<Multi_key> <slash> <less> <greater>    : "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
-
+<Multi_key> <bar> <less> <minus>      : "↚"   U219A # LEFTWARDS ARROW WITH STROKE
+<Multi_key> <bar> <minus> <greater>   : "↛"   U219B # RIGHTWARDS ARROW WITH STROKE
+<Multi_key> <bar> <less> <greater>    : "↮"   U21AE # LEFT RIGHT ARROW WITH STROKE
