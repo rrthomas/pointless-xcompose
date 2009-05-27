@@ -1,6 +1,6 @@
 All files in this distribution use UTF-8 pointlessly.  Read them in a
-font with good Unicode coverage — say, Bitstream Vera Sans Mono or GNU
-unifont (xfonts-unifont).
+font with good Unicode coverage — say, DejaVu Sans Mono or GNU unifont
+(xfonts-unifont).
 
 Background
 ==========
