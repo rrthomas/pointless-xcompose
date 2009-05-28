@@ -61,14 +61,15 @@
 ## <Multi_key> <minus> <minus> <period> : "–" U2013 # en dash
 ## <Multi_key> <minus> <minus> <minus>  : "—" U2014 # em dash
 
+# Literally counter-intuitive? Press Return when you don’t want line breks.
 <Multi_key> <minus> <Return>                : "‑" U2011 # non-breaking hyphen
-<Multi_key> <minus> <0>                     : "‒" U2012 # figure dash
+<Multi_key> <minus> <numbersign>            : "‒" U2012 # figure dash
 <Multi_key> <minus> <minus> <underscore>    : "―" U2015 # horizontal bar
 # minus sign at math.xcompose
 
 <Multi_key> <minus> <Tab>             : "­" U00AD # SOFT HYPHEN
 
-# Different from ASCII ~
+# Different from ASCII tilde, and from CJK full-width dash 〜 (nyoro)
 <Multi_key> <minus> <asciitilde>:         "⁓" U2053 # SWUNG DASH
 <Multi_key> <asciitilde> <minus>:         "⁓" U2053 # SWUNG DASH
 

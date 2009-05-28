@@ -19,7 +19,7 @@
 <Multi_key> <space> <6>: " " U2006 # SIX-PER-EM SPACE
 
 # tabular space = the width of a digit if font is fixed-digit 
-<Multi_key> <space> <Tab>: " " U2007 # FIGURE SPACE
+<Multi_key> <space> <numbersign>: " " U2007 # FIGURE SPACE
 
 ## <Multi_key> <space> <period>: " "   U2008 # PUNCTUATION SPACE
 
