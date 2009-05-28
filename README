@@ -1,4 +1,4 @@
-All files in this distribution use UTF-8 pointlessly.  Read them in a
+All files in this distribution use UTF‐8 pointlessly.  Read them in a
 font with good Unicode coverage — say, DejaVu Sans Mono or GNU unifont
 (xfonts-unifont).
 
@@ -18,18 +18,18 @@ Your keyboard doesn’t have nearly enough keys to input all them.
 In X — the GUI system used in Linux, BSD, Solaris &c. — there are a
 number of different ways to input these extra characters:
 
- - Copy and paste from the web, a reference file, or a character map
-   utility such as gucharmap(1).  Easy to do and fail-proof, but
-   tedious and labor-intensive.
+ • Copy and paste from the web, a reference file, or a character map
+   utility such as gucharmap(1).  Easy to do and fail‐proof, but
+   tedious and labor‐intensive.
 
- - Enter the Unicode character by its code point (a number that
-   uniquely identifies it; tipically in four-digit hexadecimal).  Ways
+ • Enter the Unicode character by its code point (a number that
+   uniquely identifies it; tipically in four‐digit hexadecimal).  Ways
    to input these numbers include the Ctrl+Shift+u shortcut on certain
-   setups, the ucs-insert Emacs function, web services, and charmap
-   apps.  Less labor-intensive, but requires you to memorize or look
+   setups, the ucs‐insert Emacs function, web services, and charmap
+   apps.  Less labor‐intensive, but requires you to memorize or look
    up the numbers for every character you want.
 
- - Use one of your keys as a character modifier — tipically the right
+ • Use one of your keys as a character modifier — tipically the right
    Alt key (aka AltGr), set as ISO_Level3_Shift or Mode_switch (these
    are X names for key meanings).  In my experience this method tends
    to be buggy; for example, in the Xorg version I’m using right now,
@@ -39,13 +39,13 @@ number of different ways to input these extra characters:
    it’s a method that limits you to one extra character per key (or
    two, combined with Shift).
 
- - Use a X keyboard layout with deadkeys.  A “dead” key is one that
+ • Use a X keyboard layout with deadkeys.  A “dead” key is one that
    prints nothing on the screen; when you press another key, it will
    decide on a character that combines both and output it.  These are
    common with users of European languages (most, for example, have a
    “dead acute” key that will combine with vowels to make áéíóú, &c.).
 
- - Use a custom input method (IM).  These are extra software that sit
+ • Use a custom input method (IM).  These are extra software that sit
    between your input and X and use sophisticated methods to translate
    keypresses to characters; examples include SCIM, uim, anthy, &c.
    This method is necessary for users of complex languages like
@@ -55,10 +55,10 @@ number of different ways to input these extra characters:
    no current input method make it simple to extend with your own
    arbitrary character mappings (though they often are easy to extend
    with characters of the language they target).  Some old IMs break
-   deadkeys, making the life of bilingual European-Asian speakers even
+   deadkeys, making the life of bilingual European‐Asian speakers even
    more difficult than it already is.
 
- - Use X Compose mappings.  This method is a X mechanism to input
+ • Use X Compose mappings.  This method is a X mechanism to input
    arbitrary characters by pressing fixed key sequences.  Most Compose
    sequences begin with the Compose key, also known as Multi_key (not
    available in standard keyboards; you have to assign a Windows key
@@ -67,56 +67,56 @@ number of different ways to input these extra characters:
    builtin mappings described in /usr/share/X11/locale/*/Compose, and
    you can add your own in ~/.XCompose.  Compose has its quirks, but
    IMHO it’s the easiest method to extend in your own way and use
-   system-wide.
+   system‐wide.
 
 WHATIS
 ======
 
-Pointless-XCompose is a distribution of extra Compose mappings for
+Pointless‐XCompose is a distribution of extra Compose mappings for
 many uncommon Unicode characters (actually it’s just my ~/.XCompose
 file better organized and documented).  I encourage interested parties
 to use it as a starting point to make your own Compose sequences.  I
 lost so many days in this useless timesink, I want to get revenge by
 making the world suffer through it too.
 
-I also included a few other potentially interesting Compose-related
+I also included a few other potentially interesting Compose‐related
 stuff, such as a selection of standard X mappings, a script to
 generate deadkey variants of Compose files, &c.  Or, to be throughly:
 
 WHAT’S INCLUDED
 ===============
- - doc/README:                This.
+ • doc/README:                This.
 
- - abbrevs.xcompose:          Abbreviations.
- - arrows.xcompose:           Pretty arrows.
- - cjk.xcompose:              Chinese-Japanese-Korean punctuation.
- - dingbats.xcompose:         Cute drawings.
- - enclosed.xcompose:         Stuff in circles, parenthesis, &c.
- - fractions.xcompose:        …Fractions.
- - hyphen-macron.xcompose:    For all you Japanese and Greek students,
+ • abbrevs.xcompose:          Abbreviations.
+ • arrows.xcompose:           Pretty arrows.
+ • cjk.xcompose:              Chinese‐Japanese‐Korean punctuation.
+ • dingbats.xcompose:         Cute drawings.
+ • enclosed.xcompose:         Stuff in circles, parenthesis, &c.
+ • fractions.xcompose:        …Fractions.
+ • hyphen-macron.xcompose:    For all you Japanese and Greek students,
                               macrons using hyphen instead of
                               underscore.
- - invisible.xcompose:        Spaces, byte-order mark, soft hyphen, &
+ • invisible.xcompose:        Spaces, byte‐order mark, soft hyphen, &
                               other invisible characters.
- - math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
- - typographic.xcompose:      Typographic symbols.  Impress your
+ • math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
+ • typographic.xcompose:      Typographic symbols.  Impress your
                               alistapart.com friends.
 
- - examples/.XCompose:         Sample ~/.XCompose file to include all
+ • examples/.XCompose:         Sample ~/.XCompose file to include all
                                the *.xcompose files described above.
- - bin/make-dead-compose.rb:   You want to run this if you use a
+ • bin/make-dead-compose.rb:   You want to run this if you use a
                                keyboard layout with deadkeys.
- - examples/dead.xcompose:     Example output of make-dead-keys.rb for
+ • examples/dead.xcompose:     Example output of make-dead-keys.rb for
                                everything in this package plus today’s
                                Xorg Compose table.
 
- - doc/xorg-compose-extracts:  Selected, annotated reading material.
+ • doc/xorg-compose-extracts:  Selected, annotated reading material.
 
- - bin/*.rb:                   Misc Ruby XCompose parsers and
+ • bin/*.rb:                   Misc Ruby XCompose parsers and
                                validators.  Not likely to be
                                interesting to anyone at the moment.
 
- - doc/license.txt:            “Public domain.”
+ • doc/license.txt:            “Public domain.”
 
 
 INSTALL
@@ -126,7 +126,7 @@ INSTALL
    /usr/local/share/pointless-xcompose/).
 
 2. If you have a ~/.XCompose file, skip to the next step.  If not,
-   create one (notice the two-letter capitalization).  If you’re lazy
+   create one (notice the two‐letter capitalization).  If you’re lazy
    you can copy the one in examples/ and skip to 4, else keep
    reading.  You probably want this line in it to pull default X
    compose mappings from
@@ -134,7 +134,7 @@ INSTALL
 
      include "%L"
 
-   If you use an en_US.UTF-8 locale but want another locale-specific X
+   If you use an en_US.UTF-8 locale but want another locale‐specific X
    mapping, include that one instead.  I’m thinking Brazilian users,
    who most probably will want this line to make dead_acute + c
    generate a cedilla instead of a c with accent:
@@ -194,7 +194,7 @@ INSTALL
    UTF-8 locale set, though I didn’t test.
 
 7. Fix GTK.  XCompose configuration unfortunately won’t work in GTK
-   apps by default; GTK defines its own static, compile-time,
+   apps by default; GTK defines its own static, compile‐time,
    nonconfigurable compose mechanism which overrides X.  They do copy
    X Compose mappings from time to time, so GTK compose most of the
    time are almost the same as X defaults.  It will break where you
@@ -222,8 +222,8 @@ see what mappings are included.
 
 Compose settings can conflict due to lack of terminators.  Suppose
 you have this sequence:
- - Compose . . =      → ·
- - Compose . . . =    → …
+ • Compose . . =      → ·
+ • Compose . . . =    → …
 Now when you type «Compose . .», X won’t print anything because it’s
 waiting for «Compose . . .» (IMHO it should print · and then change it
 to … should you type another period, but I digress).  In other words,
@@ -241,21 +241,21 @@ replace X mappings are marked as such.
 
 Conventions:
 
-- Termination convention (copied from X):
-  - A repeated character: Compose v v → ✓
-  - Where that would conflict, a period:
-    - Compose - .      → − (true hypen)
-    - Compose - - .    → – (en-bar)
-    - Compose - - -    → — (em-bar)
-  (Side note: the difference between the above three characters is
-  small in monospaced fonts, but large in proportionals).
+ • Termination convention (copied from X):
+   ◦ A repeated character: Compose v v → ✓
+   ◦ Where that would conflict, a period:
+     ‣ Compose - .      → − (true hypen)
+     ‣ Compose - - .    → – (en‐bar)
+     ‣ Compose - - -    → — (em‐bar)
+   (Side note: the difference between the above three characters is
+    small in monospaced fonts, but large in proportionals).
 
-- Often I set repeats for key permutations, for typing convenience:
-  - Compose + -      → ±
-  - Compose - +      → ±
+ • Often I set repeats for key permutations, for typing convenience:
+   ◦ Compose + -      → ±
+   ◦ Compose - +      → ±
 
-- Often I set repeats for shift-less equivalents, for typing convenience:
-  - Compose = -      → ± (“equals” (=) is shift-less +)
+ • Often I set repeats for shift‐less equivalents, for typing convenience:
+   ◦ Compose = -      → ± (“equals” (=) is shift-less +)
 
 # vim: encoding=utf-8
 # Emacs:

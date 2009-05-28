@@ -1,9 +1,9 @@
 # -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
-# Macrons are more convenient with (shift-less) hyphen than X default
-# (shift-full) underscore.  Notice the <minus> X name refers to the
-# ASCII hyphen-minus, not to the true minus character.
+# Macrons are more convenient with (shift‐less) hyphen than X default
+# (shift‐full) underscore.  Notice the <minus> X name refers to the
+# ASCII hyphen‐minus, not to the true minus character.
 #
 # It would be cool if we could do this using <Multi_key> <minus> :
 # dead_macron, but doesn’t work due to conflict.

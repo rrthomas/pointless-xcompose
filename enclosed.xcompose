@@ -86,7 +86,7 @@
 <Multi_key> <8> <period>   : "⒏" U248F
 <Multi_key> <9> <period>   : "⒐" U2490
 <Multi_key> <1> <0> <period>  : "⒑" U2491
-# Various of those two-digit period forms have prefix-conflicts with X
+# Various of those two‐digit period forms have prefix‐conflicts with X
 # sequences for fractions.
 # <Multi_key> <1> <1> <period>  : "⒒" U2492
 # <Multi_key> <1> <2> <period>  : "⒓" U2493

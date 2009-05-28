@@ -32,8 +32,8 @@ end
 
 # Parser for XCompose compose definitions.
 #
-# TODO: - includes
-#       - "\nnn" description format
+# TODO: • includes
+#       • "\nnn" description format
 class XComposeParser
   attr_accessor :file, :parsed_lines, :logger
 

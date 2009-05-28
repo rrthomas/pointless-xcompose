@@ -5,7 +5,7 @@
 # ====================
 # 
 # Lines commented out are already present in X.  Notice the “<minus>”
-# X name refers to the ASCII hyphen-minus, not to the true minus
+# X name refers to the ASCII hyphen‐minus, not to the true minus
 # character.
 
 ## <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN

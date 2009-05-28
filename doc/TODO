@@ -1,6 +1,2 @@
- - Actually compare for conflicts (or, write a script to look for
-   conflicts)
-   - This is starting to get complicated, perhaps write a real parser
-     in Ruby.
- - Speaking of scripts, a XCompose-to-English converter would be
-   nice.  Not everyone enjoys reading conffiles.
+ • A XCompose‐to‐English converter would be nice.  Not everyone enjoys
+   reading conffiles.

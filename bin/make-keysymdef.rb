@@ -15,7 +15,7 @@ module KeysymdefParser
 
       # From the file:
       #
-      #    Where a keysym corresponds one-to-one to an ISO 10646 /
+      #    Where a keysym corresponds one‐to‐one to an ISO 10646 /
       #    Unicode character, this is noted in a comment that provides
       #    both the U+xxxx Unicode position, as well as the official
       #    Unicode name of the character.

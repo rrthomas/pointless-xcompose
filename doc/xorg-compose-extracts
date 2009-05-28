@@ -2,7 +2,7 @@
 # vim: encoding=utf-8 ft=conf
 #
 # This file is not intended for Compose inclusion; rather, it’s a
-# selected extract of current (2009-04)
+# selected extract of current (2009‒04)
 # /usr/share/X11/locale/en_US.UTF-8/Compose.  There’s a lot of
 # interesting mappings there, but also a lot of cruft (such as vowels
 # with various permutations of piled diacritics; grep -v "WITH " and
@@ -23,7 +23,7 @@
 
 <Multi_key> <minus> <minus> <period> 	: "–"   U2013 # EN DASH
 <Multi_key> <minus> <minus> <minus> 	: "—"   U2014 # EM DASH
-## true-minus, true-hyphen, and true-horizontal-bar are absent.  see
+## true‐minus, true‐hyphen, and true–horizontal‐bar are absent.  see
 ## my typographic.xcompose for some suggestions.
 
 ## Wouldn’t <greater> <period> be more consistent with the mappings
@@ -72,7 +72,7 @@
 <Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
 
 ## Long S is not an F dammit.  They should use <S><S> or something.
-## Well-kown trivia: ever noticed ß is ſ+s?
+## Well‐kown trivia: ever noticed ß is ſ+s?
 <Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
 <Multi_key> <f> <S>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
 
@@ -119,7 +119,7 @@
 ## conflict problem.
 
 ## No idea how to type this sequence, but isn’t it interesting? The
-## decomposed character is a negation (⫝ “non-forking”), so the
+## decomposed character is a negation (⫝ “non‐forking”), so the
 ## slashed version is an affirmative.  Both symbols are some math
 ## thing apparently.
 <Multi_key> <U2ADD> <U0338> 	: "⫝̸"   U2ADC # FORKING
@@ -159,7 +159,7 @@
 ## <dead_circumflex> versions for all of these
 <Multi_key> <asciicircum> <underscore> <i> : "ⁱ"   U2071 # SUPERSCRIPT LATIN SMALL LETTER I
 <Multi_key> <asciicircum> <plus> 	: "⁺"   U207A # SUPERSCRIPT PLUS SIGN
-## how do I u2212? (without pointless-xcompose, I mean)
+## how do I u2212? (without pointless‐xcompose, I mean)
 <Multi_key> <asciicircum> <U2212>    	: "⁻"   U207B # SUPERSCRIPT MINUS
 <Multi_key> <asciicircum> <equal> 	: "⁼"   U207C # SUPERSCRIPT EQUALS SIGN
 <Multi_key> <asciicircum> <KP_Equal> 	: "⁼"   U207C # SUPERSCRIPT EQUALS SIGN
@@ -236,7 +236,7 @@
 <Multi_key> <7> <8>			: "⅞"	U215E # VULGAR FRACTION SEVEN EIGHTHS
 
 
-## Three ways of doing Ø… don’t confuse slashed-O with U2205 “empty
+## Three ways of doing Ø… don’t confuse slashed‐O with U2205 “empty
 ## set” ∅, with U2300 “diameter sign” ⌀, or with the slashed zero (a
 ## glyph, not a character; when needed, it is represented by U0338
 ## “combining long solidus overlay” plus a zero (0̸).  Confused yet?
@@ -259,7 +259,7 @@
 <Multi_key> <U1D158> <U1D165> 	: "𝅘𝅥"   U1D15F # MUSICAL SYMBOL QUARTER NOTE
 <Multi_key> <U1D15F> <U1D16E> 	: "𝅘𝅥𝅮"   U1D160 # MUSICAL SYMBOL EIGHTH NOTE
 <Multi_key> <U1D15F> <U1D16F> 	: "𝅘𝅥𝅯"   U1D161 # MUSICAL SYMBOL SIXTEENTH NOTE
-<Multi_key> <U1D15F> <U1D170> 	: "𝅘𝅥𝅰"   U1D162 # MUSICAL SYMBOL THIRTY-SECOND NOTE
+<Multi_key> <U1D15F> <U1D170> 	: "𝅘𝅥𝅰"   U1D162 # MUSICAL SYMBOL THIRTY‐SECOND NOTE
 <Multi_key> <U1D15F> <U1D171> 	: "𝅘𝅥𝅱"   U1D163 # MUSICAL SYMBOL SIXTY-FOURTH NOTE
 <Multi_key> <U1D15F> <U1D172> 	: "𝅘𝅥𝅲"   U1D164 # MUSICAL SYMBOL ONE HUNDRED TWENTY-EIGHTH NOTE
 <Multi_key> <U1D1B9> <U1D165> 	: "𝆹𝅥"   U1D1BB # MUSICAL SYMBOL MINIMA

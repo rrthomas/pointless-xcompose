@@ -18,7 +18,7 @@
 <Multi_key> <space> <4>: " " U2005 # FOUR-PER-EM SPACE
 <Multi_key> <space> <6>: " " U2006 # SIX-PER-EM SPACE
 
-# tabular space = the width of a digit if font is fixed-digit 
+# tabular space = the width of a digit if font is fixed‐digit 
 <Multi_key> <space> <numbersign>: " " U2007 # FIGURE SPACE
 
 ## <Multi_key> <space> <period>: " "   U2008 # PUNCTUATION SPACE
@@ -31,7 +31,7 @@
 
 
 
-# byte-order mark; deprecated as space
+# byte‐order mark; deprecated as space
 <Multi_key> <b> <o> <m>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
 <Multi_key> <space> <b> <o> <m>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
 <Multi_key> <B> <O> <M>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
