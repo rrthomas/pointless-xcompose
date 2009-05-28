@@ -74,14 +74,23 @@
 <Multi_key> <asciitilde> <minus>:         "⁓" U2053 # SWUNG DASH
 
 
-# Asterisk is commonly used for bullets.
-<Multi_key> <asterisk> <period>: "•" U2022 # BULLET
-<Multi_key> <asterisk> <asterisk>: "⁂" U2042 # ASTERISM
-<Multi_key> <o> <period>: "◦" U25E6 # WHITE BULLET
+# Asterisk is commonly used for bullets in ASCII.
+<Multi_key> <asterisk> <asterisk>: "•" U2022 # BULLET
+<Multi_key> <asterisk> <o>: "◦" U25E6 # WHITE BULLET
+<Multi_key> <asterisk> <greater>: "‣" U2023 # TRIANGULAR BULLET
+<Multi_key> <asterisk> <minus>: "⁃" U2043 # HYPHEN BULLET
+<Multi_key> <asterisk> <pareleft>: "⁌" U204C # LEFTWARDS BULLET
+<Multi_key> <asterisk> <parenright>: "⁍" U204D # RIGHTWARDS
+<Multi_key> <exclam> <asterisk>: "◘" U25D8 # INVERSE BULLET
+# Japanese tainome
+<Multi_key> <asterisk> <at>: "◉" U25C9 # FISHEYE
+# Thai fongman
+<Multi_key> <asterisk> <f>: "๏" U0E4F # THAI FONGMAN
+
+
 # kind of like a superscript period
 <Multi_key> <asciicircum> <period>: "·" U00B7 # MIDDLE DOT
-<Multi_key> <exclam> <asterisk>: "◘" U25D8 # INVERSE BULLET
-<Multi_key> <bar> <greater>: "‣" U2023 # TRIANGULAR BULLET
+<Multi_key> <asterisk> <3>: "⁂" U2042 # ASTERISM
 
 # commonly written as ./. in ASCII
 <Multi_key> <period> <slash> <period>: "⁒" # COMMERCIAL MINUS SIGN
