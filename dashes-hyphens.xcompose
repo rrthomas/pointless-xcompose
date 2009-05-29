@@ -3,23 +3,24 @@
 
 # A quick recap on hyphens and dashes:
 #
-# • U002D «-» is the ASCII hyphen‐minus.  Use it both as hyphen and
-#   minus sign at the command‐line, programming languages, or with
-#   software that can’t handle Unicode well.
+# • U002D «-» is the ASCII hyphen‐minus.  It is overloaded as hyphen,
+#   dash, and minus sign at the command‐line, programming languages,
+#   and in software that can’t handle Unicode well.
 # • U2010 «‐» is the true hyphen.  Use it as the grammatical hyphen
 #   when you feel typographical.
-# • U2011 «‑» is the non‐breaking hyphen.  This is visually identical
-#   to the true hyphen, but it tells software that they shouldn’t
-#   break a line.  This is useful whenever you feel like an hyphenated
-#   word musn’t be separated in different lines — for example, when a
+# • U2011 «‑» is the non‐breaking hyphen.  It is visually identical
+#   to the true hyphen, but tells software they shouldn’t break a
+#   line.  This is useful whenever you feel like an hyphenated word
+#   musn’t be separated in different lines — for example, when a
 #   broken hyphenated word could be mistaken by a non‐hyphenated word
-#   (e.g. “re‑creation” if broken could be taken as “recreation”).
+#   (e.g. “re‑creation”, if broken, could be taken as “recreation”).
 # • U2012 «‒» is the figure dash.  “Figure” here refers to numbers,
 #   and this dash is guaranteed to be the same width as a digit (in
 #   fonts with equal‐width digits) so they line up.  This dash
-#   therefore is used with digits, as in telephone numbers or postal
-#   codes.  Don’t use it for mathematical operations (for which there
-#   is the minus sign) or ranges (for which the en‐dash is best).
+#   therefore is to be used with digits, as in telephone numbers or
+#   postal codes.  Don’t use it for mathematical operations (for which
+#   there is the minus sign) or ranges (for which the en‐dash is
+#   best).
 # • U2013 «–» is the en‐dash — that is, the dash with roughly the
 #   width of an uppercase N.  It’s kind of a softer (and smaller)
 #   version of the em‐dash.  Its main uses are ranges (“2–10”,
@@ -31,7 +32,8 @@
 #   the one used to make parenthetical remarks — like this — or
 #   dangling clauses — like this.  Use it a lot if you’re a beatnik.
 #   In a pinch, many people use two or three ASCII hyphen‐minuses to
-#   substitute it.
+#   substitute it.  Normally the em‐dash is used without spaces—like
+#   this—but this looks bad in monospace fonts (only).
 # • U2015 «―» is the horizontal bar.  It’s the official character to
 #   use in dialogues.  It’s identical to the em‐dash in most fonts, so
 #   many just use the em‐dash instead.
@@ -43,19 +45,25 @@
 #   (your text editor might show it in some special font, but it won’t
 #   be printed).  Its purpose is to mark what points of a word can be
 #   broken for hyphenation and aid in automatic text layout.
+# • U2053 «⁓» is the swung dash (not a tilde like «~» ascii tilde or
+#   « ̃» combining tilde).  A swung dash is often used to substitute
+#   words, as in dictionaries.  It overlaps with CJK wave dash U301C
+#   «〜» and wavy dash U3030 «〰», which are probably better for
+#   full-width contexts (see cjk.xcompose).  Other CJK dashes are «゠»
+#   and «－».
 #
-#  Excluding the invisible hyphen, all of the above look basically the
-#  same in most monospaced fonts.  Their true typographical beauty
-#  shows up in real texts, not in conffiles.
+# Excluding the last two items, all of the above look basically the
+# same in most monospaced fonts.  Their true typographical beauty
+# shows up in real texts, not in conffiles.
 
 
-# The true hyphen ≠ ASCII ‘-’ (=U002D the hyphen‐minus).  Notice the
-# X name <minus> refer to the ASCII hyphen‐minus, not the true minus.
+# Notice the X name <minus> refer to the ASCII hyphen‐minus, not the
+# true minus.
 <Multi_key> <minus> <period>            : "‐" U2010 # hyhpen
 ## <Multi_key> <minus> <minus> <period> : "–" U2013 # en dash
 ## <Multi_key> <minus> <minus> <minus>  : "—" U2014 # em dash
 
-# Literally counter‐intuitive? Press Return when you don’t want line breks.
+# Literally counter‐intuitive? Press Return when you don’t want line breaks.
 <Multi_key> <minus> <Return>                : "‑" U2011 # non‐breaking hyphen
 <Multi_key> <minus> <numbersign>            : "‒" U2012 # figure dash
 <Multi_key> <minus> <minus> <underscore>    : "―" U2015 # horizontal bar
@@ -63,6 +71,5 @@
 # minus sign at math.xcompose
 # soft hyphen at invisible.xcompose
 
-# Different from ASCII tilde, and from CJK full‐width dash 〜 (nyoro)
 <Multi_key> <minus> <asciitilde>:         "⁓" U2053 # SWUNG DASH
 <Multi_key> <asciitilde> <minus>:         "⁓" U2053 # SWUNG DASH

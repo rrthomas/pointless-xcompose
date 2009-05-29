@@ -45,12 +45,25 @@
 ## <Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
 ## <Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
 
+# These versions make more sense with other mappings.
 <Multi_key> <greater> <period>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
 <Multi_key> <less> <period>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
 
-# Alternative sequence for apostrophe (so common in English)
+# Alternative, convenient sequence for apostrophe (so common in English).
+#
+# The right single quotation mark is the official apostrophe in Unicode.
 <Multi_key> <apostrophe> <apostrophe>   : "’"   U2019 # RIGHT SINGLE QUOTATION MARK
 
+# Some quotation styles around the world:
+# “American English.” “British English”.
+# “Dutch, English, Italian, Portuguese, Spanish, Turkish”
+# ”Danish, Finnish, Norwegian, Swedish” (but »Swedish books»)
+# „Czech, German, Slovak“
+# „Hungarian, Polish”
+# « French » # no-break space better than regular spaces
+# «Greek, Russian»
+# »Slovenian«
+# 〝ＣＪＫ〞, 「ＣＪＫ」, 『ＣＪＫ』,【ＣＪＫ】,《ＣＪＫ》,〔ＣＪＫ〕 &c.
 
 # Oldschool
 # =========

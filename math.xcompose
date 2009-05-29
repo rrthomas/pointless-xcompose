@@ -9,8 +9,6 @@
 # character.
 
 ## <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN
-<Multi_key> <equal> <minus>: "±" plusminus
-<Multi_key> <minus> <equal>: "±" plusminus
 <Multi_key> <minus> <plus>: "±" plusminus
 
 <Multi_key> <minus> <m>            : "−" U2212 # MINUS SIGN

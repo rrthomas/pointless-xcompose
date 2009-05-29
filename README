@@ -253,13 +253,6 @@ Conventions:
    (Side note: the difference between the above three characters is
     small in monospaced fonts, but large in proportionals).
 
- • Often I set repeats for key permutations, for typing convenience:
-   ◦ Compose + -      → ±
-   ◦ Compose - +      → ±
-
- • Often I set repeats for shift‐less equivalents, for typing convenience:
-   ◦ Compose = -      → ± (“equals” (=) is shift-less +)
-
 # vim: encoding=utf-8
 # Emacs:
 # Local Variables:
