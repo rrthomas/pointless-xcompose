@@ -13,13 +13,15 @@ include "%L"
 # Include everything! Adjust /usr/local/share to your installation path.
 include "/usr/local/share/pointless-xcompose/abbrevs.xcompose"
 include "/usr/local/share/pointless-xcompose/arrows.xcompose"
+include "/usr/local/share/pointless-xcompose/bullets.xcompose"
 include "/usr/local/share/pointless-xcompose/cjk.xcompose"
+include "/usr/local/share/pointless-xcompose/dashes-hyphens.xcompose"
 include "/usr/local/share/pointless-xcompose/dingbats.xcompose"
+include "/usr/local/share/pointless-xcompose/enclosed.xcompose"
 include "/usr/local/share/pointless-xcompose/fractions.xcompose"
 include "/usr/local/share/pointless-xcompose/hyphen-macron.xcompose"
 include "/usr/local/share/pointless-xcompose/invisible.xcompose"
 include "/usr/local/share/pointless-xcompose/math.xcompose"
-include "/usr/local/share/pointless-xcompose/misc.xcompose"
 include "/usr/local/share/pointless-xcompose/typographic.xcompose"
 
 # If you use a layout with X deadkeys, use bin/make-dead-compose.rb to
