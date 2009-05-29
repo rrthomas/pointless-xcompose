@@ -63,3 +63,7 @@
 ## <Multi_key> <percent> <o>: "‰"   U2030 # PER MILLE SIGN
 # % ÷ 100; can’t extend with <o> <o> due to XCompose substring issue.
 <Multi_key> <percent> <O>: "‱"   U2031 # PER MYRIAD SIGN
+
+# Tell that adjacent symbols form a list, without a visible comma.
+# Conflicts with X shortcut for (non‐combining) cedilla “¸”
+<Multi_key> <space> <comma>: "⁣" U2063 # INVISIBLE COMMA

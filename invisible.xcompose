@@ -1,17 +1,30 @@
 # -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
+# Spaces
+# ======
+
+# Used like the regular space, except it tells layout softwre not to
+# break lines at its position.
 ## <Multi_key> <space> <space>: " "   nobreakspace # NO-BREAK SPACE
+# common abbreviation
+<Multi_key> <n> <b> <s> <p>: " "   nobreakspace # NO-BREAK SPACE
+
+# A space so thin, it’s invisible.  Used to separate words in scripts
+# that don’t separate words such as Thai, Kmer, and Japanese.  Since
+# it’s invisible, it’s not actually an space at all (general category
+# control‐format).
 <Multi_key> <space> <0>: "​" U200B # ZERO WIDTH SPACE
-# Conflicts with X shortcut for cedilla “¸”
-<Multi_key> <space> <comma>: "⁣" U2063 # INVISIBLE COMMA
-# nut
+# common abbreviation
+<Multi_key> <z> <w> <s> <p>: "​" U200B # ZERO WIDTH SPACE
+
+# The following are used for manual spacing, for example in math.
+# nut; half an em
 <Multi_key> <space> <n>: " " U2002   # EN SPACE
 <Multi_key> <space> <N>: " " U2002   # EN SPACE
 # mutton ≅ type width
 <Multi_key> <space> <m>: " " U2003   # EM SPACE
 <Multi_key> <space> <M>: " " U2003   # EM SPACE
-
 # aka thick space
 <Multi_key> <space> <3>: " " U2004 # THREE-PER-EM SPACE
 # aka mid space
@@ -20,7 +33,7 @@
 
 # tabular space = the width of a digit if font is fixed‐digit 
 <Multi_key> <space> <numbersign>: " " U2007 # FIGURE SPACE
-
+# punctuation space = the width of a period.
 ## <Multi_key> <space> <period>: " "   U2008 # PUNCTUATION SPACE
 
 <Multi_key> <space> <t>: " " U2009 # THIN SPACE
@@ -29,15 +42,30 @@
 <Multi_key> <space> <bar>: " " U200A # HAIR SPACE
 
 
+# Control
+# =======
 
+# Frequently called “shy”; marks places in words were hyphenation is
+# preferred (for automatic line‐breaking).
+<Multi_key> <minus> <space>             : "­" U00AD # SOFT HYPHEN
+<Multi_key> <s> <h> <y>                 : "­" U00AD # SOFT HYPHEN
 
-# byte‐order mark; deprecated as space
-<Multi_key> <b> <o> <m>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
-<Multi_key> <space> <b> <o> <m>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
-<Multi_key> <B> <O> <M>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
-<Multi_key> <space> <B> <O> <M>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
-<Multi_key> <B> <o> <m>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
-<Multi_key> <space> <B> <o> <m>: "﻿" UFEFF # ZERO WIDTH NON BREAKING SPACE
+# Byte‐order mark.  Inserted at the start of UTF16 and UTF32 texts to
+# sign byte direction (since U+FFEF is a non‐character), and also in
+# UTF8 just to help encoding detectors.  It used to double as a
+# zero‐width non‐breaking space, but that caused problems so it’s
+# deprecated; use word joiner (below) instead.
+<Multi_key> <b> <o> <m>: "﻿" UFEFF
 
+# The following are used to fine‐tune the bidirectional algorithm.  In
+# fact they might mess up the display of this file =) The sequences
+# are the official abbreviations and widely used.
 <Multi_key> <l> <r> <m>: "‎" U200E # LEFT TO RIGHT MARK
 <Multi_key> <r> <l> <m>: "‏" U200F # RIGHT TO LEFT MARK
+<Multi_key> <l> <r> <e>: "‪" U202A # LEFT TO RIGHT EMBEDDING
+<Multi_key> <r> <l> <e>: "‫" U202B # RIGHT TO LEFT EMBEDDING
+<Multi_key> <p> <d> <f>: "‬" U202C # POP DIRECTIONAL FORMATTING
+<Multi_key> <l> <r> <o>: "‭" U202D # LEFT TO RIGHT OVERRIDE
+<Multi_key> <r> <l> <o>: "‮" U202E # RIGHT TO LEFT OVERRIDE
+
+# a free pop just to be sure: ‬

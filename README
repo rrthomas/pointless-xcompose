@@ -89,7 +89,9 @@ WHAT’S INCLUDED
 
  • abbrevs.xcompose:          Abbreviations.
  • arrows.xcompose:           Pretty arrows.
- • cjk.xcompose:              Chinese‐Japanese‐Korean punctuation.
+ • bullets.xcompose:          List markers; bullets.  Too many bullets.
+ • cjk.xcompose:              Chinese‐Japanese‐Korean punctuation & symbols.
+ • dashes-hyphens.xcompose:   Things that look like small horizontal lines.
  • dingbats.xcompose:         Cute drawings.
  • enclosed.xcompose:         Stuff in circles, parenthesis, &c.
  • fractions.xcompose:        …Fractions.
@@ -97,9 +99,10 @@ WHAT’S INCLUDED
                               macrons using hyphen instead of
                               underscore.
  • invisible.xcompose:        Spaces, byte‐order mark, soft hyphen, &
-                              other invisible characters.
+                              other characters you could print even
+                              when out of ink.
  • math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
- • typographic.xcompose:      Typographic symbols.  Impress your
+ • typographic.xcompose:      Misc typographic symbols.  Impress your
                               alistapart.com friends.
 
  • examples/.XCompose:         Sample ~/.XCompose file to include all

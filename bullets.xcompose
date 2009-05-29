@@ -1,0 +1,21 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# Asterisk is commonly used for bullets in ASCII.
+<Multi_key> <asterisk> <asterisk>: "•" U2022 # BULLET
+<Multi_key> <asterisk> <o>: "◦" U25E6 # WHITE BULLET
+<Multi_key> <asterisk> <greater>: "‣" U2023 # TRIANGULAR BULLET
+<Multi_key> <asterisk> <minus>: "⁃" U2043 # HYPHEN BULLET
+<Multi_key> <asterisk> <pareleft>: "⁌" U204C # LEFTWARDS BULLET
+<Multi_key> <asterisk> <parenright>: "⁍" U204D # RIGHTWARDS
+<Multi_key> <exclam> <asterisk>: "◘" U25D8 # INVERSE BULLET
+# Japanese tainome
+<Multi_key> <asterisk> <at>: "◉" U25C9 # FISHEYE
+# Thai fongman
+<Multi_key> <asterisk> <f>: "๏" U0E4F # THAI FONGMAN
+
+
+# kind of like a superscript period
+<Multi_key> <asciicircum> <period>: "·" U00B7 # MIDDLE DOT
+<Multi_key> <asterisk> <3>: "⁂" U2042 # ASTERISM
+

@@ -1,0 +1,68 @@
+# -*- coding: utf-8; mode: conf -*-
+# vim: encoding=utf-8 ft=conf
+
+# A quick recap on hyphens and dashes:
+#
+# • U002D «-» is the ASCII hyphen‐minus.  Use it both as hyphen and
+#   minus sign at the command‐line, programming languages, or with
+#   software that can’t handle Unicode well.
+# • U2010 «‐» is the true hyphen.  Use it as the grammatical hyphen
+#   when you feel typographical.
+# • U2011 «‑» is the non‐breaking hyphen.  This is visually identical
+#   to the true hyphen, but it tells software that they shouldn’t
+#   break a line.  This is useful whenever you feel like an hyphenated
+#   word musn’t be separated in different lines — for example, when a
+#   broken hyphenated word could be mistaken by a non‐hyphenated word
+#   (e.g. “re‑creation” if broken could be taken as “recreation”).
+# • U2012 «‒» is the figure dash.  “Figure” here refers to numbers,
+#   and this dash is guaranteed to be the same width as a digit (in
+#   fonts with equal‐width digits) so they line up.  This dash
+#   therefore is used with digits, as in telephone numbers or postal
+#   codes.  Don’t use it for mathematical operations (for which there
+#   is the minus sign) or ranges (for which the en‐dash is best).
+# • U2013 «–» is the en‐dash — that is, the dash with roughly the
+#   width of an uppercase N.  It’s kind of a softer (and smaller)
+#   version of the em‐dash.  Its main uses are ranges (“2–10”,
+#   “Jan–Mar”) and as a further separator for hyphenated words
+#   (“un‐american–like”).  In a pinch, some people use two ASCII
+#   hyphen‐minuses to substitute it.
+# • U2014 «—» is the em‐dash — the dash that is roughly the width of
+#   an uppercase M, which is usually the maximum type width.  This is
+#   the one used to make parenthetical remarks — like this — or
+#   dangling clauses — like this.  Use it a lot if you’re a beatnik.
+#   In a pinch, many people use two or three ASCII hyphen‐minuses to
+#   substitute it.
+# • U2015 «―» is the horizontal bar.  It’s the official character to
+#   use in dialogues.  It’s identical to the em‐dash in most fonts, so
+#   many just use the em‐dash instead.
+# • U2212 «−» is the true minus sign.  It is more visible and
+#   better‐spaced than the ASCII hyphen‐minus, particularly with
+#   proportional fonts (generally its size and kerning will match +, ×
+#   and other mathematical operators).
+# • U00AD «­» is the soft hyphen.  This is an invisible character
+#   (your text editor might show it in some special font, but it won’t
+#   be printed).  Its purpose is to mark what points of a word can be
+#   broken for hyphenation and aid in automatic text layout.
+#
+#  Excluding the invisible hyphen, all of the above look basically the
+#  same in most monospaced fonts.  Their true typographical beauty
+#  shows up in real texts, not in conffiles.
+
+
+# The true hyphen ≠ ASCII ‘-’ (=U002D the hyphen‐minus).  Notice the
+# X name <minus> refer to the ASCII hyphen‐minus, not the true minus.
+<Multi_key> <minus> <period>            : "‐" U2010 # hyhpen
+## <Multi_key> <minus> <minus> <period> : "–" U2013 # en dash
+## <Multi_key> <minus> <minus> <minus>  : "—" U2014 # em dash
+
+# Literally counter‐intuitive? Press Return when you don’t want line breks.
+<Multi_key> <minus> <Return>                : "‑" U2011 # non‐breaking hyphen
+<Multi_key> <minus> <numbersign>            : "‒" U2012 # figure dash
+<Multi_key> <minus> <minus> <underscore>    : "―" U2015 # horizontal bar
+
+# minus sign at math.xcompose
+# soft hyphen at invisible.xcompose
+
+# Different from ASCII tilde, and from CJK full‐width dash 〜 (nyoro)
+<Multi_key> <minus> <asciitilde>:         "⁓" U2053 # SWUNG DASH
+<Multi_key> <asciitilde> <minus>:         "⁓" U2053 # SWUNG DASH
