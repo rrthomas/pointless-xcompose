@@ -16,7 +16,8 @@
 # A space so thin, it’s invisible.  Used to separate words in scripts
 # that don’t separate words such as Thai, Kmer, and Japanese.  Since
 # it’s invisible, it’s not actually an space at all (general category
-# control‐format).
+# control‐format).  Furthermore, unlike the other spaces below, ZWSP
+# might get expanded in automatic paragraph justification.
 <Multi_key> <space> <0>: "​" U200B # ZERO WIDTH SPACE
 # common abbreviation
 <Multi_key> <z> <w> <s> <p>: "​" U200B # ZERO WIDTH SPACE
