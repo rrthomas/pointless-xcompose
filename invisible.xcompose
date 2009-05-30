@@ -65,11 +65,17 @@
 # The following are used to fine‐tune the bidirectional algorithm.  In
 # fact they might mess up the display of this file =) The sequences
 # are the official abbreviations and widely used.
+#
+# The “marks” are useful for overriding the default behavior of the
+# bidi algorithm, that considers a paragraph to be in the direction of
+# the first strongly‐directed letter.
 <Multi_key> <l> <r> <m>: "‎" U200E # LEFT TO RIGHT MARK
 <Multi_key> <r> <l> <m>: "‏" U200F # RIGHT TO LEFT MARK
 <Multi_key> <l> <r> <e>: "‪" U202A # LEFT TO RIGHT EMBEDDING
 <Multi_key> <r> <l> <e>: "‫" U202B # RIGHT TO LEFT EMBEDDING
 <Multi_key> <p> <d> <f>: "‬" U202C # POP DIRECTIONAL FORMATTING
+# The overrides will force bidi to treat _any_ character as one of
+# that directionality.
 <Multi_key> <l> <r> <o>: "‭" U202D # LEFT TO RIGHT OVERRIDE
 <Multi_key> <r> <l> <o>: "‮" U202E # RIGHT TO LEFT OVERRIDE
 
