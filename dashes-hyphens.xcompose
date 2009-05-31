@@ -41,10 +41,13 @@
 #   better‐spaced than the ASCII hyphen‐minus, particularly with
 #   proportional fonts (generally its size and kerning will match +, ×
 #   and other mathematical operators).
-# • U00AD «­» is the soft hyphen.  This is an invisible character
-#   (your text editor might show it in some special font, but it won’t
-#   be printed).  Its purpose is to mark what points of a word can be
-#   broken for hyphenation and aid in automatic text layout.
+# • U00AD «­» is the soft hyphen.  This is an invisible control
+#   character in Unicode; its purpose is to mark what points of a word
+#   can be broken for hyphenation and aid in automatic text layout.
+#   However, it was visible in ISO-8859-1, where it served to mark
+#   points where words _were_ broken by algorithms; thus some software
+#   still render it as a regular hyphen.  See
+#   http://www.cs.tut.fi/~jkorpela/shy.html .
 # • U2053 «⁓» is the swung dash (not a tilde like «~» ascii tilde or
 #   « ̃» combining tilde).  A swung dash is often used to substitute
 #   words, as in dictionaries.  It overlaps with CJK wave dash U301C

@@ -52,6 +52,9 @@
 
 # Frequently called “shy”; marks places in words were hyphenation is
 # preferred (for automatic line‐breaking).
+#
+# Shy is an invisible control character in Unicode, but was visible in
+# ISO-8859-1.  See http://www.cs.tut.fi/~jkorpela/shy.html .
 <Multi_key> <minus> <space>             : "­" U00AD # SOFT HYPHEN
 <Multi_key> <s> <h> <y>                 : "­" U00AD # SOFT HYPHEN
 
