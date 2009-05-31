@@ -58,13 +58,13 @@
 # “American English.” “British English”.
 # “Dutch, English, Italian, Portuguese, Spanish, Turkish”
 # ”Danish, Finnish, Norwegian, Swedish” (but »Swedish books»)
-# „Czech, German, Slovak“
+# „Czech, German, Slovak“ (opening low-9 is Gänsefüßchen „little goose feet“)
 # „Hungarian, Polish”
-# « French » # no-break space better than regular spaces
+# « French » # no-break space or 3∕M better than regular spaces
 # «Greek, Russian»
 # ‟Greek, second level” (opening high-reversed-9; not included above)
 # »Slovenian«
-# 〝ＣＪＫ〞, 「ＣＪＫ」, 『ＣＪＫ』,【ＣＪＫ】,《ＣＪＫ》,〔ＣＪＫ〕 &c.
+# 〝ＣＪＫ〞, 「ＣＪＫ」, 『ＣＪＫ』,【ＣＪＫ】,《ＣＪＫ》,〔ＣＪＫ〕 &c. &c.
 
 # Oldschool
 # =========
