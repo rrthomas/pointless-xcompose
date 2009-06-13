@@ -1,0 +1,18 @@
+# these two are the latin letters, not the runic wynn ᚹ U16B9
+<Multi_key> <W> <W>: "Ƿ" U01F7 # Wynn
+<Multi_key> <w> <w>: "ƿ" U01BF # wynn
+
+<Multi_key> <Y> <Y>: "Ȝ" U021C # Yogh
+<Multi_key> <y> <y>: "ȝ" U021D # yogh
+
+# X defaults for reference, &c.
+## <Multi_key> <T> <H>              	: "Þ"   THORN # LATIN CAPITAL LETTER THORN
+## <Multi_key> <t> <h>              	: "þ"   thorn # LATIN SMALL LETTER THORN
+## <Multi_key> <D> <H>              	: "Ð"   ETH # LATIN CAPITAL LETTER ETH
+## <Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
+## <Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
+## <Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
+## <Multi_key> <O> <E>              	: "Œ"   OE # LATIN CAPITAL LIGATURE OE
+## <Multi_key> <o> <e>              	: "œ"   oe # LATIN SMALL LIGATURE OE
+## <Multi_key> <A> <E>              	: "Æ"   AE # LATIN CAPITAL LETTER AE
+## <Multi_key> <a> <e>              	: "æ"   ae # LATIN SMALL LETTER AE

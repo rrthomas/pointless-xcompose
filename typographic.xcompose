@@ -18,12 +18,17 @@
 <Multi_key> <colon> <period>: "⸪" U2E2A # TWO DOTS OVER ONE DOT
 <Multi_key> <period> <colon>: "⸫" U2E2B # ONE DOT OVER TWO DOTS
 <Multi_key> <colon> <colon>:  "⸬" U2E2C # TWO DOTS OVER TWO DOTS
-# what should we use for U2E2D ⸭ ?
+<Multi_key> <colon> <plus>: "⸭" U2E2D # FIVE DOTS MARK
+<Multi_key> <plus> <colon>: "⸭" U2E2D # FIVE DOTS MARK
+
 
 <Multi_key> <plus> <bar> : "†" U2020 # DAGGER
 ## Conflicts with X sequence for # ASCII hash
 <Multi_key> <plus> <plus> : "‡" U2021 # DOUBLE DAGGER
 
+# kind of like a superscript period
+<Multi_key> <asciicircum> <period>: "·" U00B7 # MIDDLE DOT
+<Multi_key> <asterisk> <3>: "⁂" U2042 # ASTERISM
 
 # Just citing X defaults for ease of reference.
 ## <Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
@@ -45,6 +50,10 @@
 ## <Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
 ## <Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
 
+# One missing for Greek
+<Multi_key> <quotedbl> <parenleft>: "‟" U201F # DOUBLE HIGH-REVERSED-9
+<Multi_key> <parenleft> <quotedbl>: "‟" U201F # DOUBLE HIGH-REVERSED-9
+
 # These versions make more sense with other mappings.
 <Multi_key> <greater> <period>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
 <Multi_key> <less> <period>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
@@ -60,35 +69,12 @@
 # ”Danish, Finnish, Norwegian, Swedish” (but »Swedish books»)
 # „Czech, German, Slovak“ (opening low-9 is Gänsefüßchen „little goose feet“)
 # „Hungarian, Polish”
-# « French » # no-break space or 3∕M better than regular spaces
+# « French » # no-break space or 3∕M or (3∕M+WJ) better than regular
+#              spaces
 # «Greek, Russian»
-# ‟Greek, second level” (opening high-reversed-9; not included above)
+# ‟Greek, second level” (opening high-reversed-9)
 # »Slovenian«
 # 〝ＣＪＫ〞, 「ＣＪＫ」, 『ＣＪＫ』,【ＣＪＫ】,《ＣＪＫ》,〔ＣＪＫ〕 &c. &c.
-
-# Oldschool
-# =========
-# these two are the latin letters, not the runic wynn ᚹ U16B9
-<Multi_key> <W> <W>: "Ƿ" U01F7 # Wynn
-<Multi_key> <w> <w>: "ƿ" U01BF # wynn
-
-<Multi_key> <Y> <Y>: "Ȝ" U021C # Yogh
-<Multi_key> <y> <y>: "ȝ" U021D # yogh
-
-# not sure why anyone would want this, but it’s nostalgic
-<Multi_key> <bar> <bar>    : "¦" brokenbar
-
-# X defaults for reference, &c.
-## <Multi_key> <T> <H>              	: "Þ"   THORN # LATIN CAPITAL LETTER THORN
-## <Multi_key> <t> <h>              	: "þ"   thorn # LATIN SMALL LETTER THORN
-## <Multi_key> <D> <H>              	: "Ð"   ETH # LATIN CAPITAL LETTER ETH
-## <Multi_key> <d> <h>              	: "ð"   eth # LATIN SMALL LETTER ETH
-## <Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
-## <Multi_key> <f> <s>              	: "ſ"   U017f # LATIN SMALL LETTER LONG S
-## <Multi_key> <O> <E>              	: "Œ"   OE # LATIN CAPITAL LIGATURE OE
-## <Multi_key> <o> <e>              	: "œ"   oe # LATIN SMALL LIGATURE OE
-## <Multi_key> <A> <E>              	: "Æ"   AE # LATIN CAPITAL LETTER AE
-## <Multi_key> <a> <e>              	: "æ"   ae # LATIN SMALL LETTER AE
 
 # Spelled out
 # ===========
@@ -102,3 +88,6 @@
 
 # Used in Indic scripts.
 <Multi_key> <p> <h> <u> <l>: "⁕" U2055 # FLOWER PUNCTUATION MARK
+
+# not sure why anyone would want this, but it’s nostalgic
+<Multi_key> <bar> <bar>    : "¦" brokenbar

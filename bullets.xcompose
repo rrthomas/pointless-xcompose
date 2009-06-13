@@ -11,11 +11,3 @@
 <Multi_key> <exclam> <asterisk>: "◘" U25D8 # INVERSE BULLET
 # Japanese tainome
 <Multi_key> <asterisk> <at>: "◉" U25C9 # FISHEYE
-# Thai fongman
-<Multi_key> <asterisk> <f>: "๏" U0E4F # THAI FONGMAN
-
-
-# kind of like a superscript period
-<Multi_key> <asciicircum> <period>: "·" U00B7 # MIDDLE DOT
-<Multi_key> <asterisk> <3>: "⁂" U2042 # ASTERISM
-
