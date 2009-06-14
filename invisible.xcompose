@@ -82,5 +82,5 @@
 # a free pop just to be sure: ‬
 
 # The proper character to use as zero‐width no‐break space.
-<Multi_key> <w> <j>: "" U2060 # WORD JOINER
-<Multi_key> <z> <w> <n> <b> <s> <p>: "" U2060 # WORD JOINER
+<Multi_key> <w> <j>: "⁠" U2060 # WORD JOINER
+<Multi_key> <z> <w> <n> <b> <s> <p>: "⁠" U2060 # WORD JOINER
