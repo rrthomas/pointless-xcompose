@@ -3,7 +3,7 @@
 
 # Arithmetic operators
 # ====================
-# 
+#
 # Lines commented out are already present in X.  Notice the “<minus>”
 # X name refers to the ASCII hyphen‐minus, not to the true minus
 # character.
@@ -68,4 +68,4 @@
 <Multi_key> <space> <comma>: "⁣" U2063 # INVISIBLE COMMA
 
 # v = ↓ = vertical
-<Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS 
+<Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS
