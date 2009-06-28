@@ -1,21 +1,26 @@
 # -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
-# perhaps all of those are better handled by CJK input methods
+# perhaps CJK input is better handled by CJK input methods.  we try to
+# list here only characters that are not tipically avaiable in those
+# (at least in my experience with Japanese IMs).
 
-# “nyoro” on many Japanese IMs
-<Multi_key> <asciitilde> <asciitilde>: "〜" U301C # WAVE DASH
-## <Multi_key> <asciitilde> <asciitilde>: "〰" U3030 # WAVY DASH
+# “nyoro” on JIMs
+# <Multi_key> <asciitilde> <>: "〜" U301C # WAVE DASH
+<Multi_key> <asciitilde> <asciitilde>: "〰" U3030 # WAVY DASH
+
 <Multi_key> <minus> <equal>: "゠" U30A0 # KATAKANA DOUBLE HYPHEN
 <Multi_key> <equal> <minus>: "゠" U30A0 # KATAKANA DOUBLE HYPHEN
 
 # “kome” IM.
 #
-# <plus> <x> perhaps would match better the handwriting order for 米,
-# its inspiration.  this version is more visual.
-<Multi_key> <colon> <x>: "※" U203B # REFERENCE MARK
-<Multi_key> <x> <colon>: "※" U203B # REFERENCE MARK
-<Multi_key> <k> <o> <m> <e>: "※" U203B # REFERENCE MARK
+# <Multi_key> <colon> <x>: "※" U203B # REFERENCE MARK
+
+# VERTICAL FORMS
+# ==============
+# correct vertical text uses font glyph substitution; the characters
+# below are deprecated.  since almost no one supports vertical text
+# (not even XeTeX!), these my come in handy.
 
 # «<exclam> <exclam>», «<exclam> <question>» &c. taken
 <Multi_key> <2> <exclam>: "‼" U203C # DOUBLE EXCLAMATION MARK
@@ -23,9 +28,3 @@
 # ⁈
 # ⁉
 
-# rfc1345 abbreviation
-<Multi_key> <I> <S>: "　" U3000 # IDEOGRAPHIC SPACE
-<Multi_key> <I> <space>: "　" U3000 # IDEOGRAPHIC SPACE
-
-# v = ↓ = vertical
-<Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS
