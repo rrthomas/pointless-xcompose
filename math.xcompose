@@ -11,7 +11,7 @@
 ## <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN
 <Multi_key> <minus> <plus>: "±" plusminus
 
-<Multi_key> <minus> <m>            : "−" U2212 # MINUS SIGN
+<Multi_key> <m> <m>                : "−" U2212 # MINUS SIGN
 <Multi_key> <minus> <KP_Subract>   : "−" U2212 #  MINUS SIGN
 ## <Multi_key> <colon> <minus>     : "÷" division # DIVISION SIGN
 ## <Multi_key> <minus> <colon>     : "÷" division # DIVISION SIGN
@@ -22,7 +22,7 @@
 # everyone _except_ unicode call “solidus”. Use U2215 as a math
 # operator, U2044 for fractions.
 
-## slash>:                   "/" U002F # ASCII SLASH
+## slash:                   "/" U002F # ASCII SLASH
 ## Conflicts with X sequence for \ ASCII backslash
 <Multi_key> <slash> <slash>: "∕" U2215 # DIVISION SLASH
 <Multi_key> <slash> <period>: "⁄" U2044 # FRACTION SLASH
@@ -54,6 +54,7 @@
 
 # Other
 # =====
+## <Multi_key> <minus> <comma> : "¬"   notsign # NOT SIGN
 <Multi_key> <exclam> <minus> : "¬" notsign # NOT SIGN
 <Multi_key> <bracketleft> <bracketright>: "∎" # END OF PROOF
 
@@ -65,3 +66,6 @@
 # Tell that adjacent symbols form a list, without a visible comma.
 # Conflicts with X shortcut for (non‐combining) cedilla “¸”
 <Multi_key> <space> <comma>: "⁣" U2063 # INVISIBLE COMMA
+
+# v = ↓ = vertical
+<Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS 

@@ -25,6 +25,9 @@
 <Multi_key> <space> <4>: " " U2005 # FOUR-PER-EM SPACE
 <Multi_key> <space> <6>: " " U2006 # SIX-PER-EM SPACE
 
+# 4/18 of an em
+# <Multi_key> <space> <>: " " U205F # MEDIUM MATHEMATICAL SPACE
+
 # tabular space = the width of a digit if font is fixed‐digit 
 <Multi_key> <space> <numbersign>: " " U2007 # FIGURE SPACE
 # punctuation space = the width of a period.
@@ -41,7 +44,7 @@
 
 # A space so thin, it’s invisible.  Used to separate words in scripts
 # that don’t separate words such as Thai, Kmer, and Japanese.  Since
-# it’s invisible, ZWSP is not actually an space at all; but it might
+# it’s invisible, ZWSP is actually not a space at all; but it might
 # get expanded in automatic paragraph justification.
 <Multi_key> <space> <0>: "​" U200B # ZERO WIDTH SPACE
 # common abbreviation
@@ -62,9 +65,13 @@
 # deprecated; use word joiner (below) instead.
 <Multi_key> <b> <o> <m>: "﻿" UFEFF
 
-# The following are used to fine‐tune the bidirectional algorithm.  In
-# fact they might mess up the display of this file =) The sequences
-# are the official abbreviations and widely used.
+# The proper zero‐width no‐break space.
+<Multi_key> <w> <j>: "⁠" U2060 # WORD JOINER
+<Multi_key> <z> <w> <n> <b> <s> <p>: "⁠" U2060 # WORD JOINER
+
+# The following fine‐tune the bidirectional algorithm.  In fact they
+# might mess up the display of this file =) The sequences are the
+# official abbreviations and widely used.
 #
 # The “marks” are useful for overriding the default behavior of the
 # bidi algorithm, that considers a paragraph to be in the direction of
@@ -80,7 +87,3 @@
 <Multi_key> <r> <l> <o>: "‮" U202E # RIGHT TO LEFT OVERRIDE
 
 # a free pop just to be sure: ‬
-
-# The proper character to use as zero‐width no‐break space.
-<Multi_key> <w> <j>: "⁠" U2060 # WORD JOINER
-<Multi_key> <z> <w> <n> <b> <s> <p>: "⁠" U2060 # WORD JOINER
