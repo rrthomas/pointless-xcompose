@@ -5,7 +5,7 @@
 # ======
 
 # Used like the regular space, except it tells layout softwre not to
-# break lines at its position.  Also the prefereed character to
+# break lines at its position.  Also the preferred character to
 # display combining marks in isolation (example:  ̧́)
 ## <Multi_key> <space> <space>: " "   nobreakspace # NO-BREAK SPACE
 # common abbreviation
