@@ -28,10 +28,8 @@
 # 4/18 of an em
 # <Multi_key> <space> <>: " " U205F # MEDIUM MATHEMATICAL SPACE
 
-# tabular space = the width of a digit if font is fixed‐digit 
+# tabular space = the width of a digit if font is fixed‐digit
 <Multi_key> <space> <numbersign>: " " U2007 # FIGURE SPACE
-# punctuation space = the width of a period.
-## <Multi_key> <space> <period>: " "   U2008 # PUNCTUATION SPACE
 
 <Multi_key> <space> <t>: " " U2009 # THIN SPACE
 <Multi_key> <space> <h>: " " U200A # HAIR SPACE

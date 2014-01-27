@@ -3,8 +3,6 @@
 
 # Arrows
 # ======
-<Multi_key> <less> <minus>: "←" U2190
-<Multi_key> <minus> <greater>: "→" U2192
 <Multi_key> <less> <greater>: "↔" U2194
 <Multi_key> <circumflex> <bar>: "↑" U2191
 <Multi_key> <bar> <circumflex>: "↑" U2191

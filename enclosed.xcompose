@@ -2,55 +2,33 @@
 # vim: encoding=utf-8 ft=conf
 
 # X already includes mappings of the form:
-## <Multi_key> <parenleft> <0> <parenright> 	: "⓪"   U24EA # CIRCLED DIGIT ZERO
-## <Multi_key> <parenleft> <1> <parenright> 	: "①"   U2460 # CIRCLED DIGIT ONE
-## <Multi_key> <parenleft> <2> <parenright> 	: "②"   U2461 # CIRCLED DIGIT TWO
-# ③, ④… ⑩, ⑪, ⑫… ⑳, ㉑… ㊿
+## <Multi_key> <parenleft> <0> <parenright>     : "⓪"   U24EA # CIRCLED DIGIT ZERO
 
-## <Multi_key> <parenleft> <A> <parenright> 	: "Ⓐ"   U24B6 # CIRCLED LATIN CAPITAL LETTER A
-## <Multi_key> <parenleft> <B> <parenright> 	: "Ⓑ"   U24B7 # CIRCLED LATIN CAPITAL LETTER B
-## <Multi_key> <parenleft> <C> <parenright> 	: "Ⓒ"   U24B8 # CIRCLED LATIN CAPITAL LETTER C
-# …Ⓩ
-
-## <Multi_key> <parenleft> <a> <parenright> 	: "ⓐ"   U24D0 # CIRCLED LATIN SMALL LETTER A
-## <Multi_key> <parenleft> <b> <parenright> 	: "ⓑ"   U24D1 # CIRCLED LATIN SMALL LETTER B
-## <Multi_key> <parenleft> <c> <parenright> 	: "ⓒ"   U24D2 # CIRCLED LATIN SMALL LETTER C
-# …ⓩ
-
-# hangul
-## <Multi_key> <parenleft> <U1100> <parenright> 	: "㉠"   U3260 # CIRCLED HANGUL KIYEOK
-## <Multi_key> <parenleft> <U1102> <parenright> 	: "㉡"   U3261 # CIRCLED HANGUL NIEUN
-# …&c.
-
-# Since X uses () for circled, we use [] for parenthised.
-# 
-# …
-# 
-# …is this a good solution?
+# Since X uses () for circled, we use [] for parenthesised…is this a good solution?
 #
-<Multi_key> <bracketleft> <1> <bracketright>  : "⑴" U2474 # PARENTHISIZED DIGIT ONE
-<Multi_key> <bracketleft> <2> <bracketright>  : "⑵" U2475 # PARENTHISIZED DIGIT TWO
-<Multi_key> <bracketleft> <3> <bracketright>  : "⑶" U2476 # PARENTHISIZED DIGIT THREE
+<Multi_key> <bracketleft> <1> <bracketright>  : "⑴" U2474 # PARENTHESIZED DIGIT ONE
+<Multi_key> <bracketleft> <2> <bracketright>  : "⑵" U2475 # PARENTHESIZED DIGIT TWO
+<Multi_key> <bracketleft> <3> <bracketright>  : "⑶" U2476 # PARENTHESIZED DIGIT THREE
 <Multi_key> <bracketleft> <4> <bracketright>  : "⑷" U2477 # ⋮
-<Multi_key> <bracketleft> <5> <bracketright>  : "⑸" U2478  
-<Multi_key> <bracketleft> <6> <bracketright>  : "⑹" U2479  
-<Multi_key> <bracketleft> <7> <bracketright>  : "⑺" U247A  
-<Multi_key> <bracketleft> <8> <bracketright>  : "⑻" U247B  
-<Multi_key> <bracketleft> <9> <bracketright>  : "⑼" U247C  
-<Multi_key> <bracketleft> <1> <0> <bracketright> : "⑽" U247D  
-<Multi_key> <bracketleft> <1> <1> <bracketright> : "⑾" U247E  
-<Multi_key> <bracketleft> <1> <2> <bracketright> : "⑿" U247F  
-<Multi_key> <bracketleft> <1> <3> <bracketright> : "⒀" U2480  
-<Multi_key> <bracketleft> <1> <4> <bracketright> : "⒁" U2481  
-<Multi_key> <bracketleft> <1> <5> <bracketright> : "⒂" U2482  
-<Multi_key> <bracketleft> <1> <6> <bracketright> : "⒃" U2483  
-<Multi_key> <bracketleft> <1> <7> <bracketright> : "⒄" U2484  
-<Multi_key> <bracketleft> <1> <8> <bracketright> : "⒅" U2485  
-<Multi_key> <bracketleft> <1> <9> <bracketright> : "⒆" U2486  
-<Multi_key> <bracketleft> <2> <0> <bracketright> : "⒇" U2487  
+<Multi_key> <bracketleft> <5> <bracketright>  : "⑸" U2478
+<Multi_key> <bracketleft> <6> <bracketright>  : "⑹" U2479
+<Multi_key> <bracketleft> <7> <bracketright>  : "⑺" U247A
+<Multi_key> <bracketleft> <8> <bracketright>  : "⑻" U247B
+<Multi_key> <bracketleft> <9> <bracketright>  : "⑼" U247C
+<Multi_key> <bracketleft> <1> <0> <bracketright> : "⑽" U247D
+<Multi_key> <bracketleft> <1> <1> <bracketright> : "⑾" U247E
+<Multi_key> <bracketleft> <1> <2> <bracketright> : "⑿" U247F
+<Multi_key> <bracketleft> <1> <3> <bracketright> : "⒀" U2480
+<Multi_key> <bracketleft> <1> <4> <bracketright> : "⒁" U2481
+<Multi_key> <bracketleft> <1> <5> <bracketright> : "⒂" U2482
+<Multi_key> <bracketleft> <1> <6> <bracketright> : "⒃" U2483
+<Multi_key> <bracketleft> <1> <7> <bracketright> : "⒄" U2484
+<Multi_key> <bracketleft> <1> <8> <bracketright> : "⒅" U2485
+<Multi_key> <bracketleft> <1> <9> <bracketright> : "⒆" U2486
+<Multi_key> <bracketleft> <2> <0> <bracketright> : "⒇" U2487
 
-<Multi_key> <bracketleft> <a> <bracketright>  : "⒜" U249C # PARENTHISIZED LATIN SMALL LETTER A
-<Multi_key> <bracketleft> <b> <bracketright>  : "⒝" U249D # PARENTHISIZED LATIN SMALL LETTER B
+<Multi_key> <bracketleft> <a> <bracketright>  : "⒜" U249C # PARENTHESIZED LATIN SMALL LETTER A
+<Multi_key> <bracketleft> <b> <bracketright>  : "⒝" U249D # PARENTHESIZED LATIN SMALL LETTER B
 <Multi_key> <bracketleft> <c> <bracketright>  : "⒞" U249E # ⋮
 <Multi_key> <bracketleft> <d> <bracketright>  : "⒟" U249F
 <Multi_key> <bracketleft> <e> <bracketright>  : "⒠" U24A0

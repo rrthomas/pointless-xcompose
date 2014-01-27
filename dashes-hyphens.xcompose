@@ -68,8 +68,6 @@
 # Notice the X name <minus> refer to the ASCII hyphen‐minus, not the
 # true minus.
 <Multi_key> <minus> <period>            : "‐" U2010 # hyhpen
-## <Multi_key> <minus> <minus> <period> : "–" U2013 # en dash
-## <Multi_key> <minus> <minus> <minus>  : "—" U2014 # em dash
 
 # Literally counter‐intuitive? Press Return when you don’t want line breaks.
 <Multi_key> <minus> <Return>                : "‑" U2011 # non‐breaking hyphen

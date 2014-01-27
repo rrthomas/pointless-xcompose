@@ -4,18 +4,11 @@
 # Arithmetic operators
 # ====================
 #
-# Lines commented out are already present in X.  Notice the “<minus>”
-# X name refers to the ASCII hyphen‐minus, not to the true minus
-# character.
-
-## <Multi_key> <plus> <minus>: "±" plusminus # PLUS-MINUS SIGN
-<Multi_key> <minus> <plus>: "±" plusminus
+# Notice the “<minus>” X name refers to the ASCII hyphen‐minus, not to
+# the true minus character.
 
 <Multi_key> <m> <m>                : "−" U2212 # MINUS SIGN
 <Multi_key> <minus> <KP_Subract>   : "−" U2212 #  MINUS SIGN
-## <Multi_key> <colon> <minus>     : "÷" division # DIVISION SIGN
-## <Multi_key> <minus> <colon>     : "÷" division # DIVISION SIGN
-## <Multi_key> <x> <x>             : "×" multiply # MULTIPLICATION SIGN
 
 # 2215 is different from both the ASCII slash (which Unicode
 # confusingly call “solidus”) and the U2044 fraction slash ⁄, which
@@ -36,8 +29,6 @@
 
 <Multi_key> <exclam> <equal>   : "≠" U2260 # !=
 <Multi_key> <tilde> <equal> : "≅" U2245 # ~=
-<Multi_key> <greater> <equal>: "≥" U2265 # >=
-<Multi_key> <less> <equal>: "≤" # <=
 <Multi_key> <exclam> <less>    : "≮" U226E # !<
 <Multi_key> <exclam> <greater> : "≯" U226F # !>
 
@@ -58,9 +49,8 @@
 <Multi_key> <exclam> <minus> : "¬" notsign # NOT SIGN
 <Multi_key> <bracketleft> <bracketright>: "∎" # END OF PROOF
 
-# % ÷ 10
-## <Multi_key> <percent> <o>: "‰"   U2030 # PER MILLE SIGN
-# % ÷ 100; can’t extend with <o> <o> due to XCompose substring issue.
+# % ÷ 100; can’t extend with <o> <o> due to XCompose substring issue
+# (<%> <o> already used for per-mille)
 <Multi_key> <percent> <O>: "‱"   U2031 # PER MYRIAD SIGN
 
 # Tell that adjacent symbols form a list, without a visible comma.

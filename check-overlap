@@ -1,0 +1,24 @@
+#!/bin/sh
+# Check for symbols already defined in the system Compose file
+
+# syms is from https://github.com/rrthomas/syms
+
+UNICODE_REGEX="U[0-9a-fA-F]{4,4}"
+# FIXME: {hyphen-macron,fractions}.xcompose contain lots of valid duplicates
+UR_FILES="arrows.xcompose \
+        bullets.xcompose \
+        cjk.xcompose \
+        dashes-hyphens.xcompose \
+        dingbats.xcompose \
+        enclosed.xcompose \
+        fractions.xcompose \
+        historical.xcompose \
+        hyphen-macron.xcompose \
+        invisible.xcompose \
+        math.xcompose \
+        typographic.xcompose"
+
+
+syms -s $UNICODE_REGEX /usr/share/X11/locale/en_US.UTF-8/Compose | sort | uniq > compose.syms
+syms -s $UNICODE_REGEX $OUR_FILES | sort | uniq > ours.syms
+grep -F -f ours.syms compose.syms > overlap.syms

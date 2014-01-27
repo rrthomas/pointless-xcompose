@@ -10,11 +10,6 @@
 # commonly written as ./. in ASCII
 <Multi_key> <period> <slash> <period>: "⁒" # COMMERCIAL MINUS SIGN
 
-# X default will map both ?! and !? to interrobang «‽».  Here we set one
-# of them to the U2E18 gnaborretni «⸘» instead.
-## <Multi_key> <question> <exclam>: "‽"   U203D # INTERROBANG
-<Multi_key> <exclam> <question>: "⸘"   U2E18 # GNABORRETNI
-
 <Multi_key> <colon> <period>: "⸪" U2E2A # TWO DOTS OVER ONE DOT
 <Multi_key> <period> <colon>: "⸫" U2E2B # ONE DOT OVER TWO DOTS
 <Multi_key> <colon> <colon>:  "⸬" U2E2C # TWO DOTS OVER TWO DOTS
@@ -30,33 +25,13 @@
 <Multi_key> <asciicircum> <period>: "·" U00B7 # MIDDLE DOT
 <Multi_key> <asterisk> <3>: "⁂" U2042 # ASTERISM
 
-# Just citing X defaults for ease of reference.
-## <Multi_key> <period> <greater>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
-## <Multi_key> <period> <less>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
-## <Multi_key> <less> <less>        	: "«"   guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
-## <Multi_key> <greater> <greater>  	: "»"   guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
-## <Multi_key> <less> <apostrophe>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
-## <Multi_key> <apostrophe> <less>  	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
-## <Multi_key> <greater> <apostrophe> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
-## <Multi_key> <apostrophe> <greater> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
-## <Multi_key> <comma> <apostrophe> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
-## <Multi_key> <apostrophe> <comma> 	: "‚"   U201a # SINGLE LOW-9 QUOTATION MARK
-## <Multi_key> <less> <quotedbl>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
-## <Multi_key> <quotedbl> <less>    	: "“"   U201c # LEFT DOUBLE QUOTATION MARK
-## <Multi_key> <greater> <quotedbl> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
-## <Multi_key> <quotedbl> <greater> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
-## <Multi_key> <comma> <quotedbl>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
-## <Multi_key> <quotedbl> <comma>   	: "„"   U201e # DOUBLE LOW-9 QUOTATION MARK
-## <Multi_key> <quotedbl> <slash>   	: "〞"   U301e # DOUBLE PRIME QUOTATION MARK
-## <Multi_key> <quotedbl> <backslash> 	: "〝"   U301d # REVERSED DOUBLE PRIME QUOTATION MARK
-
 # One missing for Greek
 <Multi_key> <quotedbl> <parenleft>: "‟" U201F # DOUBLE HIGH-REVERSED-9
 <Multi_key> <parenleft> <quotedbl>: "‟" U201F # DOUBLE HIGH-REVERSED-9
 
 # These versions make more sense with other mappings.
-<Multi_key> <greater> <period>   	: "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
-<Multi_key> <less> <period>      	: "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <greater> <period>          : "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <less> <period>             : "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
 
 # Alternative, convenient sequence for apostrophe (so common in English).
 #
