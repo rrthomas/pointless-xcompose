@@ -2,7 +2,7 @@
 # vim: encoding=utf-8 ft=conf
 
 # perhaps CJK input is better handled by CJK input methods.  we try to
-# list here only characters that are not tipically avaiable in those
+# list here only characters that are not typically avaiable in those
 # (at least in my experience with Japanese IMs).
 
 # “nyoro” on JIMs
