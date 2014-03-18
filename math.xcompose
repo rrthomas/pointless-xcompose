@@ -28,7 +28,7 @@
 #
 
 <Multi_key> <exclam> <equal>   : "≠" U2260 # !=
-<Multi_key> <tilde> <equal> : "≅" U2245 # ~=
+<Multi_key> <asciitilde> <equal> : "≅" U2245 # ~=
 <Multi_key> <exclam> <less>    : "≮" U226E # !<
 <Multi_key> <exclam> <greater> : "≯" U226F # !>
 
