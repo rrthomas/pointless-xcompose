@@ -236,7 +236,7 @@ means you probably don’t want to set Compose shortcuts for U2A94
 GREATER-THAN ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL
 (⪔).
 
-All the mappings here have been painstakenly compared agains Xorg
+All the mappings here have been painstakingly compared agains Xorg
 1.6.0’s en_US Compose file for conflicts.  Several of my entries are
 present in X’s Compose as another sequence, but I prefer one that’s
 more mnemonic.  Some entries are duplicated for consistency sake;
