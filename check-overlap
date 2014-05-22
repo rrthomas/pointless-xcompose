@@ -3,9 +3,9 @@
 
 # syms is from https://github.com/rrthomas/syms
 
-UNICODE_REGEX="U[0-9a-fA-F]{4,4}"
+UNICODE_REGEX="[^<](U[0-9a-fA-F]{4,5})[^>]"
 # FIXME: {hyphen-macron,fractions}.xcompose contain lots of valid duplicates
-UR_FILES="arrows.xcompose \
+OUR_FILES="arrows.xcompose \
         bullets.xcompose \
         cjk.xcompose \
         dashes-hyphens.xcompose \
@@ -21,4 +21,4 @@ UR_FILES="arrows.xcompose \
 
 syms -s $UNICODE_REGEX /usr/share/X11/locale/en_US.UTF-8/Compose | sort | uniq > compose.syms
 syms -s $UNICODE_REGEX $OUR_FILES | sort | uniq > ours.syms
-grep -F -f ours.syms compose.syms > overlap.syms
+grep -F -x -f ours.syms compose.syms > overlap.syms
