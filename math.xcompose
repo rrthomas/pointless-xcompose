@@ -35,13 +35,15 @@
 
 # Set operators
 # =============
-# TODO: What are some good mnemonics for these?
-#
-# <Multi_key> : "∈" U2208
-# <Multi_key> : "∉" U2209
-# <Multi_key> : "⊂" U2282
-# <Multi_key> : "⊆" U2286
-# <Multi_key> : "⊄" U2284
+<Multi_key> <i> <n>			: "∈"	U2208		# ELEMENT OF
+<Multi_key> <exclam> <i> <n>		: "∉"	U2209		# NOT AN ELEMENT OF
+<Multi_key> <braceleft> <parenleft>	: "⊂"	U2282		# SUBSET OF
+<Multi_key> <braceleft>	<parenright>	: "⊃"	U2283		# SUPERSET OF
+<Multi_key> <exclam> <braceleft> <parenleft> : "⊄" U2284        # NOT A SUBSET OF
+<Multi_key> <braceleft> <equal> <parenleft> : "⊆" U2286		# SUBSET OF OR EQUAL TO
+<Multi_key> <braceleft> <equal> <parenright> : "⊇" U2287	# SUPERSET OF OR EQUAL TO
+<Multi_key> <braceleft> <asciicircum>	: "∩"	U2229		# INTERSECTION
+<Multi_key> <braceleft> <U>		: "∪"	U222A		# UNION
 
 # Other
 # =====

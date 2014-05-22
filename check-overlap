@@ -16,8 +16,9 @@ OUR_FILES="arrows.xcompose \
         hyphen-macron.xcompose \
         invisible.xcompose \
         math.xcompose \
-        typographic.xcompose"
-
+        typographic.xcompose \
+        fraktur.xcompose \
+        dotXcompose.xcompose"
 
 syms -s $UNICODE_REGEX /usr/share/X11/locale/en_US.UTF-8/Compose | sort | uniq > compose.syms
 syms -s $UNICODE_REGEX $OUR_FILES | sort | uniq > ours.syms

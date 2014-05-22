@@ -3,8 +3,7 @@
 
 # Mnemonics
 # =========
-<Multi_key> <v> <v> : "✓" U2713
-<Multi_key> <X> <X> : "✗" U2717 # ballot X — <x> <x> taken by Xorg for multiply
-
-# Spelled‐out
-# ===========
+<Multi_key> <v> <v> : "✓" U2713 # CHECK MARK
+<Multi_key> <X> <X> : "✗" U2717 # BALLOT X — <x> <x> taken by Xorg for multiply
+<Multi_key> <V> <_> : "✔" U2714 # HEAVY CHECK MARK
+<Multi_key> <X> <_> : "✘" U2718 # HEAVY BALLOT X

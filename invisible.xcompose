@@ -46,7 +46,8 @@
 # get expanded in automatic paragraph justification.
 <Multi_key> <space> <0>: "​" U200B # ZERO WIDTH SPACE
 # common abbreviation
-<Multi_key> <z> <w> <s> <p>: "​" U200B # ZERO WIDTH SPACE
+<Multi_key> <space> <n> <j>		: "‌"	U200C	# ZERO WIDTH NON-JOINER
+<Multi_key> <space> <w> <j>		: "‍"	U200D	# ZERO WIDTH JOINER
 
 # Frequently called “shy” (from _s_oft _hy_phen); marks places in
 # words were hyphenation is preferred (for automatic line‐breaking).
