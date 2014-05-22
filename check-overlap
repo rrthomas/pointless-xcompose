@@ -20,6 +20,10 @@ OUR_FILES="arrows.xcompose \
         fraktur.xcompose \
         dotXcompose.xcompose"
 
-syms -s $UNICODE_REGEX /usr/share/X11/locale/en_US.UTF-8/Compose | sort | uniq > compose.syms
-syms -s $UNICODE_REGEX $OUR_FILES | sort | uniq > ours.syms
+find_unicode () {
+    cat "$@" | rep 's/#.*$//' - | syms -s $UNICODE_REGEX | sort | uniq
+}
+
+find_unicode /usr/share/X11/locale/en_US.UTF-8/Compose > compose.syms
+find_unicode $OUR_FILES > ours.syms
 grep -F -x -f ours.syms compose.syms > overlap.syms
