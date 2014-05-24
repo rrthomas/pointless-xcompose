@@ -258,6 +258,6 @@ Conventions:
 # Emacs:
 # Local Variables:
 # mode: text
-# mode: filladapt
+# eval: (turn-on-filladapt-mode)
 # coding: utf-8
 # End:
