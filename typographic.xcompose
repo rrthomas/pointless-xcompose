@@ -1,8 +1,17 @@
 # -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
-# Lines commented out are already present in X.  See also the other
-# files (e.g. invisible.xcompose for spaces, &c.)
+# See also the other files (e.g. invisible.xcompose for spaces, &c.)
+
+<Multi_key> <period> <period>		: "…"	U2026		# HORIZONTAL ELLIPSIS
+# Will we someday regret this, wanting 2. for ⒉ ?
+<Multi_key> <2> <period>                  : "‥"	U2025		# TWO DOT LEADER
+# This should not be needed.
+#<Multi_key> <1> <period>                 : "․"	U2024		# ONE DOT LEADER
+<Multi_key> <period> <slash> <period>	: "⁒"	U2052		# COMMERCIAL MINUS SIGN
+# Printable sign for space.  But is \<space> too useful a key combo to use
+# for this?
+<Multi_key> <backslash> <space>		: "␣"	U2423		# OPEN BOX
 
 # Mnemonics
 # =========
@@ -16,7 +25,6 @@
 <Multi_key> <colon> <plus>: "⸭" U2E2D # FIVE DOTS MARK
 <Multi_key> <plus> <colon>: "⸭" U2E2D # FIVE DOTS MARK
 
-
 <Multi_key> <plus> <bar> : "†" U2020 # DAGGER
 ## Conflicts with X sequence for # ASCII hash
 <Multi_key> <plus> <plus> : "‡" U2021 # DOUBLE DAGGER
@@ -29,9 +37,14 @@
 <Multi_key> <quotedbl> <parenleft>: "‟" U201F # DOUBLE HIGH-REVERSED-9
 <Multi_key> <parenleft> <quotedbl>: "‟" U201F # DOUBLE HIGH-REVERSED-9
 
+# In the Asian section, but it's general-purpose punctuation
+<Multi_key> <quotedbl> <quotedbl>       : "〃"	U3003		# DITTO MARK
+
 # These versions make more sense with other mappings.
 <Multi_key> <greater> <period>          : "›"   U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
 <Multi_key> <less> <period>             : "‹"   U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+
+<Multi_key> <equal> <period> <equal>	: "⸎"	U2E0E		# EDITORIAL CORONIS
 
 # Alternative, convenient sequence for apostrophe (so common in English).
 #

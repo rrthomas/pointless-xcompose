@@ -1,9 +1,6 @@
-# -*- coding: utf-8; mode: conf -*-
 # vim: encoding=utf-8 ft=conf
 
-# Arithmetic operators
-# ====================
-#
+## Arithmetic operators
 # Notice the “<minus>” X name refers to the ASCII hyphen‐minus, not to
 # the true minus character.
 
@@ -15,26 +12,22 @@
 # everyone _except_ unicode call “solidus”. Use U2215 as a math
 # operator, U2044 for fractions.
 
-## slash:                   "/" U002F # ASCII SLASH
-## Conflicts with X sequence for \ ASCII backslash
+# slash:                   "/" U002F # ASCII SLASH
+# Conflicts with X sequence for \ ASCII backslash
 <Multi_key> <slash> <slash>: "∕" U2215 # DIVISION SLASH
 <Multi_key> <slash> <period>: "⁄" U2044 # FRACTION SLASH
 
-# Comparison
-# ==========
-#
+## Comparison
 # The order here is more intuitive for programmers than the X
 # versions.
-#
-
 <Multi_key> <exclam> <equal>   : "≠" U2260 # !=
 <Multi_key> <asciitilde> <equal> : "≅" U2245 # ~=
 <Multi_key> <exclam> <less>    : "≮" U226E # !<
 <Multi_key> <exclam> <greater> : "≯" U226F # !>
+<Multi_key> <asciitilde> <asciitilde>        : "≈"  U2248           # ALMOST EQUAL TO
 
 
-# Set operators
-# =============
+## Set operators
 <Multi_key> <i> <n>			: "∈"	U2208		# ELEMENT OF
 <Multi_key> <exclam> <i> <n>		: "∉"	U2209		# NOT AN ELEMENT OF
 <Multi_key> <braceleft> <parenleft>	: "⊂"	U2282		# SUBSET OF
@@ -45,9 +38,8 @@
 <Multi_key> <braceleft> <asciicircum>	: "∩"	U2229		# INTERSECTION
 <Multi_key> <braceleft> <U>		: "∪"	U222A		# UNION
 
-# Other
-# =====
-## <Multi_key> <minus> <comma> : "¬"   notsign # NOT SIGN
+## Other
+# <Multi_key> <minus> <comma> : "¬"   notsign # NOT SIGN
 <Multi_key> <exclam> <minus> : "¬" notsign # NOT SIGN
 <Multi_key> <bracketleft> <bracketright>: "∎" # END OF PROOF
 
@@ -61,3 +53,7 @@
 
 # v = ↓ = vertical
 <Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS
+<Multi_key> <c> <period> <period>	: "⋯"	U22EF		# MIDLINE HORIZONTAL ELLIPSIS
+<Multi_key> <period> <slash> <period>	: "⋰"	U22F0		# UP RIGHT DIAGONAL ELLIPSIS
+# To avoid conflict with \. for combining dot
+<Multi_key> <period> <backslash> <period> : "⋱" U22F1		# DOWN RIGHT DIAGONAL ELLIPSIS
