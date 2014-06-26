@@ -230,7 +230,7 @@ Conventions:
     small in monospaced fonts, but large in proportionals).
    ◦ Follow patterns in X11 Compose files
    ◦ Avoid spelling out names (rather, use an input method that allows
-     spelling out). TODO: eliminate the rest of these.
+     spelling out). FIXME: eliminate the rest of these.
 
 # vim: encoding=utf-8
 # Emacs:
