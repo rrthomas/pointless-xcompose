@@ -218,6 +218,9 @@ more mnemonic.  Some entries are duplicated for consistency sake;
 these are commented out with two ## symbols.  The few entries that
 replace X mappings are marked as such.
 
+FIXME: Have locale-specific sequences where necessary; check for dupes with
+all locales.
+
 Conventions:
 
  • Termination convention (copied from X):
