@@ -87,27 +87,7 @@ WHAT’S INCLUDED
 ===============
  • doc/README:                This.
 
- • abbrevs.xcompose:          Abbreviations.
- • arrows.xcompose:           Pretty arrows.
- • bullets.xcompose:          List markers; bullets.  Too many bullets.
- • cjk.xcompose:              Chinese‐Japanese‐Korean punctuation & symbols.
- • dashes-hyphens.xcompose:   Things that look like small horizontal lines.
- • dingbats.xcompose:         Cute drawings.
- • enclosed.xcompose:         Stuff in circles, parenthesis, &c.
- • fractions.xcompose:        …Fractions.
- • historical.xcompose:       Oldschool.
- • hyphen-macron.xcompose:    For all you Japanese and Greek students,
-                              macrons using hyphen instead of
-                              underscore.
- • invisible.xcompose:        Spaces, byte‐order mark, soft hyphen, &
-                              other characters you could print even
-                              when out of ink.
- • math.xcompose:             *Basic* math symbols (this isn’t LaTeX).
- • typographic.xcompose:      Misc typographic symbols.  Impress your
-                              alistapart.com friends.
-
- • examples/.XCompose:         Sample ~/.XCompose file to include all
-                               the *.xcompose files described above.
+ • xcompose:                  Abbreviations.
  • bin/make-dead-compose.rb:   You want to run this if you use a
                                keyboard layout with deadkeys.
  • examples/dead.xcompose:     Example output of make-dead-keys.rb for
@@ -148,12 +128,9 @@ INSTALL
    I recommend reading the Xorg en_US.UTF-8 Compose file (or the
    summary included in doc/), there’s lot of interesting things there.
 
-3. Below the X includes in your ~/.XCompose add all extras you want:
+3. Below the X includes in your ~/.XCompose add our file:
 
-     include "/path/to/pointless-xcompose/abbrevs.xcompose"
-     include "/path/to/pointless-xcompose/arrows.xcompose"
-     include "/path/to/pointless-xcompose/dingbats.xcompose"
-     …
+     include "/path/to/pointless-xcompose/xcompose"
 
 4. Skip to the next step if you don’t use X deadkeys.  If you do use
    them (for example, if you use an XKB layout like “us_intl”,
@@ -162,9 +139,7 @@ INSTALL
 
     pointless-xcompose$ ./bin/make-dead-compose.rb \
                         /usr/share/X11/locale/en_US.UTF-8/Compose \
-                        /path/to/pointless-xcompose/math.xcompose \
-                        # …list all Compose files you want to include \
-                        # or just use /pointless-xcompose/*.xcompose =) \
+                        /path/to/pointless-xcompose/xcompose \
                         > dead.xcompose
 
    Then include the deadkeys file:
@@ -221,7 +196,7 @@ INSTALL
 USAGE
 =====
 
-Read the included *.xcompose files and doc/xorg-compose-extracts to
+Read the included xcompose file and doc/xorg-compose-extracts to
 see what mappings are included.
 
 Compose settings can conflict due to lack of terminators.  Suppose
@@ -253,6 +228,9 @@ Conventions:
      ‣ Compose - - -    → — (em‐bar)
    (Side note: the difference between the above three characters is
     small in monospaced fonts, but large in proportionals).
+   ◦ Follow patterns in X11 Compose files
+   ◦ Avoid spelling out names (rather, use an input method that allows
+     spelling out). TODO: eliminate the rest of these.
 
 # vim: encoding=utf-8
 # Emacs:

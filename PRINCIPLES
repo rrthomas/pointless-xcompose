@@ -1,7 +1,0 @@
--*- mode: org-mode -*-
-
-Some principles for choosing good sequences:
-
-0. FIXME: clashing key sequences
-1. Follow patterns in X11 Compose files
-2. Avoid spelling out names (rather, use an input method that allows spelling out). TODO: eliminate the rest of these.

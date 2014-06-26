@@ -1,6 +1,0 @@
-# these two are the latin letters, not the runic wynn ᚹ U16B9
-<Multi_key> <W> <W>: "Ƿ" U01F7 # Wynn
-<Multi_key> <w> <w>: "ƿ" U01BF # wynn
-
-<Multi_key> <Y> <Y>: "Ȝ" U021C # Yogh
-<Multi_key> <y> <y>: "ȝ" U021D # yogh
