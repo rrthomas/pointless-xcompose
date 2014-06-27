@@ -1,4 +1,5 @@
-#!/usr/bin/env ruby1.8
+#!/usr/bin/env ruby1.9.1
+# -*- coding: utf-8 -*-
 require 'rubygems'
 require 'optparse'
 require 'ostruct'
@@ -7,7 +8,7 @@ require 'log4r'
 require 'pp'
 include Log4r
 
-require File.dirname(__FILE__) + '/keysymdef.rb'
+require_relative 'keysymdef'
 include Keysymdef
 
 #require 'unprof'

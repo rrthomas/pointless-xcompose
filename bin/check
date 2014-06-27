@@ -2,14 +2,14 @@
 
 parser="bin/xcompose_parser.rb"
 ignores="
-invisible.xcompose:.*Compose:.*<Multi_key><space><comma> -> ⁣ vs. ¸
-math.xcompose:.*Compose:.*<Multi_key><slash><slash> -> ∕ vs. \
-typographic.xcompose:.*Compose.*<Multi_key><exclam><question> -> ⸘ vs. ‽
-typographic.xcompose:.*Compose.*<Multi_key><plus><plus> -> ‡ vs. 
+xcompose:.*Compose:.*<Multi_key><space><comma> -> ⁣ vs. ¸
+xcompose:.*Compose:.*<Multi_key><slash><slash> -> ∕ vs. \
+xcompose:.*Compose.*<Multi_key><exclam><question> -> ⸘ vs. ‽
+xcompose:.*Compose.*<Multi_key><plus><plus> -> ‡ vs. 
 "
 
 files="/usr/share/X11/locale/en_US.UTF-8/Compose"
-files+=" $(ls *.xcompose)"
+files+=" xcompose"
 
 
 

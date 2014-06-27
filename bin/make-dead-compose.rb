@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby1.8
+#!/usr/bin/env ruby1.9.1
 require 'pp'
 require File.dirname(__FILE__) + '/keysymdef.rb'
 require File.dirname(__FILE__) + '/xcompose_parser.rb'
