@@ -856,7 +856,7 @@ include "%L"
 # Sorry, couldn't think of better ones for these.  Might want .s for SAN.
 <Multi_key> <asterisk> <question>      : "Ϛ"	U03DA	# GREEK LETTER STIGMA
 <Multi_key> <asterisk> <slash>	       : "ϛ"	U03DB	# GREEK SMALL LETTER STIGMA
-<Multi_key> <asterisk> <apostrophe>    : "ʹ"	U02B9	# MODIFIER LETTER PRIME, canonically equivalent to U0374 GREEK NUMERAL SIGN
+<Multi_key> <asterisk> <apostrophe> <apostrophe>    : "ʹ"	U02B9	# MODIFIER LETTER PRIME, canonically equivalent to U0374 GREEK NUMERAL SIGN
 # While we're at it...
 <Multi_key> <asterisk> <period> <apostrophe>	: "′"	U2032	# PRIME
 <Multi_key> <asterisk> <period> <quotedbl>      : "″"	U2033	# DOUBLE PRIME
