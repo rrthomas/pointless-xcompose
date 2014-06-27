@@ -1,2 +1,6 @@
- • A XCompose‐to‐English converter would be nice.  Not everyone enjoys
-   reading conffiles.
+See xcompose for more FIXMEs
+
+Have locale-specific sequences where necessary; check for dupes with
+all locales.
+
+Eliminate spelt-out words, making sequences more language-independent.
