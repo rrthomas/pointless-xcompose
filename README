@@ -131,11 +131,12 @@ ABOVE SLANTED EQUAL ABOVE LESS-THAN ABOVE SLANTED EQUAL (⪔).
 All the mappings here have been compared against X.org 1.6.2’s en_US
 Compose file for conflicts.  Several of my entries are present in X’s
 Compose as another sequence, but I prefer one that’s more mnemonic.
-Some entries are duplicated for consistency sake; these are commented
-out with two ## symbols.  The few entries that replace X mappings are
-marked as such.
+The few entries that replace X mappings are marked “INTENTIONAL
+CONFLICT”.
 
 Conventions:
+
+ • Follow patterns in system Compose files. For example:
 
  • Termination convention (copied from X):
    ◦ A repeated character: Compose v v → ✓
@@ -145,9 +146,15 @@ Conventions:
      ‣ Compose - - -    → — (em‐bar)
    (Side note: the difference between the above three characters is
     small in monospaced fonts, but large in proportionals).
-   ◦ Follow patterns in X11 Compose files
-   ◦ Avoid spelling out names (rather, use an input method that allows
-     spelling out).
+
+ • Where we conflict with the system files, do so only for characters
+   that have multiple definitions, and where multiple sequences follow
+   the same pattern, only conflict with one pattern, so that users can
+   use the remaining pattern(s) without being bothered with
+   exceptions.
+
+ • Avoid spelling out names (rather, use an input method that allows
+   spelling out).
 
 # vim: encoding=utf-8
 # Emacs:
