@@ -29,7 +29,7 @@ try:
             print "couldn't make sense of line: "+line
         else:
             val=m.group(1)
-        if listing.has_key(name):
+        if listing.has_key(name) and not re.search(r'INTENTIONAL CONFLICT', line):
             if val != listing[name]:
                 print "Exact conflict found: (%s )[%s][%s]"%(name, 
                                                              listing[name], val)
