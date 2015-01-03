@@ -97,8 +97,9 @@ Installation
    mechanism which overrides X.
 
    A workaround is to use the uim input method.  Sadly, how to install
-   and configure it varies from system to system.  On Debian or
-   Ubuntu, use im-config; on Fedora or RedHat, use ImChooser.
+   and configure it varies from system to system.  The package is
+   probably called uim.  On Debian or Ubuntu, use im-config; on Fedora
+   or RedHat, use ImChooser.
 
 
 Usage
