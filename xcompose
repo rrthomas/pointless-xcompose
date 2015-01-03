@@ -861,8 +861,8 @@ include "%L"
 # FIXME: conflict
 #<Multi_key> <y> <y>		: "☯" U262F		# YIN YANG
 # And now that we are into hearts...
-# FIXME: conflict
-# <Multi_key> <less> <3>                  : "❥"  U2765            # ROTATED HEAVY BLACK HEART BULLET
+# FIXME: clash with system Compose file
+#<Multi_key> <less> <less> <3>           : "❥"  U2765            # ROTATED HEAVY BLACK HEART BULLET
 <Multi_key> <exclam> <less> <3>         : "❣"  U2763            # HEAVY HEART EXCLAMATION MARK ORNAMENT
 <Multi_key> <less> <f> <3>              : "❦"  U2766            # FLORAL HEART
 <Multi_key> <less> <f> <less> <3>       : "❧"  U2767            # ROTATED FLORAL HEART BULLET
