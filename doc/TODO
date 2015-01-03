@@ -1,5 +1,11 @@
 See xcompose for more FIXMEs
 
+Fix checklines.py warnings and errors
+
+Evaluate scan4dups and treeprint to see if they can be removed
+
+Write an overall test script
+
 Have locale-specific sequences where necessary; check for dupes with
 all locales.
 
