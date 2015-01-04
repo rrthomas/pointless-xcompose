@@ -83,10 +83,22 @@ Installation
     ln -s /path/to/pointless-xcompose/xcompose ~/.XCompose
 
 
-4. Check your Compose key setup.  Sadly, this works differently in
-   different desktops, so I can’t give standard instructions.  Start
-   by trying the Menu key, if you have one.  Type “Menu + -” and you
-   should get: ±.
+4. Check your Compose key setup: the command
+
+    setxkbmap -print
+
+   should mention “compose” in a line starting `xkb_symbols`, for example:
+
+    xkb_symbols   { include "pc+us(altgr-intl)+gb:2+us:3+inet(evdev)+altwin(swap_alt_win)+level3(rwin_switch)+capslock(ctrl_modifier)+compose(ralt)"	};
+
+   (near the end of the line; here it says Compose is the right Alt
+   key).  If no Compose key is set up, you’ll need to configure one.
+   Sadly, this works differently in different desktops, so I can’t
+   give standard instructions.
+
+   Once you have a Compose key configured, try it out: type “Compose +
+   -” (i.e., the Compose key, then the plus key, then the minus key)
+   and you should get “±”.
 
 5. Restart your apps (and perhaps X the first time) — XCompose
    settings only apply for new windows.
