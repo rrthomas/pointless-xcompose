@@ -58,7 +58,7 @@ include "%L"
 <Multi_key> <asterisk> <o>: "◦" U25E6 # WHITE BULLET
 <Multi_key> <asterisk> <greater>: "‣" U2023 # TRIANGULAR BULLET
 <Multi_key> <asterisk> <minus>: "⁃" U2043 # HYPHEN BULLET
-<Multi_key> <asterisk> <pareleft>: "⁌" U204C # LEFTWARDS BULLET
+<Multi_key> <asterisk> <parenleft>: "⁌" U204C # LEFTWARDS BULLET
 <Multi_key> <asterisk> <parenright>: "⁍" U204D # RIGHTWARDS BULLET
 <Multi_key> <exclam> <asterisk>: "◘" U25D8 # INVERSE BULLET
 # Japanese tainome
@@ -174,8 +174,8 @@ include "%L"
 
 <Multi_key> <V> <V> : "✓" U2713 # CHECK MARK
 <Multi_key> <X> <X> : "✗" U2717 # BALLOT X — <x> <x> taken by Xorg for multiply
-<Multi_key> <V> <_> : "✔" U2714 # HEAVY CHECK MARK
-<Multi_key> <X> <_> : "✘" U2718 # HEAVY BALLOT X
+<Multi_key> <V> <underscore> : "✔" U2714 # HEAVY CHECK MARK
+<Multi_key> <X> <underscore> : "✘" U2718 # HEAVY BALLOT X
 
 
 # X already includes mappings of the form:
@@ -415,7 +415,7 @@ include "%L"
 # the true minus character.
 
 <Multi_key> <m> <m>                : "−" U2212 # MINUS SIGN
-<Multi_key> <minus> <KP_Subract>   : "−" U2212 #  MINUS SIGN
+<Multi_key> <minus> <KP_Subtract>  : "−" U2212 #  MINUS SIGN
 
 # 2215 is different from both the ASCII slash (which Unicode
 # confusingly call “solidus”) and the U2044 fraction slash ⁄, which
