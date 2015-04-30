@@ -1,3 +1,5 @@
+Check automatically for invalid keysyms
+
 See xcompose for more FIXMEs
 
 Fix checklines.py warnings and errors
