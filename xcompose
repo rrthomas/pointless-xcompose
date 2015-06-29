@@ -319,6 +319,7 @@ include "%L"
 
 # FIXME: The following fixes https://bugs.freedesktop.org/show_bug.cgi?id=74116
 <Multi_key> <minus> <a>    : "ā" U0101 # LATIN SMALL LETTER A WITH MACRON (INTENTIONAL CONFLICT)
+<Multi_key> <a> <minus>    : "ā" U0101 # LATIN SMALL LETTER A WITH MACRON (INTENTIONAL CONFLICT)
 
 # FIXME: Submit the following to freedesktop.org, as they're consistent with existing shortcuts
 <Multi_key> <minus> <AE>                : "Ǣ"   U01E2 # LATIN CAPITAL LETTER AE WITH MACRON
@@ -667,7 +668,7 @@ include "%L"
 <Multi_key> <i> <i> <i> <n> <t>	: "∭"	U222D		# TRIPLE INTEGRAL
 <Multi_key> <i> <i> <i> <i> <n> <t>	: "⨌"	U2A0C		# QUADRUPLE INTEGRAL
 <Multi_key> <o> <i> <n> <t>	: "∮"	U222E		# CONTOUR INTEGRAL
-<Multi_key> <p> <i> <n> <t>	: "⨕"	U2A15		# SEMICIRCULAR POLE INTEGRAL
+<Multi_key> <p> <i> <n> <t>	: "⨕"	U2a15		# SEMICIRCULAR POLE INTEGRAL
 <Multi_key> <c> <P> <i> <n> <t>	: "⨓"	U2A13		# INTEGRAL AROUND POINT
 <Multi_key> <o> <i> <i> <n> <t>	: "∯"	U222F		# SURFACE INTEGRAL
 <Multi_key> <o> <i> <i> <i> <n> <t>	: "∰"	U2230		# VOLUME INTEGRAL
