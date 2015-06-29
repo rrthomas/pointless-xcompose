@@ -525,6 +525,7 @@ include "%L"
 
 # Spelled out
 # ===========
+<Multi_key> <s> <c>:      "§" U00A7	# SECTION SIGN
 <Multi_key> <m> <i> <n> : "′"
 # ≠ prime quotation mark above
 <Multi_key> <s> <e> <c> : "″"
