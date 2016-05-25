@@ -1061,9 +1061,11 @@ include "%L"
 
 
 ## Music.  # is the music mnemonic.
-<Multi_key> <numbersign> <G>             : "𝄞"  U0001d11e # MUSICAL SYMBOL G CLEF
+<Multi_key> <numbersign> <G>              : "𝄞"  U0001d11e # MUSICAL SYMBOL G CLEF
 <Multi_key> <numbersign> <F>              : "𝄢"  U0001d122 # MUSICAL SYMBOL F CLEF
 <Multi_key> <numbersign> <C>              : "𝄡" U0001d121 # MUSICAL SYMBOL C CLEF
+<Multi_key> <numbersign> <numbersign>     : "♭" U266D # MUSIC FLAT SIGN
+<Multi_key> <numbersign> <b>              : "♯" U266F # MUSIC SHARP SIGN
 
 
 ## Astrological signs
