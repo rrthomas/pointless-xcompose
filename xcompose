@@ -4,6 +4,7 @@ include "%L"
 # See also http://bleah.co.uk/~simon/stuff/XCompose
 # and http://dotfiles.org/~inky/.XCompose
 # and http://paste.lisp.org/display/73094
+# and https://tools.ietf.org/html/rfc1345
 
 # scan4dups.py will ignore conflicts marked INTENTIONAL CONFLICT
 
