@@ -616,7 +616,7 @@ include "%L"
 <Multi_key> <3> <less>			: "⋘"  U22D8		# VERY MUCH LESS-THAN
 <Multi_key> <n> <i>			: "∋"  U220B		# CONTAINS AS MEMBER  (I hope this doesn't conflict)
 <Multi_key> <slash> <n> <i>		: "∌"  U220C		# DOES NOT CONTAIN AS MEMBER
-# <exclam><n><i> would conflict, with <exclam> <n> for N WITH UNDERDOT, etc.
+# <exclam><n><i> would conflict, with <exclam> <n> for N WITH DOT BELOW, etc.
 <Multi_key> <equal> <question>		: "≟"  U225f		# QUESTIONED EQUAL TO
 # FIXME: conflict
 #<Multi_key> <equal> <d> <e> <f>		: "≝"  U225D		# EQUAL TO BY DEFINITION
