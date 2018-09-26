@@ -1054,7 +1054,8 @@ include "%L"
 <Multi_key> <G> <apostrophe>	    : "ʛ"   U029B     # LATIN LETTER SMALL CAPITAL G WITH HOOK
 <Multi_key> <R> <x>			: "℞"	U211E		# PRESCRIPTION TAKE
 <Multi_key> <o> <z> <period>		: "℥"	U2125		# OUNCE SIGN
-<Multi_key> <s> <c> <r> <period>	: "℈"	U2108		# SCRUPLE
+# FIXME: conflict
+#<Multi_key> <s> <c> <r> <period>	: "℈"	U2108		# SCRUPLE
 # There are all kinds of awesome combining characters in the U+0300 page.
 # There are a bunch of other awesome combining characters like U+20E0
 # FIXME: conflict
