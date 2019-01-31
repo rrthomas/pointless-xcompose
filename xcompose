@@ -1269,3 +1269,6 @@ include "%L"
 
 
 ## TODO: Emoticons (U+1F600 et seq)
+
+# Lozenge (for Pollen http://pollenpub.com)
+<Multi_key> <greater> <less>: "◊" U25ca # INTENTIONAL CONFLICT
