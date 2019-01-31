@@ -745,6 +745,7 @@ include "%L"
 
 ## Subscript letters
 <Multi_key> <underscore> <i>  	       :  "ᵢ"  U1D62   	  # LATIN SUBSCRIPT SMALL LETTER I (INTENTIONAL CONFLICT)
+<Multi_key> <underscore> <u>           :  "ᵤ"  U1D64      # LATIN SUBSCRIPT SMALL LETTER U (INTENTIONAL CONFLICT)
 <Multi_key> <underscore> <o>	       :  "ₒ"  U2092	  # LATIN SUBSCRIPT SMALL LETTER O (INTENTIONAL CONFLICT)
 <Multi_key> <underscore> <x>	       :  "ₓ"  U2093	  # LATIN SUBSCRIPT SMALL LETTER X
 <Multi_key> <underscore> <j>	       :  "ⱼ"  U2C7C	  # LATIN SUBSCRIPT SMALL LETTER J
