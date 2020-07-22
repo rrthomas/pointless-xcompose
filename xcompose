@@ -168,6 +168,8 @@ include "%L"
 <Multi_key> <minus> <numbersign>            : "‒" U2012 # figure dash
 <Multi_key> <minus> <minus> <underscore>    : "―" U2015 # horizontal bar
 
+<Multi_key> <bar> <bar>                     : "‖" U2016 # DOUBLE VERTICAL LINE
+
 <Multi_key> <minus> <asciitilde>:         "⁓" U2053 # SWUNG DASH
 # <Multi_key>  <>: "‧" U2027 # HYPHENATION POINT
 ## <Multi_key> <period> <minus>    	: "·"   periodcentered # MIDDLE DOT
@@ -538,10 +540,6 @@ include "%L"
 # Used in Indic scripts.
 # FIXME: conflict
 #<Multi_key> <p> <h> <u> <l>: "⁕" U2055 # FLOWER PUNCTUATION MARK
-
-# not sure why anyone would want this, but it’s nostalgic
-<Multi_key> <bar> <bar>    : "¦" brokenbar
-
 
 <Multi_key> <F> <less>			: "☚"	U261A		# BLACK LEFT POINTING INDEX
 <Multi_key> <F> <greater>		: "☛"	U261B		# BLACK RIGHT POINTING INDEX
