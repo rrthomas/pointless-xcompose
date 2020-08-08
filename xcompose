@@ -642,8 +642,6 @@ include "%L"
 <Multi_key> <A> <A>                     : "∀"  U2200            # FOR ALL (INTENTIONAL CONFLICT)
 <Multi_key> <Q> <E> <D>     : "∎"  U220E            # END OF PROOF
 <Multi_key> <a> <l> <e> <f> : "ℵ" U2135	       # ALEF SYMBOL
-<Multi_key> <0> <a> <l> <e> <f> : "ℵ₀"        # ALEF Null
-<Multi_key> <1> <a> <l> <e> <f> : "ℵ₁"        # ALEF One
 <Multi_key> <KP_Multiply> <KP_Multiply>    : "∗"   U2217 # ASTERISK OPERATOR
 <Multi_key> <parenleft> <plus> <parenright>     : "⊕"  U2295    # CIRCLED PLUS
 # FIXME: prefix conflict
@@ -666,12 +664,12 @@ include "%L"
 <Multi_key> <l> <i> <n> <t>	: "⨜"	U2A1C		# LOWER INTEGRAL
 <Multi_key> <i> <i> <n> <t>	: "∬"	U222C		# DOUBLE INTEGRAL
 <Multi_key> <i> <i> <i> <n> <t>	: "∭"	U222D		# TRIPLE INTEGRAL
-<Multi_key> <i> <i> <i> <i> <n> <t>	: "⨌"	U2A0C		# QUADRUPLE INTEGRAL
+#<Multi_key> <i> <i> <i> <i> <n> <t>	: "⨌"	U2A0C		# QUADRUPLE INTEGRAL
 <Multi_key> <o> <i> <n> <t>	: "∮"	U222E		# CONTOUR INTEGRAL
 <Multi_key> <p> <i> <n> <t>	: "⨕"	U2a15		# SEMICIRCULAR POLE INTEGRAL
 <Multi_key> <c> <P> <i> <n> <t>	: "⨓"	U2A13		# INTEGRAL AROUND POINT
 <Multi_key> <o> <i> <i> <n> <t>	: "∯"	U222F		# SURFACE INTEGRAL
-<Multi_key> <o> <i> <i> <i> <n> <t>	: "∰"	U2230		# VOLUME INTEGRAL
+#<Multi_key> <o> <i> <i> <i> <n> <t>	: "∰"	U2230		# VOLUME INTEGRAL
 <Multi_key> <g> <i> <n> <t>	: "⨘"	U2A18		# GEOMETRIC INTEGRAL
 <Multi_key> <s> <i> <n> <t>	: "⨋"	U2A0B		# SUM/INTEGRAL
 <Multi_key> <d> <e> <l>	: "∇"	U2207	        # NABLA
@@ -833,7 +831,6 @@ include "%L"
 <Multi_key> <parenleft> <colon>         : "☻"   U263B           # BLACK SMILING FACE
 <Multi_key> <colon> <asciitilde>	: "⍨"   U2368		# APL FUNCTIONAL SYMBOL TILDE DIAERESIS
 <Multi_key> <colon> <bar>		: "⸚"   U2E1A		# HYPHEN WITH DIAERESIS
-<Multi_key> <colon> <o> <o> <parenright>  :  "°͜°"    # Funny smiley-face.
 # Those are archaic Cyrillic letters... but look so _perfect_ for use
 # in chat. And about the last, the "multiocular O"... Well, I don't
 # know what it can be used for, but given the description, how could I
@@ -937,11 +934,11 @@ include "%L"
 # FIXME: prefix conflict
 # <Multi_key> <O> <minus> <plus>		: "♀"	U2640		# FEMALE SIGN
 # <Multi_key> <O> <minus> <greater>	: "♂"	U2642		# MALE SIGN
-<Multi_key> <g> <a> <y>                 :   "⚣"     U26A3   # DOUBLED MALE SIGN
-<Multi_key> <l> <e> <s> <b> <i> <a> <n> :   "⚢"     U26A2   # DOUBLED FEMALE SIGN
-<Multi_key> <h> <e> <t> <e> <r> <o>     :   "⚤"     U26A4   # INTERLOCKED FEMALE AND MALE SIGN
-<Multi_key> <t> <r> <a> <n> <s>         :   "⚥"     U26A5   # MALE AND FEMALE SIGN
-<Multi_key> <g> <e> <n> <d> <e> <r> <q> :   "⚧"     U26A7   # MALE WITH STROKE AND MALE AND FEMALE SIGN
+#<Multi_key> <g> <a> <y>                 :   "⚣"     U26A3   # DOUBLED MALE SIGN
+#<Multi_key> <l> <e> <s> <b> <i> <a> <n> :   "⚢"     U26A2   # DOUBLED FEMALE SIGN
+#<Multi_key> <h> <e> <t> <e> <r> <o>     :   "⚤"     U26A4   # INTERLOCKED FEMALE AND MALE SIGN
+#<Multi_key> <t> <r> <a> <n> <s>         :   "⚥"     U26A5   # MALE AND FEMALE SIGN
+#<Multi_key> <g> <e> <n> <d> <e> <r> <q> :   "⚧"     U26A7   # MALE WITH STROKE AND MALE AND FEMALE SIGN
 
 
 <Multi_key> <O> <X>: 			"☠" U2620 # SKULL AND CROSSBONES (INTENTIONAL CONFLICT)
@@ -1240,31 +1237,31 @@ include "%L"
 
 
 ## Clock faces
-<Multi_key> <parenleft> <1> <colon> <0> <0> <parenright> : "🕐" U1F550 # CLOCK FACE ONE OCLOCK
-<Multi_key> <parenleft> <2> <colon> <0> <0> <parenright> : "🕑" U1F551 # CLOCK FACE TWO OCLOCK
-<Multi_key> <parenleft> <3> <colon> <0> <0> <parenright> : "🕒" U1F552 # CLOCK FACE THREE OCLOCK
-<Multi_key> <parenleft> <4> <colon> <0> <0> <parenright> : "🕓" U1F553 # CLOCK FACE FOUR OCLOCK
-<Multi_key> <parenleft> <5> <colon> <0> <0> <parenright> : "🕔" U1F554 # CLOCK FACE FIVE OCLOCK
-<Multi_key> <parenleft> <6> <colon> <0> <0> <parenright> : "🕕" U1F555 # CLOCK FACE SIX OCLOCK
-<Multi_key> <parenleft> <7> <colon> <0> <0> <parenright> : "🕖" U1F556 # CLOCK FACE SEVEN OCLOCK
-<Multi_key> <parenleft> <8> <colon> <0> <0> <parenright> : "🕗" U1F557 # CLOCK FACE EIGHT OCLOCK
-<Multi_key> <parenleft> <9> <colon> <0> <0> <parenright> : "🕘" U1F558 # CLOCK FACE NINE OCLOCK
-<Multi_key> <parenleft> <1> <0> <colon> <0> <0> <parenright> : "🕙" U1F559 # CLOCK FACE TEN OCLOCK
-<Multi_key> <parenleft> <1> <1> <colon> <0> <0> <parenright> : "🕚" U1F55A # CLOCK FACE ELEVEN OCLOCK
-<Multi_key> <parenleft> <1> <2> <colon> <0> <0> <parenright> : "🕛" U1F55B # CLOCK FACE TWELVE OCLOCK
+# <Multi_key> <parenleft> <1> <colon> <0> <0> <parenright> : "🕐" U1F550 # CLOCK FACE ONE OCLOCK
+# <Multi_key> <parenleft> <2> <colon> <0> <0> <parenright> : "🕑" U1F551 # CLOCK FACE TWO OCLOCK
+# <Multi_key> <parenleft> <3> <colon> <0> <0> <parenright> : "🕒" U1F552 # CLOCK FACE THREE OCLOCK
+# <Multi_key> <parenleft> <4> <colon> <0> <0> <parenright> : "🕓" U1F553 # CLOCK FACE FOUR OCLOCK
+# <Multi_key> <parenleft> <5> <colon> <0> <0> <parenright> : "🕔" U1F554 # CLOCK FACE FIVE OCLOCK
+# <Multi_key> <parenleft> <6> <colon> <0> <0> <parenright> : "🕕" U1F555 # CLOCK FACE SIX OCLOCK
+# <Multi_key> <parenleft> <7> <colon> <0> <0> <parenright> : "🕖" U1F556 # CLOCK FACE SEVEN OCLOCK
+# <Multi_key> <parenleft> <8> <colon> <0> <0> <parenright> : "🕗" U1F557 # CLOCK FACE EIGHT OCLOCK
+# <Multi_key> <parenleft> <9> <colon> <0> <0> <parenright> : "🕘" U1F558 # CLOCK FACE NINE OCLOCK
+# <Multi_key> <parenleft> <1> <0> <colon> <0> <0> <parenright> : "🕙" U1F559 # CLOCK FACE TEN OCLOCK
+# <Multi_key> <parenleft> <1> <1> <colon> <0> <0> <parenright> : "🕚" U1F55A # CLOCK FACE ELEVEN OCLOCK
+# <Multi_key> <parenleft> <1> <2> <colon> <0> <0> <parenright> : "🕛" U1F55B # CLOCK FACE TWELVE OCLOCK
 
-<Multi_key> <parenleft> <1> <colon> <3> <0> <parenright>     : "🕜" U1F55C # CLOCK FACE ONE-THIRTY
-<Multi_key> <parenleft> <2> <colon> <3> <0> <parenright>     : "🕝" U1F55D # CLOCK FACE TWO-THIRTY
-<Multi_key> <parenleft> <3> <colon> <3> <0> <parenright>     : "🕞" U1F55E # CLOCK FACE THREE-THIRTY
-<Multi_key> <parenleft> <4> <colon> <3> <0> <parenright>     : "🕟" U1F55F # CLOCK FACE FOUR-THIRTY
-<Multi_key> <parenleft> <5> <colon> <3> <0> <parenright>     : "🕠" U1F560 # CLOCK FACE FIVE-THIRTY
-<Multi_key> <parenleft> <6> <colon> <3> <0> <parenright>     : "🕡" U1F561 # CLOCK FACE SIX-THIRTY
-<Multi_key> <parenleft> <7> <colon> <3> <0> <parenright>     : "🕢" U1F562 # CLOCK FACE SEVEN-THIRTY
-<Multi_key> <parenleft> <8> <colon> <3> <0> <parenright>     : "🕣" U1F563 # CLOCK FACE EIGHT-THIRTY
-<Multi_key> <parenleft> <9> <colon> <3> <0> <parenright>     : "🕤" U1F564 # CLOCK FACE NINE-THIRTY
-<Multi_key> <parenleft> <1> <0> <colon> <3> <0> <parenright>     : "🕥" U1F565 # CLOCK FACE TEN-THIRTY
-<Multi_key> <parenleft> <1> <1> <colon> <3> <0> <parenright>     : "🕦" U1F566 # CLOCK FACE ELEVEN-THIRTY
-<Multi_key> <parenleft> <1> <2> <colon> <3> <0> <parenright>     : "🕧" U1F567 # CLOCK FACE TWELVE-THIRTY
+# <Multi_key> <parenleft> <1> <colon> <3> <0> <parenright>     : "🕜" U1F55C # CLOCK FACE ONE-THIRTY
+# <Multi_key> <parenleft> <2> <colon> <3> <0> <parenright>     : "🕝" U1F55D # CLOCK FACE TWO-THIRTY
+# <Multi_key> <parenleft> <3> <colon> <3> <0> <parenright>     : "🕞" U1F55E # CLOCK FACE THREE-THIRTY
+# <Multi_key> <parenleft> <4> <colon> <3> <0> <parenright>     : "🕟" U1F55F # CLOCK FACE FOUR-THIRTY
+# <Multi_key> <parenleft> <5> <colon> <3> <0> <parenright>     : "🕠" U1F560 # CLOCK FACE FIVE-THIRTY
+# <Multi_key> <parenleft> <6> <colon> <3> <0> <parenright>     : "🕡" U1F561 # CLOCK FACE SIX-THIRTY
+# <Multi_key> <parenleft> <7> <colon> <3> <0> <parenright>     : "🕢" U1F562 # CLOCK FACE SEVEN-THIRTY
+# <Multi_key> <parenleft> <8> <colon> <3> <0> <parenright>     : "🕣" U1F563 # CLOCK FACE EIGHT-THIRTY
+# <Multi_key> <parenleft> <9> <colon> <3> <0> <parenright>     : "🕤" U1F564 # CLOCK FACE NINE-THIRTY
+# <Multi_key> <parenleft> <1> <0> <colon> <3> <0> <parenright>     : "🕥" U1F565 # CLOCK FACE TEN-THIRTY
+# <Multi_key> <parenleft> <1> <1> <colon> <3> <0> <parenright>     : "🕦" U1F566 # CLOCK FACE ELEVEN-THIRTY
+# <Multi_key> <parenleft> <1> <2> <colon> <3> <0> <parenright>     : "🕧" U1F567 # CLOCK FACE TWELVE-THIRTY
 
 
 ## TODO: Emoticons (U+1F600 et seq)
