@@ -460,6 +460,9 @@ include "%L"
 # Tell that adjacent symbols form a list, without a visible comma.
 <Multi_key> <space> <comma>: "⁣" U2063 # INVISIBLE COMMA (INTENTIONAL CONFLICT)
 
+<Multi_key> <H> <less>: "❮" U276E # HEAVY LEFT-POINTING ANGLE QUOTATION MARK ORNAMENT
+<Multi_key> <H> <greater>: "❯" U276F # HEAVY RIGHT-POINTING ANGLE QUOTATION MARK ORNAMENT
+
 # v = ↓ = vertical
 <Multi_key> <v> <period> <period>: "⋮" U22EE # VERTICAL ELLIPSIS
 # FIXME: prefix conflict
